@@ -4,54 +4,54 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<link rel="stylesheet" href="style.css">
 	<script src="main.js" async></script>
 	<script src="app.js" defer type="module"></script>
-	<title>AdminSite</title>
+	<title>Pharmacy</title>
 </head>
 <body>
 	<!-- SIDEBAR -->
 	<section id="sidebar">
 		<a href="#" class="brand"><i class='bx bxs-smile icon'></i> Campus Pharmacy</a>
 		<ul class="side-menu">
-			<li><a href="#" class="active"><i class='bx bxs-dashboard icon' ></i> Dashboard</a></li>
+			<li><a href="#" class="active"><i class='bx bxs-dashboard icon' ></i> Home</a></li>
 			<li class="divider" data-text="compras">compras</li>
 			<li>
-				<a href="#"><i class='bx bxs-inbox icon' ></i> Proveedor <i class='bx bx-chevron-right icon-right' ></i></a>
+				<a href="#"><i class='bx bxs-inbox icon' ></i> Elige una opcion <i class='bx bx-chevron-right icon-right' ></i></a>
 				<ul class="side-dropdown">
-					<li><a href="#">Alert</a></li>
-					<li><a href="#">Badges</a></li>
-					<li><a href="#">Breadcrumbs</a></li>
-					<li><a href="#">Button</a></li>
-				</ul>
-			</li>
-			<li>
-				<a href="#"><i class='bx bxs-chart icon' ></i> Empleado <i class='bx bx-chevron-right icon-right' ></i></a>
-				<ul class="side-dropdown">
-					<li><a href="#">Alert</a></li>
-					<li><a href="#">Badges</a></li>
-					<li><a href="#">Breadcrumbs</a></li>
-					<li><a href="#">Button</a></li>
-				</ul>
-			</li>
-			<li>
-				<a href="#"><i class='bx bxs-widget icon' ></i> Paciente <i class='bx bx-chevron-right icon-right' ></i></a>
-				<ul class="side-dropdown">
-					<li><a href="#">Alert</a></li>
-					<li><a href="#">Badges</a></li>
-					<li><a href="#">Breadcrumbs</a></li>
-					<li><a href="#">Button</a></li>
+					<li><a id="litMedisCompras" href="#">Medicamento</a></li>
+					<li><a id="litEmpleCompras" href="#">Empleado</a></li>
+					<li><a href="#">Paciente</a></li>
+					<li><a href="#">Proveedor</a></li>
 				</ul>
 			</li>
 			<li class="divider" data-text="ventas">ventas</li>
-			<li><a href="#"><i class='bx bx-table icon' ></i> Tables</a></li>
 			<li>
-				<a href="#"><i class='bx bxs-notepad icon' ></i> Forms <i class='bx bx-chevron-right icon-right' ></i></a>
+				<a href="#"><i class='bx bxs-notepad icon' ></i> Elige una opcion <i class='bx bx-chevron-right icon-right' ></i></a>
 				<ul class="side-dropdown">
-					<li><a href="#">Basic</a></li>
-					<li><a href="#">Select</a></li>
-					<li><a href="#">Checkbox</a></li>
-					<li><a href="#">Radio</a></li>
+					<li><a href="#">Medicamento</a></li>
+					<li><a href="#">Empleado</a></li>
+					<li><a href="#">Proveedor</a></li>
+				</ul>
+			</li>
+			<li class="divider" data-text="listar">listar</li>
+			<li>
+				<a href="#"><i class='bx bxs-widget icon' ></i> Elige una opcion <i class='bx bx-chevron-right icon-right' ></i></a>
+				<ul class="side-dropdown">
+					<li><a id="listarMedis" href="#">Medicamento</a></li>
+					<li><a href="#">Proveedor</a></li>
+					<li><a href="#">Paciente</a></li>
+					<li><a href="#">Recetas</a></li>
+				</ul>
+			</li>
+			<li class="divider" data-text="agregar">agregar</li>
+			<li>
+				<a href="#"><i class='bx bx-trending-up icon' ></i> Elige una opcion <i class='bx bx-chevron-right icon-right' ></i></a>
+				<ul class="side-dropdown">
+					<li><a href="#">Medicamento</a></li>
+					<li><a href="#">Proveedor</a></li>
+					<li><a href="#">Paciente</a></li>
 				</ul>
 			</li>
 		</ul>
@@ -78,21 +78,111 @@
 			</div>
 		</nav>
 		<!-- NAVBAR -->
-
+		<div id="cards">
+			<div class="card col-2">
+				<a class="card1" href="#">
+				<img class="imgCard" src="./imgs/cards.jpg" alt="">
+					<p>This is heading</p>
+					<p class="small">Card description with lots of great facts and interesting details.</p>
+					<div class="go-corner" href="#">
+						<div class="go-arrow">
+							→
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="card col-2">
+				<a class="card1" href="#">
+				<img class="imgCard" src="./imgs/cards.jpg" alt="">
+					<p>This is heading</p>
+					<p class="small">Card description with lots of great facts and interesting details.</p>
+					<div class="go-corner" href="#">
+						<div class="go-arrow">
+							→
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="card col-2">
+				<a class="card1" href="#">
+				<img class="imgCard" src="./imgs/cards.jpg" alt="">
+					<p>This is heading</p>
+					<p class="small">Card description with lots of great facts and interesting details.</p>
+					<div class="go-corner" href="#">
+						<div class="go-arrow">
+							→
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="card col-2">
+				<a class="card1" href="#">
+				<img class="imgCard" src="./imgs/cards.jpg" alt="">
+					<p>This is heading</p>
+					<p class="small">Card description with lots of great facts and interesting details.</p>
+					<div class="go-corner" href="#">
+						<div class="go-arrow">
+							→
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="card col-2">
+				<a class="card1" href="#">
+				<img class="imgCard" src="./imgs/cards.jpg" alt="">
+					<p>This is heading</p>
+					<p class="small">Card description with lots of great facts and interesting details.</p>
+					<div class="go-corner" href="#">
+						<div class="go-arrow">
+							→
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+		<div id="mediCompras">
+			<div class="card col-2">
+				<a class="card1" href="#">
+				<img class="imgCard" src="./imgs/cards.jpg" alt="">
+					<p>This is heading</p>
+					<p class="small">Card description with lots of great facts and interesting details.</p>
+					<div class="go-corner" href="#">
+						<div class="go-arrow">
+							→
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+		<div id="empleCompras">
+			<div class="card col-2">
+				<a class="card1" href="#">
+				<img class="imgCard" src="./imgs/cards.jpg" alt="">
+					<p>This is heading</p>
+					<p class="small">Card description with lots of great facts and interesting details.</p>
+					<div class="go-corner" href="#">
+						<div class="go-arrow">
+							→
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
 		<!-- MAIN -->
-		<main>
-			<h1 class="title">Dashboard</h1>
+		<main id="main">
+			
+			<h1 class="title">Nos interesa tu salud</h1>
 			<ul class="breadcrumbs">
-				<li><a href="#">Home</a></li>
+				<li><a href="#">Contactanos</a></li>
 				<li class="divider">/</li>
-				<li><a href="#" class="active">Dashboard</a></li>
+				<li><a href="#" class="active">Tu bienestar es primero</a></li>
 			</ul>
 			<div class="info-data">
 				<div class="card">
 					<div class="head">
 						<div>
 							<h2>1500</h2>
-							<p>Traffic</p>
+							<p>Ventas</p>
 						</div>
 						<i class='bx bx-trending-up icon' ></i>
 					</div>
@@ -103,7 +193,7 @@
 					<div class="head">
 						<div>
 							<h2>234</h2>
-							<p>Sales</p>
+							<p>Descuentos</p>
 						</div>
 						<i class='bx bx-trending-down icon down' ></i>
 					</div>
@@ -114,38 +204,52 @@
 					<div class="head">
 						<div>
 							<h2>465</h2>
-							<p>Pageviews</p>
+							<p>Visitantes</p>
 						</div>
 						<i class='bx bx-trending-up icon' ></i>
 					</div>
 					<span class="progress" data-value="30%"></span>
 					<span class="label">30%</span>
 				</div>
-				<div class="card">
-					<div class="head">
-						<div>
-							<h2>235</h2>
-							<p>Visitors</p>
-						</div>
-						<i class='bx bx-trending-up icon' ></i>
-					</div>
-					<span class="progress" data-value="80%"></span>
-					<span class="label">80%</span>
-				</div>
 			</div>
 			<div class="data">
 				<div class="content-data">
 					<div class="head">
-						<h3>Sales Report</h3>
+						<h3>Nuestros Productos</h3>
 					</div>
-					<!-- conteido -->
-					<h1>Hola Mundo</h1>
+					<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+						<div class="carousel-indicators">
+						  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+						  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+						  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+						</div>
+						<div class="carousel-inner">
+						  <div class="carousel-item active">
+							<img src="./imgs/pexels-anna-shvets-3683041.jpg" class="d-block w-100" alt="...">
+						  </div>
+						  <div class="carousel-item">
+							<img src="./imgs/pexels-anna-shvets-3683081.jpg" class="d-block w-100" alt="...">
+						  </div>
+						  <div class="carousel-item">
+							<img src="./imgs/pexels-anna-shvets-3683123.jpg" class="d-block w-100" alt="...">
+						  </div>
+						</div>
+						<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+						  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						  <span class="visually-hidden">Previous</span>
+						</button>
+						<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+						  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+						  <span class="visually-hidden">Next</span>
+						</button>
+					  </div>
 				</div>
-			
 			</div>
 		</main>
 		<!-- MAIN -->
 	</section>
 	<!-- NAVBAR -->
+	<script src="./app.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
