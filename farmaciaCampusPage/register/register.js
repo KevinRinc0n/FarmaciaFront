@@ -5,48 +5,47 @@ registrar.addEventListener('submit',async (e) => {
 
 let data = Object.fromEntries(new FormData(e.target));
 
-if (data.userPassword !== data.userPassword2)
+if (data.Password !== data.PasswordConfirm)
 {
     alert("Las contraseñas no coincide. Vuelve a intentarlo")
 }
 else
 {
-    const url = 'http://localhost:5223/Farmacia/user/register';
+    const url = 'http://localhost:5297/api/Empleado/register';
 
 
-    var usuario = {
-        "UserName": data.userName,
-        "UserEmail": data.userMail,
-        "userPassword": data.userPassword
+    var empleado = {
+        "Nombre": data.Nombre,
+        "Password": data.Password
     };
 
-    var l = JSON.stringify(usuario)
+    var informacion = JSON.stringify(empleado)
 
-    const opciones = {
+    const post = {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: l
+        body: informacion
         };
 
 
-        fetch(url, opciones)
+        fetch(url, post)
         .then(response => {
         if (!response.ok) {
-            throw new Error(`La solicitud no fue exitosa. Código de estado: ${response.status}`);
+            throw new Error(`La solicitud no se cumplio. (${response.status})`);
         }
         return response.text(); 
         })
         .then(result => {
         
-        if (result === "Usuario ya tiene Registro"){
-            alert("Ya hay un usuario con ese Nombre y Clave")
+        if (result === "Empleado ya existente"){
+            alert("Ya existe un empleado con ese nombre. Intenta con otro")
         }
 
-        if (result === "Usuario Registrado Correctamente"){
-            alert("Tu registro se ha realizado correctamente")
-            window.location.replace("../Html/Pagina_Login.html");
+        if (result === "Empleado registrado correctamente"){
+            alert("Registro completado")
+            window.location.replace("../login/login.html");
         }
         console.log("Resultado:", result);
         })

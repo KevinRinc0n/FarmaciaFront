@@ -32,11 +32,16 @@ const post = {
         })
         .then(result => {
         
-        if (result.mensaje === "Empleado No Existe"){
+        if (result.Message === "Empleado existente"){
+
+            window.location.replace("../index.html");
+        }    
+
+        if (result.Message === "Empleado No Existe"){
             alert("Empleado no existente")
         }
 
-        if(result.mensaje === `Credenciales incorrectas para el empleado ${result.Nombre}`){
+        if(result.Message === `Credenciales incorrectas para el empleado ${result.Nombre}`){
             alert("La clave es Incorrecta")
         }
         console.log("Resultado:", result);
