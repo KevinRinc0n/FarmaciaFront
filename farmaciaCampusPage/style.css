@@ -9,7 +9,7 @@
 
 #cards
 {
-	display: none;
+	display: none; 
 }
 
 #mediCompras
@@ -18,10 +18,59 @@
 
 }
 
-#empleCompras
+#pacienCompras
 {
 	display: none;
+}
 
+#mediVentas
+{
+	display: none;
+}
+
+#empleeVentas
+{
+	display: none;
+}
+
+#proveeVentas
+{
+	display: none;
+}
+
+#proveeListar
+{
+	display: none;
+}
+
+#proveeListar
+{
+	display: none;
+}
+
+#pacienteListar
+{
+	display: none;
+}
+
+#recetaListar
+{
+	display: none;
+}
+
+#agregaMedi
+{
+	display: none;
+}
+
+#agregaProvee
+{
+	display: none;
+}
+
+#agregaPaciente
+{
+	display: none;
 }
 
 .imgCard
