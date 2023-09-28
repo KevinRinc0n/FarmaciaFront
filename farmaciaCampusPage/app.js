@@ -55,6 +55,7 @@ medicamentoComprado.addEventListener("click", function(){
     medisCompras.style.flexWrap = "wrap";
     medisCompras.style.gap = "5%";
     medisCompras.style.marginTop = "6%";
+    medisCompras.style.height = "100vh";
 });
 
 var pacienteCompra = document.getElementById("listPacienCompras");

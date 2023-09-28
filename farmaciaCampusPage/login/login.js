@@ -8,7 +8,7 @@ let data = Object.fromEntries(new FormData(e.target));
 const url = 'http://localhost:5297/api/Empleado/token';
 
 var empleado = {
-    "Nombre": data.Nombre,
+    "Username": data.Username,
     "Password": data.Password
 };
 
