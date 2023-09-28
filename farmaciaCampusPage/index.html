@@ -49,7 +49,7 @@
 				<ul class="side-dropdown">
 					<li><a id="aggMedica" href="#">Medicamento</a></li>
 					<li><a id="aggProvee" href="#">Proveedor</a></li>
-					<li><a id="aggPacient" href="#">Paciente</a></li>
+					<li><a id="aggPacient" href="#">Ubicación</a></li>
 				</ul>
 			</li>
 		</ul>
@@ -572,19 +572,35 @@
 				</a>
 			</div>
 		</div>
-		<div id="agregaMedi">
-			<div class="card">
-				<a class="card1" href="#">
-				<img class="imgCard" src="./imgs/cards.jpg" alt="">
-					<p>This is heading</p>
-					<p class="small">Card description with lots of great facts and interesting details.</p>
-					<div class="go-corner" href="#">
-						<div class="go-arrow">
-							→
-						</div>
-					</div>
-				</a>
+		<div  id="agregaMedi">
+			<div class="form-floating mb-3 medisInput">
+				<input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+				<label for="floatingInput">NOMBRE</label>
 			</div>
+			<div class="form-floating mb-3 medisInput">
+				<input type="number" class="form-control" id="floatingInput" placeholder="name@example.com">
+				<label for="floatingInput">PRECIO</label>
+			</div>
+			<div>
+				<label for="">INGRESA LA FECHA DE EXPIRACION</label>
+				<div class="input-group flex-nowrap fecha">
+					<input type="date" class="form-control" aria-label="Username" aria-describedby="addon-wrapping">
+				</div>
+			</div>
+			<div class="form-floating mb-3 medisInput">
+				<input type="number" class="form-control" id="floatingInput" placeholder="name@example.com">
+				<label for="floatingInput">CANTIDAD</label>
+			</div>
+			<select class="form-select medisInput" aria-label="Default select example">
+				<option selected>SELECCIONA AL PROVEEDOR</option>
+			</select>
+			<select class="form-select medisInput" aria-label="Default select example">
+				<option selected>SELECCIONA LA PRESENTACION</option>
+			</select>
+			<select class="form-select medisInput" aria-label="Default select example">
+				<option selected>SELECCIONA LA MARCA</option>
+			</select>
+			<button type="button" class="btn btn-warning btEnvi">Enviar</button>
 		</div>
 		<div id="agregaProvee">
 			<div class="card">
@@ -601,18 +617,30 @@
 			</div>
 		</div>
 		<div id="agregaPaciente">
-			<div class="card">
-				<a class="card1" href="#">
-				<img class="imgCard" src="./imgs/cards.jpg" alt="">
-					<p>This is heading</p>
-					<p class="small">Card description with lots of great facts and interesting details.</p>
-					<div class="go-corner" href="#">
-						<div class="go-arrow">
-							→
-						</div>
-					</div>
-				</a>
+			<div class="form-floating mb-3 medisInput">
+				<input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+				<label for="floatingInput">TIPO VIA</label>
 			</div>
+			<div class="form-floating mb-3 medisInput">
+				<input type="number" class="form-control" id="floatingInput" placeholder="name@example.com">
+				<label for="floatingInput">NUMERO VIA</label>
+			</div>
+			<div class="form-floating mb-3 medisInput">
+				<input type="number" class="form-control" id="floatingInput" placeholder="name@example.com">
+				<label for="floatingInput">NUMERO VIA SECUNDARIO</label>
+			</div>
+			<div class="form-floating mb-3 medisInput">
+				<input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+				<label for="floatingInput">BARRIO</label>
+			</div>
+			<div class="form-floating mb-3 medisInput">
+				<input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+				<label for="floatingInput">COMPLEMENTO</label>
+			</div>
+			<select class="form-select medisInput" aria-label="Default select example">
+				<option selected>SELECCIONA LA CIUDAD</option>
+			</select>
+			<button type="button" class="btn btn-warning btEnviUbi">Enviar</button>
 		</div>
 		<!-- MAIN -->
 		<main id="main">
@@ -696,6 +724,7 @@
 	</section>
 	<!-- NAVBAR -->
 	<script src="./app.js"></script>
+	<script src="./peticiones.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
