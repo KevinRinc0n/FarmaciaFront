@@ -101,13 +101,13 @@ const contenedorMedicamentoParace = document.getElementById("");
 
 const mostrarMedicamentoParace = (medicamentoParacetamol) =>{
     let listar = "";
-    medicamentoParacetamol.foreach(medicamento =>{                                           //cambiar nombre de medicamento "." de aqui en adelante
+    medicamentoParacetamol.foreach(medicamentoParacet =>{                                           
         listar += `
         <div class="card" style="width: 18rem;">
-            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+            <img src="./img/parace.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">${medicamento.Nombre}</h5>
-                <p class="card-text">${medicamento.Nombre}</p>
+                <h5 class="card-title">El total de ventas de paracetamol es:</h5>
+                <h5 class="card-title">${medicamentoParacet.unidadesVendidas}</h5>
             </div>
         </div>
         `
@@ -124,7 +124,7 @@ window.addEventListener("DOMContentLoaded", () =>{
     getRecetas();
 });
 
-const getRecetas = ()  =>{
+const getRecetas = ()  =>{                                                                      //cambiar nombre de medicamento "." de aqui en adelante
     fetch(urlReceta)
     .then(respuesta  => respuesta.json())
     .then(data  => {
