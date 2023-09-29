@@ -6,6 +6,192 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+
+#medicamentosProveeA
+{
+	display: none; 
+}
+
+#pacienCompraPara
+{
+	display: none; 
+}
+
+#pacienCompraPara2023
+{
+	display: none; 
+}
+
+#pacienNoCompra2023
+{
+	display: none; 
+}
+
+#medicamentosTotaParace
+{
+	display: none; 
+}
+
+#medicamentosVenMazo2023
+{
+	display: none; 
+}
+
+#medicamentosMenosVen2023
+{
+	display: none; 
+}
+
+#medicamentosPromeXVen
+{
+	display: none; 
+}
+
+#medicamentosNoVendidos
+{
+	display: none; 
+}
+
+#medicamentosVenXMes2023
+{
+	display: none; 
+}
+
+#medicamentosVenPorMes2023
+{
+	display: none; 
+}
+
+#medicamentosNoVendidos2023
+{
+	display: none; 
+}
+
+#medicamentosTotalTrimes2023
+{
+	display: none; 
+}
+
+#ventaXEmpleado
+{
+	display: none; 
+}
+
+#empleadoMas5Ventas
+{
+	display: none; 
+}
+
+#empleadoSinVentas2023
+{
+	display: none; 
+}
+
+#empleadoMenos5Ventas
+{
+	display: none; 
+}
+
+#empleVenMedicDistinto2023
+{
+	display: none; 
+}
+
+#empleadoSinVentasAbril2023
+{
+	display: none; 
+}
+
+#totalMedisVenXProveedor
+{
+	display: none; 
+}
+
+#proveeNoVenMedicUltiAño
+{
+	display: none; 
+}
+
+#proveedorSumiMasMedic2023
+{
+	display: none; 
+}
+
+#proveedoresSumiMedic2023
+{
+	display: none; 
+}
+
+#proveeSumiMas5MedicDife2023
+{
+	display: none; 
+}
+
+#medicamentosMenos50Stock
+{
+	display: none; 
+}
+
+#medicamentosVencenAntes2024
+{
+	display: none; 
+}
+
+#totalRecaudadoXVenMedic
+{
+	display: none; 
+}
+
+#medicamentosNoVendidos
+{
+	display: none; 
+}
+
+#medicamentoMasCaro
+{
+	display: none; 
+}
+
+#medicamentosPre50Stock100
+{
+	display: none; 
+}
+
+#proveeInfoContacto
+{
+	display: none; 
+}
+
+#cantMedicXProvee
+{
+	display: none; 
+}
+
+#ganaciaXProvee2023
+{
+	display: none; 
+}
+
+#proveeMenos50Medic
+{
+	display: none; 
+}
+
+#pacienteMasDinero2023
+{
+	display: none; 
+}
+
+#totalGastXPacient
+{
+	display: none; 
+}
+
+#recetasDespues2023
+{
+	display: none; 
+}
+
 .btEnvi
 {
 	margin-top: 8%;

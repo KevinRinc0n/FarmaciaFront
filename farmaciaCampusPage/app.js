@@ -15,6 +15,7 @@ var agregaPaciente = document.getElementById("agregaPaciente");
 
 var medis = document.getElementById("listarMedis");
 medis.addEventListener("click", function(){
+    comProveA.style.display = "none";
     agregaMedi.style.display = "none";
     agregaProvee.style.display = "none";
     agregaPaciente.style.display = "none";
@@ -37,6 +38,7 @@ medis.addEventListener("click", function(){
 
 var medicamentoComprado = document.getElementById("litMedisCompras");
 medicamentoComprado.addEventListener("click", function(){
+    comProveA.style.display = "none";
     agregaMedi.style.display = "none";
     agregaProvee.style.display = "none";
     agregaPaciente.style.display = "none";
@@ -60,6 +62,7 @@ medicamentoComprado.addEventListener("click", function(){
 
 var pacienteCompra = document.getElementById("listPacienCompras");
 pacienteCompra.addEventListener("click", function(){
+    comProveA.style.display = "none";
     agregaMedi.style.display = "none";
     agregaProvee.style.display = "none";
     agregaPaciente.style.display = "none";
@@ -82,6 +85,7 @@ pacienteCompra.addEventListener("click", function(){
 
 var medisVenta = document.getElementById("listMedisVentas");
 medisVenta.addEventListener("click", function(){
+    comProveA.style.display = "none";
     agregaMedi.style.display = "none";
     agregaProvee.style.display = "none";
     agregaPaciente.style.display = "none";
@@ -104,6 +108,7 @@ medisVenta.addEventListener("click", function(){
 
 var empleVentas = document.getElementById("listEmpleVentas");
 empleVentas.addEventListener("click", function(){
+    comProveA.style.display = "none";
     agregaMedi.style.display = "none";
     agregaProvee.style.display = "none";
     agregaPaciente.style.display = "none";
@@ -126,6 +131,7 @@ empleVentas.addEventListener("click", function(){
 
 var listProvedoVenta = document.getElementById("listProveeVentas");
 listProvedoVenta.addEventListener("click", function(){
+    comProveA.style.display = "none";
     agregaMedi.style.display = "none";
     agregaProvee.style.display = "none";
     agregaPaciente.style.display = "none";
@@ -148,6 +154,7 @@ listProvedoVenta.addEventListener("click", function(){
 
 var proveeList = document.getElementById("listarProvee");
 proveeList.addEventListener("click", function(){
+    comProveA.style.display = "none";
     agregaMedi.style.display = "none";
     agregaProvee.style.display = "none";
     agregaPaciente.style.display = "none";
@@ -170,6 +177,7 @@ proveeList.addEventListener("click", function(){
 
 var pacientList = document.getElementById("listarPaciente");
 pacientList.addEventListener("click", function(){
+    comProveA.style.display = "none";
     agregaMedi.style.display = "none";
     agregaProvee.style.display = "none";
     agregaPaciente.style.display = "none";
@@ -192,6 +200,7 @@ pacientList.addEventListener("click", function(){
 
 var recetaList = document.getElementById("listarReceta");
 recetaList.addEventListener("click", function(){
+    comProveA.style.display = "none";
     agregaMedi.style.display = "none";
     agregaProvee.style.display = "none";
     agregaPaciente.style.display = "none";
@@ -214,6 +223,7 @@ recetaList.addEventListener("click", function(){
 
 var aggMedica = document.getElementById("aggMedica");
 aggMedica.addEventListener("click", function(){
+    comProveA.style.display = "none";
     agregaProvee.style.display = "none";
     agregaPaciente.style.display = "none";
     ocultarMain.style.display = "none";
@@ -236,6 +246,7 @@ aggMedica.addEventListener("click", function(){
 
 var aggProvee = document.getElementById("aggProvee");
 aggProvee.addEventListener("click", function(){
+    comProveA.style.display = "none";
     agregaPaciente.style.display = "none";
     ocultarMain.style.display = "none";
     medisCompras.style.display = "none";
@@ -258,6 +269,43 @@ aggProvee.addEventListener("click", function(){
 
 var aggPacient = document.getElementById("aggPacient");
 aggPacient.addEventListener("click", function(){
+    pacienCompraPara = "none";
+    pacienCompraPara2023 = "none";
+    pacienNoCompra2023 = "none";
+    medicamentosTotaParace = "none";
+    medicamentosVenMazo2023 = "none";
+    medicamentosMenosVen2023 = "none";
+    medicamentosPromeXVen = "none";
+    medicamentosNoVendidos = "none";
+    medicamentosVenXMes2023 = "none";
+    medicamentosVenPorMes2023 = "none";
+    medicamentosNoVendidos2023 = "none";
+    medicamentosTotalTrimes2023 = "none";
+    ventaXEmpleado = "none";
+    empleadoMas5Ventas = "none";
+    empleadoSinVentas2023 = "none";
+    empleadoMenos5Ventas = "none";
+    empleVenMedicDistinto2023 = "none";
+    empleadoSinVentasAbril2023 = "none";
+    totalMedisVenXProveedor = "none";
+    proveeNoVenMedicUltiAño = "none";
+    proveedorSumiMasMedic2023 = "none";
+    proveedoresSumiMedic2023 = "none";
+    proveeSumiMas5MedicDife2023 = "none";
+    medicamentosMenos50Stock = "none";
+    medicamentosVencenAntes2024 = "none";
+    totalRecaudadoXVenMedic = "none";
+    medicamentoMasCaro = "none";
+    medicamentosPre50Stock100 = "none";
+    proveeInfoContacto = "none";
+    cantMedicXProvee = "none";
+    ganaciaXProvee2023 = "none";
+    proveeMenos50Medic = "none";
+    pacienteMasDinero2023 = "none";
+    totalGastXPacientrecetasDespues2023 = "none";
+
+
+    comProveA.style.display = "none";
     ocultarMain.style.display = "none";
     medisCompras.style.display = "none";
     cartas.style.display = "none";
@@ -276,4 +324,48 @@ aggPacient.addEventListener("click", function(){
     agregaPaciente.style.flexWrap = "wrap";
     agregaPaciente.style.gap = "5%";
     agregaPaciente.style.marginTop = "6%";
+});
+
+var comProveA = document.getElementById("medicamentosProveeA");
+var pacienCompraPara = document.getElementById("pacienCompraPara");
+var pacienCompraPara2023 = document.getElementById("pacienCompraPara2023");
+var pacienNoCompra2023 = document.getElementById("pacienNoCompra2023");
+var medicamentosTotaParace = document.getElementById("medicamentosTotaParace");
+var medicamentosVenMazo2023 = document.getElementById("medicamentosVenMazo2023");
+var medicamentosMenosVen2023 = document.getElementById("medicamentosMenosVen2023");
+var medicamentosPromeXVen = document.getElementById("medicamentosPromeXVen");
+var medicamentosNoVendidos = document.getElementById("medicamentosNoVendidos");
+var medicamentosVenXMes2023 = document.getElementById("medicamentosVenXMes2023");
+var medicamentosVenPorMes2023 = document.getElementById("medicamentosVenPorMes2023");
+var medicamentosNoVendidos2023 = document.getElementById("medicamentosNoVendidos2023");
+var medicamentosTotalTrimes2023 = document.getElementById("medicamentosTotalTrimes2023");
+var ventaXEmpleado = document.getElementById("ventaXEmpleado");
+var empleadoMas5Ventas = document.getElementById("empleadoMas5Ventas");
+var empleadoSinVentas2023 = document.getElementById("empleadoSinVentas2023");
+var empleadoMenos5Ventas = document.getElementById("empleadoMenos5Ventas");
+var empleVenMedicDistinto2023 = document.getElementById("empleVenMedicDistinto2023");
+var empleadoSinVentasAbril2023 = document.getElementById("empleadoSinVentasAbril2023");
+var totalMedisVenXProveedor = document.getElementById("totalMedisVenXProveedor");
+var proveeNoVenMedicUltiAño = document.getElementById("proveeNoVenMedicUltiAño");
+var proveedorSumiMasMedic2023 = document.getElementById("proveedorSumiMasMedic2023");
+var proveedoresSumiMedic2023 = document.getElementById("proveedoresSumiMedic2023");
+var proveeSumiMas5MedicDife2023 = document.getElementById("proveeSumiMas5MedicDife2023");
+var medicamentosMenos50Stock = document.getElementById("medicamentosMenos50Stock");
+var medicamentosVencenAntes2024 = document.getElementById("medicamentosVencenAntes2024");
+var totalRecaudadoXVenMedic = document.getElementById("totalRecaudadoXVenMedic");
+var medicamentoMasCaro = document.getElementById("medicamentoMasCaro");
+var medicamentosPre50Stock100 = document.getElementById("medicamentosPre50Stock100");
+var proveeInfoContacto = document.getElementById("proveeInfoContacto");
+var cantMedicXProvee = document.getElementById("cantMedicXProvee");
+var ganaciaXProvee2023 = document.getElementById("ganaciaXProvee2023");
+var proveeMenos50Medic = document.getElementById("proveeMenos50Medic");
+var pacienteMasDinero2023 = document.getElementById("pacienteMasDinero2023");
+var totalGastXPacient = document.getElementById("totalGastXPacient");
+var recetasDespues2023 = document.getElementById("recetasDespues2023");
+
+
+var medicComProveeA = document.getElementById("comProveA");
+medicComProveeA.addEventListener("click", function(){
+    medisCompras.style.display = "none";
+    comProveA.style.display = "flex";
 });

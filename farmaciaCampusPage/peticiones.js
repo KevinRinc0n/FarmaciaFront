@@ -1,7 +1,7 @@
 const url = "http://localhost:5297/api/Medicamentos/GetStock50";
 let medicamentos = [];
 
-window.addEventListener("DOMContentLoaded", () =>{
+window.addEventListener("DOMContentLoaded", () =>{ 
     getMedicamentos();
 });
 
@@ -64,6 +64,12 @@ const mostrarMedicCompProveeA = (medicamentosComProveeA) =>{
     let listar = "";
     medicamentosComProveeA.foreach(medicamentoProveeA =>{
         listar += `
+        <div class="card" style="width: 18rem;">
+            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${medicamentoProveeA.Nombre}</h5>
+            </div>
+        </div>
         `
     }); 
     contenedorMedicComProveeA.innerHTML = listar;
@@ -95,8 +101,15 @@ const contenedorMedicamentoParace = document.getElementById("");
 
 const mostrarMedicamentoParace = (medicamentoParacetamol) =>{
     let listar = "";
-    medicamentoParacetamol.foreach(medicamento =>{
+    medicamentoParacetamol.foreach(medicamento =>{                                           //cambiar nombre de medicamento "." de aqui en adelante
         listar += `
+        <div class="card" style="width: 18rem;">
+            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${medicamento.Nombre}</h5>
+                <p class="card-text">${medicamento.Nombre}</p>
+            </div>
+        </div>
         `
     }); 
     contenedorMedicamentoParace.innerHTML = listar;
@@ -130,6 +143,13 @@ const mostrarRecetas = (recetas) =>{
     let listar = "";
     recetas.foreach(medicamento =>{
         listar += `
+        <div class="card" style="width: 18rem;">
+            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${medicamento.Nombre}</h5>
+                <p class="card-text">${medicamento.Nombre}</p>
+            </div>
+        </div>
         `
     }); 
     contenedorRecetas.innerHTML = listar;
@@ -163,6 +183,13 @@ const mostrarCadu2024 = (medisCadu2024) =>{
     let listar = "";
     medisCadu2024.foreach(medicamento =>{
         listar += `
+        <div class="card" style="width: 18rem;">
+            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${medicamento.Nombre}</h5>
+                <p class="card-text">${medicamento.Nombre}</p>
+            </div>
+        </div>
         `
     }); 
     contenedorMedisCadu2024.innerHTML = listar;
@@ -196,6 +223,13 @@ const mostrarMedicXProvee = (medicXProvee) =>{
     let listar = "";
     medicXProvee.foreach(medicamento =>{
         listar += `
+        <div class="card" style="width: 18rem;">
+            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${medicamento.Nombre}</h5>
+                <p class="card-text">${medicamento.Nombre}</p>
+            </div>
+        </div>
         `
     }); 
     contenedorMedicXProvee.innerHTML = listar;
@@ -229,6 +263,13 @@ const mostrarTotalRecaudado = (recaudadoXVenta) =>{
     let listar = "";
     recaudadoXVenta.foreach(medicamento =>{
         listar += `
+        <div class="card" style="width: 18rem;">
+            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${medicamento.Nombre}</h5>
+                <p class="card-text">${medicamento.Nombre}</p>
+            </div>
+        </div>
         `
     }); 
     contenedorTotalRecaudado.innerHTML = listar;
@@ -262,6 +303,13 @@ const mostrarMedicNoVendi = (medisNoVendidos) =>{
     let listar = "";
     medisNoVendidos.foreach(medicamento =>{
         listar += `
+        <div class="card" style="width: 18rem;">
+            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${medicamento.Nombre}</h5>
+                <p class="card-text">${medicamento.Nombre}</p>
+            </div>
+        </div>
         `
     }); 
     contenedorNoVendidos.innerHTML = listar;
@@ -295,6 +343,13 @@ const mostrarMasCaro = (medicCaro) =>{
     let listar = "";
     medicCaro.foreach(medicamento =>{
         listar += `
+        <div class="card" style="width: 18rem;">
+            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${medicamento.Nombre}</h5>
+                <p class="card-text">${medicamento.Nombre}</p>
+            </div>
+        </div>
         `
     }); 
     contenedorMasCaro.innerHTML = listar;
@@ -328,6 +383,13 @@ const mostrarMedicaXProvee = (medicamentoXProvee) =>{
     let listar = "";
     medicamentoXProvee.foreach(medicamento =>{
         listar += `
+        <div class="card" style="width: 18rem;">
+            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${medicamento.Nombre}</h5>
+                <p class="card-text">${medicamento.Nombre}</p>
+            </div>
+        </div>
         `
     }); 
     contenedorMedicaXProvee.innerHTML = listar;
@@ -361,6 +423,13 @@ const mostrarPacientePara = (pacienteCompraParace) =>{
     let listar = "";
     pacienteCompraParace.foreach(medicamento =>{
         listar += `
+        <div class="card" style="width: 18rem;">
+            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${medicamento.Nombre}</h5>
+                <p class="card-text">${medicamento.Nombre}</p>
+            </div>
+        </div>
         `
     }); 
     contenedorPacientePara.innerHTML = listar;
@@ -394,6 +463,13 @@ const mostrarNoVentaProvee = (proveeNoVentas) =>{
     let listar = "";
     proveeNoVentas.foreach(medicamento =>{
         listar += `
+        <div class="card" style="width: 18rem;">
+            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${medicamento.Nombre}</h5>
+                <p class="card-text">${medicamento.Nombre}</p>
+            </div>
+        </div>
         `
     }); 
     contenedorProveeNoVentas.innerHTML = listar;
@@ -427,6 +503,13 @@ const mostrarMedicMarzo = (medicamentosMarzo) =>{
     let listar = "";
     medicamentosMarzo.foreach(medicamento =>{
         listar += `
+        <div class="card" style="width: 18rem;">
+            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${medicamento.Nombre}</h5>
+                <p class="card-text">${medicamento.Nombre}</p>
+            </div>
+        </div>
         `
     }); 
     contenedorMedicMarzo.innerHTML = listar;
@@ -460,6 +543,13 @@ const mostrarMedicMenosven = (medicMenosVendido) =>{
     let listar = "";
     medicMenosVendido.foreach(medicamento =>{
         listar += `
+        <div class="card" style="width: 18rem;">
+            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${medicamento.Nombre}</h5>
+                <p class="card-text">${medicamento.Nombre}</p>
+            </div>
+        </div>
         `
     }); 
     contenedorMedicMenosVen.innerHTML = listar;
@@ -493,6 +583,13 @@ const mostrarGananciaProvee = (gananciaXProvee) =>{
     let listar = "";
     gananciaXProvee.foreach(medicamento =>{
         listar += `
+        <div class="card" style="width: 18rem;">
+            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${medicamento.Nombre}</h5>
+                <p class="card-text">${medicamento.Nombre}</p>
+            </div>
+        </div>
         `
     }); 
     contenedorGananciaProvee.innerHTML = listar;
@@ -526,6 +623,13 @@ const mostrarPromMedisVenta = (promMedisVentas) =>{
     let listar = "";
     promMedisVentas.foreach(medicamento =>{
         listar += `
+        <div class="card" style="width: 18rem;">
+            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${medicamento.Nombre}</h5>
+                <p class="card-text">${medicamento.Nombre}</p>
+            </div>
+        </div>
         `
     }); 
     contenedorPromMedis.innerHTML = listar;
@@ -559,6 +663,13 @@ const mostrarVentaEmpleados2023 = (ventasEmple2023) =>{
     let listar = "";
     ventasEmple2023.foreach(medicamento =>{
         listar += `
+        <div class="card" style="width: 18rem;">
+            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${medicamento.Nombre}</h5>
+                <p class="card-text">${medicamento.Nombre}</p>
+            </div>
+        </div>
         `
     }); 
     contenedorVentaEmple.innerHTML = listar;
@@ -592,6 +703,13 @@ const mostraMedicExpira2024 = (medicamentosExpiran2024) =>{
     let listar = "";
     medicamentosExpiran2024.foreach(medicamento =>{
         listar += `
+        <div class="card" style="width: 18rem;">
+            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${medicamento.Nombre}</h5>
+                <p class="card-text">${medicamento.Nombre}</p>
+            </div>
+        </div>
         `
     }); 
     contenedoMedicExp2024.innerHTML = listar;
@@ -625,6 +743,13 @@ const mostraEmpleMas5ventas = (empleadosMas5Ventas) =>{
     let listar = "";
     empleadosMas5Ventas.foreach(medicamento =>{
         listar += `
+        <div class="card" style="width: 18rem;">
+            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${medicamento.Nombre}</h5>
+                <p class="card-text">${medicamento.Nombre}</p>
+            </div>
+        </div>
         `
     }); 
     contenedorEmpleMas5Ventas.innerHTML = listar;
@@ -658,6 +783,13 @@ const mostraMedicNuncaVent = (medicamentosNuncaVendidos) =>{
     let listar = "";
     medicamentosNuncaVendidos.foreach(medicamento =>{
         listar += `
+        <div class="card" style="width: 18rem;">
+            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${medicamento.Nombre}</h5>
+                <p class="card-text">${medicamento.Nombre}</p>
+            </div>
+        </div>
         `
     }); 
     contenedorMedicNuncaVendi.innerHTML = listar;
@@ -691,6 +823,13 @@ const mostraPacienMasDinero = (pacienteMasDineroGasta) =>{
     let listar = "";
     pacienteMasDineroGasta.foreach(medicamento =>{
         listar += `
+        <div class="card" style="width: 18rem;">
+            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${medicamento.Nombre}</h5>
+                <p class="card-text">${medicamento.Nombre}</p>
+            </div>
+        </div>
         `
     }); 
     contenedorMasDineroGasta.innerHTML = listar;
@@ -724,6 +863,13 @@ const mostrarEmpleadosSinVentas = (empleadosSinVentas) =>{
     let listar = "";
     empleadosSinVentas.foreach(medicamento =>{
         listar += `
+        <div class="card" style="width: 18rem;">
+            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${medicamento.Nombre}</h5>
+                <p class="card-text">${medicamento.Nombre}</p>
+            </div>
+        </div>
         `
     }); 
     contenedorEmpleSinVentas.innerHTML = listar;
@@ -757,6 +903,13 @@ const mostrarProveeMasMedis = (proveeSuminisMasMedis) =>{
     let listar = "";
     proveeSuminisMasMedis.foreach(medicamento =>{
         listar += `
+        <div class="card" style="width: 18rem;">
+            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${medicamento.Nombre}</h5>
+                <p class="card-text">${medicamento.Nombre}</p>
+            </div>
+        </div>
         `
     }); 
     contenedorProveMasMedis.innerHTML = listar;
@@ -790,6 +943,13 @@ const mostrarpacienCompraParace2023 = (pacienteCompraronParace2023) =>{
     let listar = "";
     pacienteCompraronParace2023.foreach(medicamento =>{
         listar += `
+        <div class="card" style="width: 18rem;">
+            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${medicamento.Nombre}</h5>
+                <p class="card-text">${medicamento.Nombre}</p>
+            </div>
+        </div>
         `
     }); 
     contenedorpacienCompraParace2023.innerHTML = listar;
@@ -823,6 +983,13 @@ const mostrarMedisVenXMes = (totalMedicvendiXMes) =>{
     let listar = "";
     totalMedicvendiXMes.foreach(medicamento =>{
         listar += `
+        <div class="card" style="width: 18rem;">
+            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${medicamento.Nombre}</h5>
+                <p class="card-text">${medicamento.Nombre}</p>
+            </div>
+        </div>
         `
     }); 
     contenedorMedisVenXMes.innerHTML = listar;
@@ -856,9 +1023,454 @@ const mostrarEmpleMenos5Vent2023 = (empleadosMenos5Ven2023) =>{
     let listar = "";
     empleadosMenos5Ven2023.foreach(medicamento =>{
         listar += `
+        <div class="card" style="width: 18rem;">
+            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${medicamento.Nombre}</h5>
+                <p class="card-text">${medicamento.Nombre}</p>
+            </div>
+        </div>
         `
     }); 
     contenedorEmpleMenos5Vent2023.innerHTML = listar;
 };
 
 /////////////////////////////////////////////////////////////////
+
+const proveedoresTotalMedis = "http://localhost:5297/api/Proveedor/suministraron-2023";
+let totalProveeSumnisMedicamentos = [];
+
+window.addEventListener("DOMContentLoaded", () =>{
+    getProveeSumMedis();
+});
+
+const getProveeSumMedis = ()  =>{
+    fetch(proveedoresTotalMedis)
+    .then(respuesta  => respuesta.json())
+    .then(data  => {
+        totalProveeSumnisMedicamentos = data;
+        console.log(totalProveeSumnisMedicamentos);
+        mostrarProveeSumMedis(totalProveeSumnisMedicamentos);
+    })
+    .catch(error =>{
+        alert(error, "Ha ocurrido un problema");
+    });
+};
+
+const contenedorProveeSumMedis = document.getElementById("");
+
+const mostrarProveeSumMedis = (totalProveeSumnisMedicamentos) =>{
+    let listar = "";
+    totalProveeSumnisMedicamentos.foreach(medicamento =>{
+        listar += `
+        <div class="card" style="width: 18rem;">
+            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${medicamento.Nombre}</h5>
+                <p class="card-text">${medicamento.Nombre}</p>
+            </div>
+        </div>
+        `
+    }); 
+    contenedorProveeSumMedis.innerHTML = listar;
+};
+
+/////////////////////////////////////////////////////////////////
+
+const proveeMenos50Stock = "http://localhost:5297/api/Proveedor/medicamentos-menos-50-stock";
+let proveMedicMenos50Stock = [];
+
+window.addEventListener("DOMContentLoaded", () =>{
+    getProveeMedic50();
+});
+
+const getProveeMedic50 = ()  =>{
+    fetch(proveeMenos50Stock)
+    .then(respuesta  => respuesta.json())
+    .then(data  => {
+        proveMedicMenos50Stock = data;
+        console.log(proveMedicMenos50Stock);
+        mostrarProveeMedic50(proveMedicMenos50Stock);
+    })
+    .catch(error =>{
+        alert(error, "Ha ocurrido un problema");
+    });
+};
+
+const contenedorProveeMedic50 = document.getElementById("");
+
+const mostrarProveeMedic50 = (proveMedicMenos50Stock) =>{
+    let listar = "";
+    proveMedicMenos50Stock.foreach(medicamento =>{
+        listar += `
+        <div class="card" style="width: 18rem;">
+            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${medicamento.Nombre}</h5>
+                <p class="card-text">${medicamento.Nombre}</p>
+            </div>
+        </div>
+        `
+    }); 
+    contenedorProveeMedic50.innerHTML = listar;
+};
+
+/////////////////////////////////////////////////////////////////
+
+const pacientNoCompraronMedis = "http://localhost:5297/api/Paciente/no-compraron-2023";
+let pacientNoCompraron = [];
+
+window.addEventListener("DOMContentLoaded", () =>{
+    getPacientNoCompraMedic();
+});
+
+const getPacientNoCompraMedic = ()  =>{
+    fetch(pacientNoCompraronMedis)
+    .then(respuesta  => respuesta.json())
+    .then(data  => {
+        pacientNoCompraron = data;
+        console.log(pacientNoCompraron);
+        mostrarPacientNoCompraMedic(pacientNoCompraron);
+    })
+    .catch(error =>{
+        alert(error, "Ha ocurrido un problema");
+    });
+};
+
+const contenedorPacientNoCompraMedic = document.getElementById("");
+
+const mostrarPacientNoCompraMedic = (pacientNoCompraron) =>{
+    let listar = "";
+    pacientNoCompraron.foreach(medicamento =>{
+        listar += `
+        <div class="card" style="width: 18rem;">
+            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${medicamento.Nombre}</h5>
+                <p class="card-text">${medicamento.Nombre}</p>
+            </div>
+        </div>
+        `
+    }); 
+    contenedorPacientNoCompraMedic.innerHTML = listar;
+};
+
+/////////////////////////////////////////////////////////////////
+
+const medisVendiXMes2023 = "http://localhost:5297/api/Medicamento/medicamentos-vendidosXmes-2023";
+let medisVendidoXMes = [];
+
+window.addEventListener("DOMContentLoaded", () =>{
+    getMedisVendidosXMes2023();
+});
+
+const getMedisVendidosXMes2023 = ()  =>{
+    fetch(medisVendiXMes2023)
+    .then(respuesta  => respuesta.json())
+    .then(data  => {
+        medisVendidoXMes = data;
+        console.log(medisVendidoXMes);
+        mostrarMedisVendidosXMes2023(medisVendidoXMes);
+    })
+    .catch(error =>{
+        alert(error, "Ha ocurrido un problema");
+    });
+};
+
+const contenedorMedisVendidosXMes2023 = document.getElementById("");
+
+const mostrarMedisVendidosXMes2023 = (medisVendidoXMes) =>{
+    let listar = "";
+    medisVendidoXMes.foreach(medicamento =>{
+        listar += `
+        <div class="card" style="width: 18rem;">
+            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${medicamento.Nombre}</h5>
+                <p class="card-text">${medicamento.Nombre}</p>
+            </div>
+        </div>
+        `
+    }); 
+    contenedorMedisVendidosXMes2023.innerHTML = listar;
+};
+
+/////////////////////////////////////////////////////////////////
+
+const empleadoMayorVentDistin = "http://localhost:5297/api/Empleado/venta/mayorcantidad-medicamentos-distintos";
+let empleadoVendidoMayorMedic = [];
+
+window.addEventListener("DOMContentLoaded", () =>{
+    getEmpleadoVendi();
+});
+
+const getEmpleadoVendi = ()  =>{
+    fetch(empleadoMayorVentDistin)
+    .then(respuesta  => respuesta.json())
+    .then(data  => {
+        empleadoVendidoMayorMedic = data;
+        console.log(empleadoVendidoMayorMedic);
+        mostrarEmpleadoVendi(empleadoVendidoMayorMedic);
+    })
+    .catch(error =>{
+        alert(error, "Ha ocurrido un problema");
+    });
+};
+
+const contenedorEmpleadoVendi = document.getElementById("");
+
+const mostrarEmpleadoVendi = (empleadoVendidoMayorMedic) =>{
+    let listar = "";
+    empleadoVendidoMayorMedic.foreach(medicamento =>{
+        listar += `
+        <div class="card" style="width: 18rem;">
+            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${medicamento.Nombre}</h5>
+                <p class="card-text">${medicamento.Nombre}</p>
+            </div>
+        </div>
+        `
+    }); 
+    contenedorEmpleadoVendi.innerHTML = listar;
+};
+
+/////////////////////////////////////////////////////////////////
+
+const pacienteTotalGastado = "http://localhost:5297/api/Paciente/total-gastadoXpaciente-2023";
+let totalGastadoXPaci2023 = [];
+
+window.addEventListener("DOMContentLoaded", () =>{
+    getTotalPacientX2023();
+});
+
+const getTotalPacientX2023 = ()  =>{
+    fetch(pacienteTotalGastado)
+    .then(respuesta  => respuesta.json())
+    .then(data  => {
+        totalGastadoXPaci2023 = data;
+        console.log(totalGastadoXPaci2023);
+        mostrarTotalPacientX2023(totalGastadoXPaci2023);
+    })
+    .catch(error =>{
+        alert(error, "Ha ocurrido un problema");
+    });
+};
+
+const contenedorTotalPacientX2023 = document.getElementById("");
+
+const mostrarTotalPacientX2023 = (totalGastadoXPaci2023) =>{
+    let listar = "";
+    totalGastadoXPaci2023.foreach(medicamento =>{
+        listar += `
+        <div class="card" style="width: 18rem;">
+            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${medicamento.Nombre}</h5>
+                <p class="card-text">${medicamento.Nombre}</p>
+            </div>
+        </div>
+        `
+    }); 
+    contenedorTotalPacientX2023.innerHTML = listar;
+};
+
+/////////////////////////////////////////////////////////////////
+
+const medicamentoNoVendi2023 = "http://localhost:5297/api/Medicamento/medicamentos-no-vendidos-2023";
+let mediNoVendido2023 = [];
+
+window.addEventListener("DOMContentLoaded", () =>{
+    getMedicamentosNoVendidos2023();
+});
+
+const getMedicamentosNoVendidos2023 = ()  =>{
+    fetch(medicamentoNoVendi2023)
+    .then(respuesta  => respuesta.json())
+    .then(data  => {
+        mediNoVendido2023 = data;
+        console.log(mediNoVendido2023);
+        mostrarMedicamentosNoVendidos2023(mediNoVendido2023);
+    })
+    .catch(error =>{
+        alert(error, "Ha ocurrido un problema");
+    });
+};
+
+const contenedorMedicamentosNoVendidos2023 = document.getElementById("");
+
+const mostrarMedicamentosNoVendidos2023 = (mediNoVendido2023) =>{
+    let listar = "";
+    mediNoVendido2023.foreach(medicamento =>{
+        listar += `
+        <div class="card" style="width: 18rem;">
+            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${medicamento.Nombre}</h5>
+                <p class="card-text">${medicamento.Nombre}</p>
+            </div>
+        </div>
+        `
+    }); 
+    contenedorMedicamentosNoVendidos2023.innerHTML = listar;
+};
+
+/////////////////////////////////////////////////////////////////
+
+const proveeSumi5Medic2023 = "http://localhost:5297/api/Proveedor/suministro-almenos-5-medicamentos-diferentes-2023";
+let proveeSuminisAlmenos52023 = [];
+
+window.addEventListener("DOMContentLoaded", () =>{
+    getProveeSumi5Medic2023();
+});
+
+const getProveeSumi5Medic2023 = ()  =>{
+    fetch(proveeSumi5Medic2023)
+    .then(respuesta  => respuesta.json())
+    .then(data  => {
+        proveeSuminisAlmenos52023 = data;
+        console.log(proveeSuminisAlmenos52023);
+        mostrarProveeSumi5Medic2023(proveeSuminisAlmenos52023);
+    })
+    .catch(error =>{
+        alert(error, "Ha ocurrido un problema");
+    });
+};
+
+const contenedorProveeSumi5Medic2023 = document.getElementById("");
+
+const mostrarProveeSumi5Medic2023 = (proveeSuminisAlmenos52023) =>{
+    let listar = "";
+    proveeSuminisAlmenos52023.foreach(medicamento =>{
+        listar += `
+        <div class="card" style="width: 18rem;">
+            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${medicamento.Nombre}</h5>
+                <p class="card-text">${medicamento.Nombre}</p>
+            </div>
+        </div>
+        `
+    }); 
+    contenedorProveeSumi5Medic2023.innerHTML = listar;
+};
+
+/////////////////////////////////////////////////////////////////
+
+const totalMedisTrimesVen2023 = "http://localhost:5297/api/Medicamento/total-medicamentos-vendidos-primer-trimestre-2023";
+let medicVenTrimes2023 = [];
+
+window.addEventListener("DOMContentLoaded", () =>{
+    getTotalMedicVen2023();
+});
+
+const getTotalMedicVen2023 = ()  =>{
+    fetch(totalMedisTrimesVen2023)
+    .then(respuesta  => respuesta.json())
+    .then(data  => {
+        medicVenTrimes2023 = data;
+        console.log(medicVenTrimes2023);
+        mostrarTotalMedicVen2023(medicVenTrimes2023);
+    })
+    .catch(error =>{
+        alert(error, "Ha ocurrido un problema");
+    });
+};
+
+const contenedorTotalMedicVen2023 = document.getElementById("");
+
+const mostrarTotalMedicVen2023 = (medicVenTrimes2023) =>{
+    let listar = "";
+    medicVenTrimes2023.foreach(medicamento =>{
+        listar += `
+        <div class="card" style="width: 18rem;">
+            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${medicamento.Nombre}</h5>
+                <p class="card-text">${medicamento.Nombre}</p>
+            </div>
+        </div>
+        `
+    }); 
+    contenedorTotalMedicVen2023.innerHTML = listar;
+};
+
+/////////////////////////////////////////////////////////////////
+
+const empleadoSinVentas2023 = "http://localhost:5297/api/Empleado/sin-ventas-abril-2023";
+let empleSinVentas2023 = [];
+
+window.addEventListener("DOMContentLoaded", () =>{
+    getEmpleadoSinVentas2023();
+});
+
+const getEmpleadoSinVentas2023 = ()  =>{
+    fetch(empleadoSinVentas2023)
+    .then(respuesta  => respuesta.json())
+    .then(data  => {
+        empleSinVentas2023 = data;
+        console.log(empleSinVentas2023);
+        mostrarEmpleadoSinVentas2023(empleSinVentas2023);
+    })
+    .catch(error =>{
+        alert(error, "Ha ocurrido un problema");
+    });
+};
+
+const contenedorEmpleadoSinVentas2023 = document.getElementById("");
+
+const mostrarEmpleadoSinVentas2023 = (empleSinVentas2023) =>{
+    let listar = "";
+    empleSinVentas2023.foreach(medicamento =>{
+        listar += `
+        <div class="card" style="width: 18rem;">
+            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${medicamento.Nombre}</h5>
+                <p class="card-text">${medicamento.Nombre}</p>
+            </div>
+        </div>
+        `
+    }); 
+    contenedorEmpleadoSinVentas2023.innerHTML = listar;
+};
+
+/////////////////////////////////////////////////////////////////
+
+const medicMayor50Menor100 = "http://localhost:5297/api/Medicamento/medicamentos-precio-mas-50-stock-menos-100";
+let medicPreci50StockMenor100 = [];
+
+window.addEventListener("DOMContentLoaded", () =>{
+    getMedicPrecio50Stock100();
+});
+
+const getMedicPrecio50Stock100 = ()  =>{
+    fetch(medicMayor50Menor100)
+    .then(respuesta  => respuesta.json())
+    .then(data  => {
+        medicPreci50StockMenor100 = data;
+        console.log(medicPreci50StockMenor100);
+        mostrarMedicPrecio50Stock100(medicPreci50StockMenor100);
+    })
+    .catch(error =>{
+        alert(error, "Ha ocurrido un problema");
+    });
+};
+
+const contenedorMedicPrecio50Stock100 = document.getElementById("");
+
+const mostrarMedicPrecio50Stock100 = (medicPreci50StockMenor100) =>{
+    let listar = "";
+    medicPreci50StockMenor100.foreach(medicamento =>{
+        listar += `
+        <div class="card" style="width: 18rem;">
+            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${medicamento.Nombre}</h5>
+                <p class="card-text">${medicamento.Nombre}</p>
+            </div>
+        </div>
+        `
+    }); 
+    contenedorMedicPrecio50Stock100.innerHTML = listar;
+};
