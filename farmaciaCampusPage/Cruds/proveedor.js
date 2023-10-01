@@ -14,7 +14,7 @@ const getProveedores = () =>{
         mostrarProveedores(proveedores);
     })
     .catch(error => {
-        alertManager("error", "Ha ocurrido un problema");
+        alert("error", "Ha ocurrido un problema");
     });
 };
 
@@ -62,11 +62,11 @@ console.log(empleado);
     })
     .then(respuesta => respuesta.json())
     .then(respuestaa => {
-        alertManager("success", respuestaa,mensaje);
+        alert("success", respuestaa,mensaje);
         getProvee();
     })
     .catch(error =>{
-        alertManager("error", error);
+        alert("error", error);
         document.getElementById("contenedor").reset();
     });
 };
