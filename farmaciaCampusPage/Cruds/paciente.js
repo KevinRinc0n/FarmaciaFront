@@ -12,13 +12,26 @@ const getPacientes = () =>{
         pacientes = data;
         console.log(pacientes);
         mostrarPacientes(pacientes);
+
+    const direccionSelect = document.getElementById("inputDireccion");
+
+    direccionSelect.forEach((select) => {
+        select.innerHTML = "";
+
+        datos.forEach((ciudad) => {
+            const opcion = document.createElement("option");
+            opcion.value = ciudad.Id;
+            opcion.value = ciudad.IdCiudadFk;
+            select.appendChild(opcion);
+        });
+    });
     })
     .catch(error => {
         alert("error", "Ha ocurrido un problema");
     });
 };
 
-const contenedorPacientes = document.getElementById("");
+const contenedorPacientes = document.getElementById("aggPacientBody");
 
 const mostrarPacientes = (pacientes) =>{
     let listar = "";
@@ -77,6 +90,18 @@ const editarPacient = (id) =>{
         if(pacientt.Id == id){
             pacient = pacientt;
         };
+    });
+
+    const direccionSelect = document.getElementById("editaDireccionn");
+
+    direccionSelect.forEach((select) => {
+        select.innerHTML = "";
+
+        datos.forEach((direccion) => {
+            const opcion = document.createElement("option");
+            opcion.value = direccion.IdDireccionFk;
+            select.appendChild(opcion);
+        });
     });
 
     document.getElementById("editaNaame").value = pacient.Nombre;

@@ -12,13 +12,24 @@ const getProveedores = () =>{
         proveedores = data;
         console.log(proveedores);
         mostrarProveedores(proveedores);
+    const direccionSelect = document.getElementById("inputDirec");
+
+    direccionSelect.forEach((select) => {
+        select.innerHTML = "";
+
+        datos.forEach((direccion) => {
+            const opcion = document.createElement("option");
+            opcion.value = direccion.Id;
+            select.appendChild(opcion);
+        });
+    });
     })
     .catch(error => {
         alert("error", "Ha ocurrido un problema");
     });
 };
 
-const contenedorProveedores = document.getElementById("");
+const contenedorProveedores = document.getElementById("aggProveeBody");
 
 const mostrarProveedores = (proveedores) =>{
     let listar = "";
@@ -77,6 +88,18 @@ const editarProvee = (id) =>{
         if(provv.Id == id){
             prov = provv;
         };
+    });
+
+    const direccionSelect = document.getElementById("editaDireccion");
+
+    direccionSelect.forEach((select) => {
+        select.innerHTML = "";
+
+        datos.forEach((direccion) => {
+            const opcion = document.createElement("option");
+            opcion.value = direccion.Id;
+            select.appendChild(opcion);
+        });
     });
 
     document.getElementById("editaName").value = prov.Nombre;

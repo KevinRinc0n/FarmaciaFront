@@ -200,6 +200,7 @@
 .btEnvi
 {
 	margin-top: 8%;
+	margin-bottom: 8%;
 	width: 30%;
 }
 
@@ -293,6 +294,11 @@
 }
 
 #agregaEmpleado
+{
+	display: none;
+}
+
+#totalGastXPacientrecetasDespues2023
 {
 	display: none;
 }

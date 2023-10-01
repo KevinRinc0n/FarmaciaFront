@@ -12,13 +12,50 @@ const getMedic = () =>{
         medicaments = data;
         console.log(medicaments);
         mostrarMedicamentos(medicaments);
+    const proveedorSelect = document.getElementById("selectProvee");
+
+    proveedorSelect.forEach((select) => {
+        select.innerHTML = "";
+
+        datos.forEach((proveedorr) => {
+            const opcion = document.createElement("option");
+            opcion.value = proveedorr.Id;
+            opcion.textContent = proveedorr.Nombre;
+            select.appendChild(opcion);
+        });
+    });
+    const presentacionSelect = document.getElementById("selectPresentac");
+
+    presentacionSelect.forEach((select) => {
+        select.innerHTML = "";
+
+        datos.forEach((presentacion) => {
+            const opcion = document.createElement("option");
+            opcion.value = presentacion.Id;
+            opcion.textContent = presentacion.Nombre;
+            select.appendChild(opcion);
+        });
+    });
+    const marcaSelect = document.getElementById("selectMarca");
+
+    marcaSelect.forEach((select) => {
+        select.innerHTML = "";
+
+        datos.forEach((marca) => {
+            const opcion = document.createElement("option");
+            opcion.value = marca.Id;
+            opcion.textContent = marca.Nombre;
+            select.appendChild(opcion);
+        });
+    });
+
     })
     .catch(error => {
         alert("error", "Ha ocurrido un problema");
     });
 };
 
-const contenedorMedicamentos = document.getElementById("");
+const contenedorMedicamentos = document.getElementById("aggMedicBody");
 
 const mostrarMedicamentos = (medicamentos) =>{
     let listar = "";
@@ -27,6 +64,12 @@ const mostrarMedicamentos = (medicamentos) =>{
         <tr>
             <th scope="row">${medicamento.Id}</th>
             <td>${medicamento.Nombre}</td>
+            <td>${medicamento.Precio}</td>
+            <td>${medicamento.FechaExpiracion}</td>
+            <td>${medicamento.Cantidad}</td>
+            <td>${medicamento.Proveedor}</td>
+            <td>${medicamento.Presentacion}</td>
+            <td>${medicamento.Marca}</td>
             <td><button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEditar" onclick="editarMedicamento(${medicamento.Id})>EDITAR</button></td>
             <td><button class="btn btn-danger" onclick="eliminarrMedicamento(${medicamento.Id})>ELIMINAR</button></td>
         </tr>
@@ -81,6 +124,43 @@ const editarMedicamento= (id) =>{
         };
     });
 
+    const proveedorSelect = document.getElementById("medicProveEditar");
+
+    proveedorSelect.forEach((select) => {
+        select.innerHTML = "";
+
+        datos.forEach((proveedorr) => {
+            const opcion = document.createElement("option");
+            opcion.value = proveedorr.Id;
+            opcion.textContent = proveedorr.Nombre;
+            select.appendChild(opcion);
+        });
+    });
+    const presentacionSelect = document.getElementById("medicPresentaEditar");
+
+    presentacionSelect.forEach((select) => {
+        select.innerHTML = "";
+
+        datos.forEach((presentacion) => {
+            const opcion = document.createElement("option");
+            opcion.value = presentacion.Id;
+            opcion.textContent = presentacion.Nombre;
+            select.appendChild(opcion);
+        });
+    });
+    const marcaSelect = document.getElementById("medicMarcaeEditar");
+
+    marcaSelect.forEach((select) => {
+        select.innerHTML = "";
+
+        datos.forEach((marca) => {
+            const opcion = document.createElement("option");
+            opcion.value = marca.Id;
+            opcion.textContent = marca.Nombre;
+            select.appendChild(opcion);
+        });
+    });
+    
     document.getElementById("editarNombre").value = medicamento.Nombre;
     document.getElementById("editarPrecio").value = medicamento.Precio;
     document.getElementById("editarFecha").value = medicamento.FechaExpiracion;
@@ -142,3 +222,15 @@ const eliminarMedicamento = (id) =>{
         alert("error", error);
     });
 };
+
+function filterTable(){
+    const buscarIgual = document.querySelector("#search").value.toLowerCase();
+  
+    const filtrarMedicamentos = medicaments.filter((medicamento) =>{
+      return(
+        medicamento.Id.toString().includes(buscarIgual) ||
+        medicamento.Nombre.toString().includes(buscarIgual)
+      );
+    });
+    mostrarMedicamentos(filtrarMedicamentos)
+  };

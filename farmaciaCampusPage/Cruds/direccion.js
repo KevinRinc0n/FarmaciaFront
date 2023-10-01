@@ -12,13 +12,25 @@ const getDireccion = () =>{
         direcciones = data;
         console.log(direcciones);
         mostrarDireccion(direcciones);
+    const direccionSelect = document.getElementById("inputCiudad");
+
+    direccionSelect.forEach((select) => {
+        select.innerHTML = "";
+
+        datos.forEach((ciudad) => {
+            const opcion = document.createElement("option");
+            opcion.value = ciudad.Id;
+            opcion.value = ciudad.IdCiudadFk;
+            select.appendChild(opcion);
+        });
+    });
     })
     .catch(error => {
         alert("error", "Ha ocurrido un problema");
     });
 };
 
-const contenedorDirecciones = document.getElementById("");
+const contenedorDirecciones = document.getElementById("aggDireccBody");
 
 const mostrarDireccion = (direcciones) =>{
     let listar = "";
@@ -83,6 +95,19 @@ const editarDireccion= (id) =>{
         if(direction.Id == id){
             direccion = direction;
         };
+    });
+
+    const direccionSelect = document.getElementById("dieccCiudadEditar");
+
+    direccionSelect.forEach((select) => {
+        select.innerHTML = "";
+
+        datos.forEach((ciudad) => {
+            const opcion = document.createElement("option");
+            opcion.value = ciudad.Id;
+            opcion.value = ciudad.IdCiudadFk;
+            select.appendChild(opcion);
+        });
     });
 
     document.getElementById("editarVia").value = direccion.TipoViaPrincipal;

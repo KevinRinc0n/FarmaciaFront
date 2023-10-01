@@ -603,6 +603,29 @@
 				<option selected>SELECCIONA LA MARCA</option>
 			</select>
 			<button type="button" class="btn btn-warning btEnvi" onclick="crearMedicamento()">Enviar</button>
+			<div class="container mt5 pb-5 pt-5">
+				<div class="row">
+				  <div class="offset-md-3 col-md-6"></div>
+				  <input type="text" class="form-control" id="search" placeholder="BUSCAR..." oninput="filterTable()">
+				</div>
+			</div>
+			<table class="table">
+				<thead>
+				  <tr>
+					<th scope="col">Id</th>
+					<th scope="col">Nombre</th>
+					<th scope="col">Precio</th>
+					<th scope="col">Fecha Expiracion</th>
+					<th scope="col">Cantidad</th>
+					<th scope="col">Proveedor</th>
+					<th scope="col">Presentacion</th>
+					<th scope="col">Marca</th>
+					<th scope="col">Editar</th>
+					<th scope="col">Eliminar</th>
+				  </tr>
+				</thead>
+				<tbody id="aggMedicBody"></tbody>
+			</table>
 		</div>
 		<div id="agregaProvee">
 			<div class="form-floating mb-3 medisInput">
@@ -617,6 +640,19 @@
 				<option selected>SELECCIONA TU DIRECCION</option>
 			</select>
 			<button type="button" class="btn btn-warning btEnviUbi" onclick="crearProveedor()">Enviar</button>
+			<table class="table">
+				<thead>
+				  <tr>
+					<th scope="col">Id</th>
+					<th scope="col">Nombre</th>
+					<th scope="col">Contacto</th>
+					<th scope="col">Direccion</th>
+					<th scope="col">Editar</th>
+					<th scope="col">Eliminar</th>
+				  </tr>
+				</thead>
+				<tbody id="aggProveeBody"></tbody>
+			</table>
 		</div>
 		<div id="agregaPaciente">
 			<div class="form-floating mb-3 medisInput">
@@ -643,6 +679,22 @@
 				<option selected>SELECCIONA LA CIUDAD</option>
 			</select>
 			<button type="button" class="btn btn-warning btEnviUbi" onclick="crearDireccion()">Enviar</button>
+			<table class="table">
+				<thead>
+				  <tr>
+					<th scope="col">Id</th>
+					<th scope="col">Tipo Via</th>
+					<th scope="col">Numero Via</th>
+					<th scope="col">Numero Via Secundario</th>
+					<th scope="col">Barrio</th>
+					<th scope="col">Complemento</th>
+					<th scope="col">Ciudad</th>
+					<th scope="col">Editar</th>
+					<th scope="col">Eliminar</th>
+				  </tr>
+				</thead>
+				<tbody id="aggDireccBody"></tbody>
+			</table>
 		</div>
 		<div id="agregaPacienteReally">
 			<div class="form-floating mb-3 medisInput">
@@ -657,6 +709,19 @@
 				<option selected>SELECCIONA TU DIRECCION</option>
 			</select>
 			<button type="button" class="btn btn-warning btEnviUbi" onclick="crearPaciente()">Enviar</button>
+			<table class="table">
+				<thead>
+				  <tr>
+					<th scope="col">Id</th>
+					<th scope="col">Nombre</th>
+					<th scope="col">Telefono</th>
+					<th scope="col">Direccion</th>
+					<th scope="col">Editar</th>
+					<th scope="col">Eliminar</th>
+				  </tr>
+				</thead>
+				<tbody id="aggPacientBody"></tbody>
+			</table>
 		</div>
 		<div id="agregaEmpleado">
 			<div class="form-floating mb-3 medisInput">
@@ -668,126 +733,219 @@
 				<label for="floatingInput">Cargo</label>
 			</div>
 			<div class="form-floating mb-3 medisInput">
-				<input type="number" class="form-control" id="inputFechaContratacion" placeholder="name@example.com">
+				<input type="date" class="form-control" id="inputFechaContratacion" placeholder="name@example.com">
 				<label for="floatingInput">Fecha Contratacion</label>
 			</div>
 			<button type="button" class="btn btn-warning btEnviUbi" onclick="crearEmpleado()">Enviar</button>
+			<table class="table">
+				<thead>
+				  <tr>
+					<th scope="col">Id</th>
+					<th scope="col">Nombre</th>
+					<th scope="col">Cargo</th>
+					<th scope="col">Fecha Contratacion</th>
+					<th scope="col">Editar</th>
+					<th scope="col">Eliminar</th>
+				  </tr>
+				</thead>
+				<tbody id="aggEmpleadoBody"></tbody>
+			</table>
 		</div>
 		<!-- -->
-		<div id="medicamentosProveeA">
-			aa
-		</div>
+		<div id="medicamentosProveeA">aa</div>
 		<div id="pacienCompraPara">
-			aa
+			<table class="table">
+				<thead>
+				  <tr>
+					<th scope="col">Id</th>
+					<th scope="col">Nombre</th>
+					<th scope="col">Precio</th>
+					<th scope="col">Editar</th>
+					<th scope="col">Eliminar</th>
+				  </tr>
+				</thead>
+				<tbody id="medicNoVenBody"></tbody>
+			</table>
 		</div>
-		<div id="pacienCompraPara2023">
-			aa
-		</div>
-		<div id="pacienNoCompra2023">
-			aa
-		</div>
-		<div id="medicamentosTotaParace">
-			aa
-		</div>
-		<div id="medicamentosVenMazo2023">
-			aa
-		</div>
-		<div id="medicamentosMenosVen2023">
-			aa
-		</div>
-		<div id="medicamentosPromeXVen">
-			aa
-		</div>
-		<div id="medicamentosNoVendidos">
-			aa
-		</div>
-		<div id="medicamentosVenXMes2023">
-			aa
-		</div>
-		<div id="medicamentosVenPorMes2023">
-			aa
-		</div>
-		<div id="medicamentosNoVendidos2023">
-			aa
-		</div>
-		<div id="medicamentosTotalTrimes2023">
-			aa
-		</div>
-		<div id="ventaXEmpleado">
-			aa
-		</div>
+		<div id="pacienCompraPara2023">aa</div>
+		<div id="pacienNoCompra2023">aa</div>
+		<div id="medicamentosTotaParace">aa</div>
+		<div id="medicamentosVenMazo2023">aa</div>
+		<div id="medicamentosMenosVen2023">aa</div>
+		<div id="medicamentosPromeXVen">aa</div>
+		<div id="medicamentosNoVendidos">aa</div>
+		<div id="medicamentosVenXMes2023">aa</div>
+		<div id="medicamentosVenPorMes2023">aa</div>
+		<div id="medicamentosNoVendidos2023">aa</div>
+		<div id="medicamentosTotalTrimes2023">aa</div>
+		<div id="ventaXEmpleado">aa</div>
 		<div id="empleadoMas5Ventas">
-			aa
+			<table class="table">
+				<thead>
+				  <tr>
+					<th scope="col">Id</th>
+					<th scope="col">Nombre</th>
+				  </tr>
+				</thead>
+				<tbody id="empleMas5VentasBody"></tbody>
+			</table>
 		</div>
-		<div id="empleadoSinVentas2023">
-			aa
-		</div>
-		<div id="empleadoMenos5Ventas">
-			aa
-		</div>
-		<div id="empleVenMedicDistinto2023">
-			aa
-		</div>
+		<div id="empleadoSinVentas2023">aa</div>
+		<div id="empleadoMenos5Ventas">aa</div>
+		<div id="empleVenMedicDistinto2023">aa</div>
 		<div id="empleadoSinVentasAbril2023">
-			aa
+			<table class="table">
+				<thead>
+				  <tr>
+					<th scope="col">Id</th>
+					<th scope="col">Nombre</th>
+				  </tr>
+				</thead>
+				<tbody id="empleadoSinVentasAbril2023Body"></tbody>
+			</table>
 		</div>
-		<div id="totalMedisVenXProveedor">
-			aa
-		</div>
+		<div id="totalMedisVenXProveedor">aa</div>
 		<div id="proveeNoVenMedicUltiAño">
-			aa
+			<table class="table">
+				<thead>
+				  <tr>
+					<th scope="col">Id</th>
+					<th scope="col">Nombre</th>
+				  </tr>
+				</thead>
+				<tbody id="medicNoVenBody"></tbody>
+			</table>
 		</div>
 		<div id="proveedorSumiMasMedic2023">
-			aa
+			<table class="table">
+				<thead>
+				  <tr>
+					<th scope="col">Id</th>
+					<th scope="col">Nombre</th>
+					<th scope="col">Contacto</th>
+				  </tr>
+				</thead>
+				<tbody id="proveedorSumiMasMedic2023Body"></tbody>
+			</table>
 		</div>
-		<div id="proveedoresSumiMedic2023">
-			aa
-		</div>
+		<div id="proveedoresSumiMedic2023">aa</div>
 		<div id="proveeSumiMas5MedicDife2023">
-			aa
+			<table class="table">
+				<thead>
+				  <tr>
+					<th scope="col">Id</th>
+					<th scope="col">Nombre</th>
+					<th scope="col">Cantidad Medicamentos</th>
+				  </tr>
+				</thead>
+				<tbody id="proveeSumiMas5MedicDife20234Body"></tbody>
+			</table>
 		</div>
-		<div id="medicamentosMenos50Stock">
-			aa
-		</div>
+		<div id="medicamentosMenos50Stock">aa</div>
 		<div id="medicamentosVencenAntes2024">
-			aa
+			<table class="table">
+				<thead>
+				  <tr>
+					<th scope="col">Id</th>
+					<th scope="col">Nombre</th>
+					<th scope="col">Precio</th>
+					<th scope="col">FechaExpiracion</th>
+					<th scope="col">IdProveedorFk</th>
+				  </tr>
+				</thead>
+				<tbody id="medicAntes2024Body"></tbody>
+			</table>
 		</div>
-		<div id="totalRecaudadoXVenMedic">
-			aa
-		</div>
+		<div id="totalRecaudadoXVenMedic">aa</div>
 		<div id="medicamentosNoVendidos">
-			aa
+			<!-- <table class="table">
+				<thead>
+				  <tr>
+					<th scope="col">#</th>
+					<th scope="col">First</th>
+					<th scope="col">Last</th>
+				  </tr>
+				</thead>
+				<tbody id="medicNoVenBody"></tbody>
+			</table> -->
 		</div>
-		<div id="medicamentoMasCaro">
-			aa
-		</div>
-		<div id="medicamentoExpi2024">
-			aa
-		</div>
-		<div id="medicamentosPre50Stock100">
-			aa
-		</div>
-		<div id="proveeInfoContacto">
-			aa
-		</div>
+		<div id="medicamentoMasCaro">aa</div>
+		<div id="medicamentoExpi2024">aa</div>
+		<div id="medicamentosPre50Stock100">aa</div>
+		<div id="proveeInfoContacto">aa</div>
 		<div id="cantMedicXProvee">
-			aa
+			<table class="table">
+				<thead>
+				  <tr>
+					<th scope="col">Id</th>
+					<th scope="col">Nombre</th>
+					<th scope="col">Contacto</th>
+					<th scope="col">Ganancia</th>
+				  </tr>
+				</thead>
+				<tbody id="ventXProveBody"> </tbody>
+			</table>
 		</div>
 		<div id="ganaciaXProvee2023">
-			aa
-		</div>
+			<!-- <table class="table">
+				<thead>
+				  <tr>
+					<th scope="col">#</th>
+					<th scope="col">First</th>
+					<th scope="col">Last</th>
+					<th scope="col">Handle</th>
+				  </tr>
+				</thead>
+				<tbody id="ganaciaProveeBody"> 
+				  <tr>
+					<th scope="row">1</th>
+					<td>Mark</td>
+					<td>Otto</td>
+					<td>@mdo</td>
+					<td>@mdo</td>
+				  </tr>
+				</tbody>
+			</table> -->
+		</div> 
 		<div id="proveeMenos50Medic">
-			aa
+			<table class="table">
+				<thead>
+				  <tr>
+					<th scope="col">Id</th>
+					<th scope="col">Nombre</th>
+					<th scope="col">Contacto</th>
+				  </tr>
+				</thead>
+				<tbody id="proveeMenos50MedicBody"></tbody>
+			</table>
 		</div>
-		<div id="pacienteMasDinero2023">
-			aa
-		</div>
+		<div id="pacienteMasDinero2023">aa</div>
 		<div id="totalGastXPacient">
-			aa
+			<table class="table">
+				<thead>
+				  <tr>
+					<th scope="col">Id</th>
+					<th scope="col">Nombre</th>
+					<th scope="col">Total Gastado</th>
+				  </tr>
+				</thead>
+				<tbody id="totalGastXPacientBody"> </tbody>
+			</table>
 		</div>
 		<div id="recetasDespues2023">
-			aa
+			<table class="table">
+				<thead>
+				  <tr>
+					<th scope="col">Id</th>
+					<th scope="col">Descripcion</th>
+					<th scope="col">MedicamentoRemitente</th>
+					<th scope="col">IdPacienteFk</th>
+				  </tr>
+				</thead>
+				<tbody id="recetasBody"></tbody>
+			</table>
 		</div>
+		<div id="totalGastXPacientrecetasDespues2023">aa</div>
 		<!-- MAIN -->
 		<main id="main">
 			
@@ -872,15 +1030,16 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">EDITA TU PRODUCTO</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">EDITA TU MEDICAMENTO</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div id="">
-                        <input type="text" id="editarNombre" placeholder="NOMBRE DEL PRODUCTO">
-                        <input type="number" id="editarPrecio"  placeholder="PRECIO DEL PRODUCTO">
-                        <input type="text" id="editarFecha"  placeholder="DESCRIPCIÓN DEL PRODUCTO">
-                        <input type="number" id="editarCantidad"  placeholder="PRECIO DEL PRODUCTO">
+                        <input type="text" id="editarNombre" placeholder="NOMBRE DEL MEDICAMENTO">
+                        <input type="number" id="editarPrecio"  placeholder="PRECIO DEL MEDICAMENTO">
+						<label for="">EDITA LA FECHA DE EXPIRACION</label>
+                        <input type="date" id="editarFecha">
+                        <input type="number" id="editarCantidad"  placeholder="CANTIDAD DEL MEDICAMENTO">
 						<select class="form-select medisInput" id="medicProveEditar" aria-label="Default select example">
 							<option selected>SELECCIONA EL PROVEEDOR</option>
 						</select>
@@ -903,7 +1062,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">EDITA TU PRODUCTO</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">EDITA TU DIRECCION</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -914,7 +1073,7 @@
                         <input type="text" id="editarBarrio"  placeholder="BARRIO">
                         <input type="text" id="editarComplemento"  placeholder="COMPLEMENTO">
 						<select class="form-select medisInput" id="dieccCiudadEditar" aria-label="Default select example">
-							<option selected>SELECCIONA EL PROVEEDOR</option>
+							<option selected>SELECCIONA LA CIUDAD</option>
 						</select>
                     </div>
                 </div>
@@ -929,14 +1088,15 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">EDITA TU PRODUCTO</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">EDITAR EMPLEADO</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div id="">
                         <input type="text" id="editarNombree" placeholder="NOMBRE">
                         <input type="text" id="editarCargo"  placeholder="CARGO">
-                        <input type="date" id="editarFechaContratacion"  placeholder="FECHA CONTRATACION">
+						<label for="">EDITA LA FECHA DE CONTRATACION</label>
+                        <input type="date" id="editarFechaContratacion">
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -950,13 +1110,13 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">EDITA TU PRODUCTO</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">EDITAR PROVEEDOR</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div id="">
                         <input type="text" id="editaName" placeholder="NOMBRE">
-                        <input type="text" id="editaContacto"  placeholder="CONTACTO">
+                        <input type="number" id="editaContacto"  placeholder="CONTACTO">
 						<select class="form-select medisInput" id="editaDireccion" aria-label="Default select example">
 							<option selected>SELECCIONA TU DIRECCION</option>
 						</select>
@@ -973,13 +1133,13 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">EDITA TU PRODUCTO</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">EDITAR PACIENTE</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div id="">
                         <input type="text" id="editaNaame" placeholder="NOMBRE">
-                        <input type="text" id="editaTele"  placeholder="TELEFONO">
+                        <input type="number" id="editaTele"  placeholder="TELEFONO">
 						<select class="form-select medisInput" id="editaDireccionn" aria-label="Default select example">
 							<option selected>SELECCIONA TU DIRECCION</option>
 						</select>

@@ -18,7 +18,7 @@ const getEmplado = () =>{
     });
 };
 
-const contenedorEmpleados = document.getElementById("");
+const contenedorEmpleados = document.getElementById("aggEmpleadoBody");
 
 const mostrarEmpleados = (empleados) =>{
     let listar = "";
