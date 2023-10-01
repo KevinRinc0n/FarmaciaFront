@@ -1,4 +1,5 @@
-const url = "http://localhost:5297/api/Medicamentos/GetStock50";
+const url = "http://localhost:5297/api/";
+
 let medicamentos = [];
 
 window.addEventListener("DOMContentLoaded", () =>{ 
@@ -6,7 +7,7 @@ window.addEventListener("DOMContentLoaded", () =>{
 });
 
 const getMedicamentos = ()  =>{
-    fetch(url)
+    fetch(`${url}Medicamentos/GetStock50`)
     .then(respuesta  => respuesta.json())
     .then(data  => {
         medicamentos = data;
@@ -39,7 +40,6 @@ const mostrarMedicamentos = (medicamentos) =>{
 
 /////////////////////////////////////////////////////////////////
 
-const urll = "http://localhost:5297/api/Proveedor/proveedorMedica";
 let medicamentosComProveeA = [];
 
 window.addEventListener("DOMContentLoaded", () =>{
@@ -47,7 +47,7 @@ window.addEventListener("DOMContentLoaded", () =>{
 });
 
 const getMedicCompProveeA = ()  =>{
-    fetch(urll)
+    fetch(`${url}Proveedor/proveedorMedica`)
     .then(respuesta  => respuesta.json())
     .then(data  => {
         medicamentosComProveeA = data;
@@ -78,7 +78,6 @@ const mostrarMedicCompProveeA = (medicamentosComProveeA) =>{
 
 /////////////////////////////////////////////////////////////////
 
-const urrrl = "http://localhost:5297/api/Medicamentos/GetTotalParace";
 let medicamentoParacetamol = [];
 
 window.addEventListener("DOMContentLoaded", () =>{
@@ -86,7 +85,7 @@ window.addEventListener("DOMContentLoaded", () =>{
 });
 
 const getMedicamentoParace = ()  =>{
-    fetch(urrrl)
+    fetch(`${url}Medicamentos/GetTotalParace`)
     .then(respuesta  => respuesta.json())
     .then(data  => {
         medicamentoParacetamol = data;
@@ -118,7 +117,6 @@ const mostrarMedicamentoParace = (medicamentoParacetamol) =>{
 
 /////////////////////////////////////////////////////////////////
 
-const urlReceta = "http://localhost:5297/api/Receta/GetRecetas2023";
 let recetas = [];
 
 window.addEventListener("DOMContentLoaded", () =>{
@@ -126,7 +124,7 @@ window.addEventListener("DOMContentLoaded", () =>{
 });
 
 const getRecetas = ()  =>{                                                               
-    fetch(urlReceta)
+    fetch(`${url}Receta/GetRecetas2023`)
     .then(respuesta  => respuesta.json())
     .then(data  => {
         recetas = data;
@@ -157,7 +155,6 @@ const mostrarRecetas = (recetas) =>{
 
 /////////////////////////////////////////////////////////////////
 
-const urlCaducan2024 = "http://localhost:5297/api/Medicamentos/GetCadu2024";
 let medisCadu2024 = [];
 
 window.addEventListener("DOMContentLoaded", () =>{
@@ -165,7 +162,7 @@ window.addEventListener("DOMContentLoaded", () =>{
 });
 
 const getMediCadu2024 = ()  =>{
-    fetch(urlCaducan2024)
+    fetch(`${url}Medicamentos/GetCadu2024`)
     .then(respuesta  => respuesta.json())
     .then(data  => {
         medisCadu2024 = data;
@@ -197,7 +194,6 @@ const mostrarCadu2024 = (medisCadu2024) =>{
 
 /////////////////////////////////////////////////////////////////
 
-const urlMedicVenXProvee = "http://localhost:5297/api/MovimientoInventario/GetTotalMedisVendi";
 let medicXProvee = [];
 
 window.addEventListener("DOMContentLoaded", () =>{
@@ -205,7 +201,7 @@ window.addEventListener("DOMContentLoaded", () =>{
 });
 
 const getMedicVenXProvee = ()  =>{
-    fetch(urlMedicVenXProvee)
+    fetch(`${url}MovimientoInventario/GetTotalMedisVendi`)
     .then(respuesta  => respuesta.json())
     .then(data  => {
         medicXProvee = data;
@@ -239,7 +235,6 @@ const mostrarMedicXProvee = (medicXProvee) =>{
 
 /////////////////////////////////////////////////////////////////
 
-const urlDineroXVenta = "http://localhost:5297/api/MovimientoInventario/GetTotalRecaudado";
 let recaudadoXVenta = [];
 
 window.addEventListener("DOMContentLoaded", () =>{
@@ -247,7 +242,7 @@ window.addEventListener("DOMContentLoaded", () =>{
 });
 
 const getTotalRecaudado = ()  =>{
-    fetch(urlDineroXVenta)
+    fetch(`${url}MovimientoInventario/GetTotalRecaudado`)
     .then(respuesta  => respuesta.json())
     .then(data  => {
         recaudadoXVenta = data;
@@ -316,7 +311,6 @@ const mostrarTotalRecaudado = (recaudadoXVenta) =>{
 
 /////////////////////////////////////////////////////////////////
 
-const urlMedicCaro = "http://localhost:5297/api/Medicamento/GetMediCaro";
 let medicCaro = [];
 
 window.addEventListener("DOMContentLoaded", () =>{
@@ -324,7 +318,7 @@ window.addEventListener("DOMContentLoaded", () =>{
 });
 
 const getMasCaro = ()  =>{
-    fetch(urlMedicCaro)
+    fetch(`${url}Medicamento/GetMediCaro`)
     .then(respuesta  => respuesta.json())
     .then(data  => {
         medicCaro = data;
@@ -357,7 +351,6 @@ const mostrarMasCaro = (medicCaro) =>{
 
 /////////////////////////////////////////////////////////////////
 
-const urlMedicXProvee = "http://localhost:5297/api/Proveedor/GetMedisXProve";
 let medicamentoXProvee = [];
 
 window.addEventListener("DOMContentLoaded", () =>{
@@ -365,7 +358,7 @@ window.addEventListener("DOMContentLoaded", () =>{
 });
 
 const getMedicXProvee = ()  =>{
-    fetch(urlMedicXProvee)
+    fetch(`${url}Proveedor/GetMedisXProve`)
     .then(respuesta  => respuesta.json())
     .then(data  => {
         medicamentoXProvee = data;
@@ -396,7 +389,6 @@ const mostrarMedicaXProvee = (medicamentoXProvee) =>{
 
 /////////////////////////////////////////////////////////////////
 
-const urlPacienParaceta = "http://localhost:5297/api/MovimientoInventario/GetPacienComParace";
 let pacienteCompraParace = [];
 
 window.addEventListener("DOMContentLoaded", () =>{
@@ -404,7 +396,7 @@ window.addEventListener("DOMContentLoaded", () =>{
 });
 
 const getPacientePara = ()  =>{
-    fetch(urlPacienParaceta)
+    fetch(`${url}MovimientoInventario/GetPacienComParace`)
     .then(respuesta  => respuesta.json())
     .then(data  => {
         pacienteCompraParace = data;
@@ -433,7 +425,6 @@ const mostrarPacientePara = (pacienteCompraParace) =>{
 
 /////////////////////////////////////////////////////////////////
 
-const urlProveeNoVentas = "http://localhost:5297/api/Proveedor/GetProveeNoVenMedis";
 let proveeNoVentas = [];
 
 window.addEventListener("DOMContentLoaded", () =>{
@@ -441,7 +432,7 @@ window.addEventListener("DOMContentLoaded", () =>{
 });
 
 const getNoventasProvee = ()  =>{
-    fetch(urlProveeNoVentas)
+    fetch(`${url}Proveedor/GetProveeNoVenMedis`)
     .then(respuesta  => respuesta.json())
     .then(data  => {
         proveeNoVentas = data;
@@ -471,7 +462,6 @@ const mostrarNoVentaProvee = (proveeNoVentas) =>{
 
 /////////////////////////////////////////////////////////////////
 
-const urlMedicMarzo = "http://localhost:5297/api/Medicamento/GetMedisVendMarzo";
 let medicamentosMarzo = [];
 
 window.addEventListener("DOMContentLoaded", () =>{
@@ -479,7 +469,7 @@ window.addEventListener("DOMContentLoaded", () =>{
 });
 
 const getMedicamentoMarzo = ()  =>{
-    fetch(urlMedicMarzo)
+    fetch(`${url}Medicamento/GetMedisVendMarzo`)
     .then(respuesta  => respuesta.json())
     .then(data  => {
         medicamentosMarzo = data;
@@ -510,7 +500,6 @@ const mostrarMedicMarzo = (medicamentosMarzo) =>{
 
 /////////////////////////////////////////////////////////////////
 
-const urlMedicMenosVen = "http://localhost:5297/api/Medicamento/GetMediMenosVe2023";
 let medicMenosVendido = [];
 
 window.addEventListener("DOMContentLoaded", () =>{
@@ -518,7 +507,7 @@ window.addEventListener("DOMContentLoaded", () =>{
 });
 
 const getMediMenosVen2023 = ()  =>{
-    fetch(urlMedicMenosVen)
+    fetch(`${url}Medicamento/GetMediMenosVe2023`)
     .then(respuesta  => respuesta.json())
     .then(data  => {
         medicMenosVendido = data;
@@ -550,7 +539,6 @@ const mostrarMedicMenosven = (medicMenosVendido) =>{
 
 /////////////////////////////////////////////////////////////////
 
-const urlGananciaXProvee = "http://localhost:5297/api/Proveedor/GetGananTotalProvee";
 let gananciaXProvee = [];
 
 window.addEventListener("DOMContentLoaded", () =>{
@@ -558,7 +546,7 @@ window.addEventListener("DOMContentLoaded", () =>{
 });
 
 const getProveeGanancia = ()  =>{
-    fetch(urlGananciaXProvee)
+    fetch(`${url}Proveedor/GetGananTotalProvee`)
     .then(respuesta  => respuesta.json())
     .then(data  => {
         gananciaXProvee = data;
@@ -589,7 +577,6 @@ const mostrarGananciaProvee = (gananciaXProvee) =>{
 
 /////////////////////////////////////////////////////////////////
 
-const urlPromMediVenta = "http://localhost:5297/api/MovimientoInventario/GetPromMedis";
 let promMedisVentas = [];
 
 window.addEventListener("DOMContentLoaded", () =>{
@@ -597,7 +584,7 @@ window.addEventListener("DOMContentLoaded", () =>{
 });
 
 const getPromMedis = ()  =>{
-    fetch(urlPromMediVenta)
+    fetch(`${url}MovimientoInventario/GetPromMedis`)
     .then(respuesta  => respuesta.json())
     .then(data  => {
         promMedisVentas = data;
@@ -631,7 +618,6 @@ const mostrarPromMedisVenta = (promMedisVentas) =>{
 
 /////////////////////////////////////////////////////////////////
 
-const cantVenEmpleado2023 = "http://localhost:5297/api/Empleado/CantVentaEmple";
 let ventasEmple2023 = [];
 
 window.addEventListener("DOMContentLoaded", () =>{
@@ -639,7 +625,7 @@ window.addEventListener("DOMContentLoaded", () =>{
 });
 
 const getVentaEmple2023 = ()  =>{
-    fetch(cantVenEmpleado2023)
+    fetch(`${url}Empleado/CantVentaEmple`)
     .then(respuesta  => respuesta.json())
     .then(data  => {
         ventasEmple2023 = data;
@@ -672,7 +658,6 @@ const mostrarVentaEmpleados2023 = (ventasEmple2023) =>{
 
 /////////////////////////////////////////////////////////////////
 
-const medicExpira2024 = "http://localhost:5297/api/Medicamento/Get2024Expi";
 let medicamentosExpiran2024 = [];
 
 window.addEventListener("DOMContentLoaded", () =>{
@@ -680,7 +665,7 @@ window.addEventListener("DOMContentLoaded", () =>{
 });
 
 const getMedisExpi2024 = ()  =>{
-    fetch(medicExpira2024)
+    fetch(`${url}Medicamento/Get2024Expi`)
     .then(respuesta  => respuesta.json())
     .then(data  => {
         medicamentosExpiran2024 = data;
@@ -714,7 +699,6 @@ const mostraMedicExpira2024 = (medicamentosExpiran2024) =>{
 
 /////////////////////////////////////////////////////////////////
 
-const empleMas5Ventas = "http://localhost:5297/api/Empleado/mas-5-ventas";
 let empleadosMas5Ventas = [];
 
 window.addEventListener("DOMContentLoaded", () =>{
@@ -722,7 +706,7 @@ window.addEventListener("DOMContentLoaded", () =>{
 });
 
 const getEmpleMas5Vent = ()  =>{
-    fetch(empleMas5Ventas)
+    fetch(`${url}Empleado/mas-5-ventas`)
     .then(respuesta  => respuesta.json())
     .then(data  => {
         empleadosMas5Ventas = data;
@@ -751,7 +735,6 @@ const mostraEmpleMas5ventas = (empleadosMas5Ventas) =>{
 
 /////////////////////////////////////////////////////////////////
 
-const medicNuncaVen = "http://localhost:5297/api/Medicamento/nunca-vendido";
 let medicamentosNuncaVendidos = [];
 
 window.addEventListener("DOMContentLoaded", () =>{
@@ -759,7 +742,7 @@ window.addEventListener("DOMContentLoaded", () =>{
 });
 
 const getMedisNuncaVen = ()  =>{
-    fetch(medicNuncaVen)
+    fetch(`${url}Medicamento/nunca-vendido`)
     .then(respuesta  => respuesta.json())
     .then(data  => {
         medicamentosNuncaVendidos = data;
@@ -791,7 +774,6 @@ const mostraMedicNuncaVent = (medicamentosNuncaVendidos) =>{
 
 /////////////////////////////////////////////////////////////////
 
-const pacieGastadoMasdinero = "http://localhost:5297/api/Paciente/gastado-mas-dinero-2023";
 let pacienteMasDineroGasta = [];
 
 window.addEventListener("DOMContentLoaded", () =>{
@@ -799,7 +781,7 @@ window.addEventListener("DOMContentLoaded", () =>{
 });
 
 const getPaciente = ()  =>{
-    fetch(pacieGastadoMasdinero)
+    fetch(`${url}Paciente/gastado-mas-dinero-2023`)
     .then(respuesta  => respuesta.json())
     .then(data  => {
         pacienteMasDineroGasta = data;
@@ -831,7 +813,6 @@ const mostraPacienMasDinero = (pacienteMasDineroGasta) =>{
 
 /////////////////////////////////////////////////////////////////
 
-const empleSinVentas = "http://localhost:5297/api/Empleado/sin-ventas-2023";
 let empleadosSinVentas = [];
 
 window.addEventListener("DOMContentLoaded", () =>{
@@ -839,7 +820,7 @@ window.addEventListener("DOMContentLoaded", () =>{
 });
 
 const getEmpleadosSinVentas = ()  =>{
-    fetch(empleSinVentas)
+    fetch(`${url}Empleado/sin-ventas-2023`)
     .then(respuesta  => respuesta.json())
     .then(data  => {
         empleadosSinVentas = data;
@@ -871,7 +852,6 @@ const mostrarEmpleadosSinVentas = (empleadosSinVentas) =>{
 
 /////////////////////////////////////////////////////////////////
 
-const proveedorMasMedis = "http://localhost:5297/api/Proveedor/suministro-mas-medicamentos-2023";
 let proveeSuminisMasMedis = [];
 
 window.addEventListener("DOMContentLoaded", () =>{
@@ -879,7 +859,7 @@ window.addEventListener("DOMContentLoaded", () =>{
 });
 
 const getproveeSuminisMasMedis = ()  =>{
-    fetch(proveedorMasMedis)
+    fetch(`${url}Proveedor/suministro-mas-medicamentos-2023`)
     .then(respuesta  => respuesta.json())
     .then(data  => {
         proveeSuminisMasMedis = data;
@@ -909,7 +889,6 @@ const mostrarProveeMasMedis = (proveeSuminisMasMedis) =>{
 
 /////////////////////////////////////////////////////////////////
 
-const pacienteComParace2023 = "http://localhost:5297/api/Paciente/compraron-paracetamol-2023";
 let pacienteCompraronParace2023 = [];
 
 window.addEventListener("DOMContentLoaded", () =>{
@@ -917,7 +896,7 @@ window.addEventListener("DOMContentLoaded", () =>{
 });
 
 const getpacienteComprarParace2023 = ()  =>{
-    fetch(pacienteComParace2023)
+    fetch(`${url}Paciente/compraron-paracetamol-2023`)
     .then(respuesta  => respuesta.json())
     .then(data  => {
         pacienteCompraronParace2023 = data;
@@ -949,7 +928,6 @@ const mostrarpacienCompraParace2023 = (pacienteCompraronParace2023) =>{
 
 /////////////////////////////////////////////////////////////////
 
-const totalMedisXMes = "http://localhost:5297/api/Medicamento/total-medicamentos-vendidosXmes-2023";
 let totalMedicvendiXMes = [];
 
 window.addEventListener("DOMContentLoaded", () =>{
@@ -957,7 +935,7 @@ window.addEventListener("DOMContentLoaded", () =>{
 });
 
 const getMedisVenXMes = ()  =>{
-    fetch(totalMedisXMes)
+    fetch(`${url}Medicamento/total-medicamentos-vendidosXmes-2023`)
     .then(respuesta  => respuesta.json())
     .then(data  => {
         totalMedicvendiXMes = data;
@@ -989,7 +967,6 @@ const mostrarMedisVenXMes = (totalMedicvendiXMes) =>{
 
 /////////////////////////////////////////////////////////////////
 
-const empleadoMenos5Ventas = "http://localhost:5297/api/Empleado/menos-5-ventas-2023";
 let empleadosMenos5Ven2023 = [];
 
 window.addEventListener("DOMContentLoaded", () =>{
@@ -997,7 +974,7 @@ window.addEventListener("DOMContentLoaded", () =>{
 });
 
 const getEmpleMenos5Vent2023 = ()  =>{
-    fetch(empleadoMenos5Ventas)
+    fetch(`${url}Empleado/menos-5-ventas-2023`)
     .then(respuesta  => respuesta.json())
     .then(data  => {
         empleadosMenos5Ven2023 = data;
@@ -1029,7 +1006,6 @@ const mostrarEmpleMenos5Vent2023 = (empleadosMenos5Ven2023) =>{
 
 /////////////////////////////////////////////////////////////////
 
-const proveedoresTotalMedis = "http://localhost:5297/api/Proveedor/suministraron-2023";
 let totalProveeSumnisMedicamentos = [];
 
 window.addEventListener("DOMContentLoaded", () =>{
@@ -1037,7 +1013,7 @@ window.addEventListener("DOMContentLoaded", () =>{
 });
 
 const getProveeSumMedis = ()  =>{
-    fetch(proveedoresTotalMedis)
+    fetch(`${url}Proveedor/suministraron-2023`)
     .then(respuesta  => respuesta.json())
     .then(data  => {
         totalProveeSumnisMedicamentos = data;
@@ -1068,7 +1044,6 @@ const mostrarProveeSumMedis = (totalProveeSumnisMedicamentos) =>{
 
 /////////////////////////////////////////////////////////////////
 
-const proveeMenos50Stock = "http://localhost:5297/api/Proveedor/medicamentos-menos-50-stock";
 let proveMedicMenos50Stock = [];
 
 window.addEventListener("DOMContentLoaded", () =>{
@@ -1076,7 +1051,7 @@ window.addEventListener("DOMContentLoaded", () =>{
 });
 
 const getProveeMedic50 = ()  =>{
-    fetch(proveeMenos50Stock)
+    fetch(`${url}Proveedor/medicamentos-menos-50-stock`)
     .then(respuesta  => respuesta.json())
     .then(data  => {
         proveMedicMenos50Stock = data;
@@ -1106,7 +1081,6 @@ const mostrarProveeMedic50 = (proveMedicMenos50Stock) =>{
 
 /////////////////////////////////////////////////////////////////
 
-const pacientNoCompraronMedis = "http://localhost:5297/api/Paciente/no-compraron-2023";
 let pacientNoCompraron = [];
 
 window.addEventListener("DOMContentLoaded", () =>{
@@ -1114,7 +1088,7 @@ window.addEventListener("DOMContentLoaded", () =>{
 });
 
 const getPacientNoCompraMedic = ()  =>{
-    fetch(pacientNoCompraronMedis)
+    fetch(`${url}Paciente/no-compraron-2023`)
     .then(respuesta  => respuesta.json())
     .then(data  => {
         pacientNoCompraron = data;
@@ -1146,7 +1120,6 @@ const mostrarPacientNoCompraMedic = (pacientNoCompraron) =>{
 
 /////////////////////////////////////////////////////////////////
 
-const medisVendiXMes2023 = "http://localhost:5297/api/Medicamento/medicamentos-vendidosXmes-2023";
 let medisVendidoXMes = [];
 
 window.addEventListener("DOMContentLoaded", () =>{
@@ -1154,7 +1127,7 @@ window.addEventListener("DOMContentLoaded", () =>{
 });
 
 const getMedisVendidosXMes2023 = ()  =>{
-    fetch(medisVendiXMes2023)
+    fetch(`${url}Medicamento/medicamentos-vendidosXmes-2023`)
     .then(respuesta  => respuesta.json())
     .then(data  => {
         medisVendidoXMes = data;
@@ -1186,7 +1159,6 @@ const mostrarMedisVendidosXMes2023 = (medisVendidoXMes) =>{
 
 /////////////////////////////////////////////////////////////////
 
-const empleadoMayorVentDistin = "http://localhost:5297/api/Empleado/venta/mayorcantidad-medicamentos-distintos";
 let empleadoVendidoMayorMedic = [];
 
 window.addEventListener("DOMContentLoaded", () =>{
@@ -1194,7 +1166,7 @@ window.addEventListener("DOMContentLoaded", () =>{
 });
 
 const getEmpleadoVendi = ()  =>{
-    fetch(empleadoMayorVentDistin)
+    fetch(`${url}Empleado/venta/mayorcantidad-medicamentos-distintos`)
     .then(respuesta  => respuesta.json())
     .then(data  => {
         empleadoVendidoMayorMedic = data;
@@ -1226,7 +1198,6 @@ const mostrarEmpleadoVendi = (empleadoVendidoMayorMedic) =>{
 
 /////////////////////////////////////////////////////////////////
 
-const pacienteTotalGastado = "http://localhost:5297/api/Paciente/total-gastadoXpaciente-2023";
 let totalGastadoXPaci2023 = [];
 
 window.addEventListener("DOMContentLoaded", () =>{
@@ -1234,7 +1205,7 @@ window.addEventListener("DOMContentLoaded", () =>{
 });
 
 const getTotalPacientX2023 = ()  =>{
-    fetch(pacienteTotalGastado)
+    fetch(`${url}Paciente/total-gastadoXpaciente-2023`)
     .then(respuesta  => respuesta.json())
     .then(data  => {
         totalGastadoXPaci2023 = data;
@@ -1264,7 +1235,6 @@ const mostrarTotalPacientX2023 = (totalGastadoXPaci2023) =>{
 
 /////////////////////////////////////////////////////////////////
 
-const medicamentoNoVendi2023 = "http://localhost:5297/api/Medicamento/medicamentos-no-vendidos-2023";
 let mediNoVendido2023 = [];
 
 window.addEventListener("DOMContentLoaded", () =>{
@@ -1272,7 +1242,7 @@ window.addEventListener("DOMContentLoaded", () =>{
 });
 
 const getMedicamentosNoVendidos2023 = ()  =>{
-    fetch(medicamentoNoVendi2023)
+    fetch(`${url}Medicamento/medicamentos-no-vendidos-2023`)
     .then(respuesta  => respuesta.json())
     .then(data  => {
         mediNoVendido2023 = data;
@@ -1304,7 +1274,6 @@ const mostrarMedicamentosNoVendidos2023 = (mediNoVendido2023) =>{
 
 /////////////////////////////////////////////////////////////////
 
-const proveeSumi5Medic2023 = "http://localhost:5297/api/Proveedor/suministro-almenos-5-medicamentos-diferentes-2023";
 let proveeSuminisAlmenos52023 = [];
 
 window.addEventListener("DOMContentLoaded", () =>{
@@ -1312,7 +1281,7 @@ window.addEventListener("DOMContentLoaded", () =>{
 });
 
 const getProveeSumi5Medic2023 = ()  =>{
-    fetch(proveeSumi5Medic2023)
+    fetch(`${url}Proveedor/suministro-almenos-5-medicamentos-diferentes-2023`)
     .then(respuesta  => respuesta.json())
     .then(data  => {
         proveeSuminisAlmenos52023 = data;
@@ -1342,7 +1311,6 @@ const mostrarProveeSumi5Medic2023 = (proveeSuminisAlmenos52023) =>{
 
 /////////////////////////////////////////////////////////////////
 
-const totalMedisTrimesVen2023 = "http://localhost:5297/api/Medicamento/total-medicamentos-vendidos-primer-trimestre-2023";
 let medicVenTrimes2023 = [];
 
 window.addEventListener("DOMContentLoaded", () =>{
@@ -1350,7 +1318,7 @@ window.addEventListener("DOMContentLoaded", () =>{
 });
 
 const getTotalMedicVen2023 = ()  =>{
-    fetch(totalMedisTrimesVen2023)
+    fetch(`${url}Medicamento/total-medicamentos-vendidos-primer-trimestre-2023`)
     .then(respuesta  => respuesta.json())
     .then(data  => {
         medicVenTrimes2023 = data;
@@ -1381,7 +1349,6 @@ const mostrarTotalMedicVen2023 = (medicVenTrimes2023) =>{
 
 /////////////////////////////////////////////////////////////////
 
-const empleadoSinVentas2023 = "http://localhost:5297/api/Empleado/sin-ventas-abril-2023";
 let empleSinVentas2023 = [];
 
 window.addEventListener("DOMContentLoaded", () =>{
@@ -1389,7 +1356,7 @@ window.addEventListener("DOMContentLoaded", () =>{
 });
 
 const getEmpleadoSinVentas2023 = ()  =>{
-    fetch(empleadoSinVentas2023)
+    fetch(`${url}Empleado/sin-ventas-abril-2023`)
     .then(respuesta  => respuesta.json())
     .then(data  => {
         empleSinVentas2023 = data;
@@ -1455,7 +1422,6 @@ const mostrarEmpleadoSinVentas2023 = (empleSinVentas2023) =>{
 
 /////////////////////////////////////////////////////////////////
 
-const medicMayor50Menor100 = "http://localhost:5297/api/Medicamento/medicamentos-precio-mas-50-stock-menos-100";
 let medicPreci50StockMenor100 = [];
 
 window.addEventListener("DOMContentLoaded", () =>{
@@ -1463,7 +1429,7 @@ window.addEventListener("DOMContentLoaded", () =>{
 });
 
 const getMedicPrecio50Stock100 = ()  =>{
-    fetch(medicMayor50Menor100)
+    fetch(`${url}Medicamento/medicamentos-precio-mas-50-stock-menos-100`)
     .then(respuesta  => respuesta.json())
     .then(data  => {
         medicPreci50StockMenor100 = data;
