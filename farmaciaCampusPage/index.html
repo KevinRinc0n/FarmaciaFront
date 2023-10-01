@@ -49,6 +49,8 @@
 				<ul class="side-dropdown">
 					<li><a id="aggMedica" href="#">Medicamento</a></li>
 					<li><a id="aggProvee" href="#">Proveedor</a></li>
+					<li><a id="aggPacienteReally" href="#">Paciente</a></li>
+					<li><a id="aggEmpleado" href="#">Empleado</a></li>
 					<li><a id="aggPacient" href="#">Ubicación</a></li>
 				</ul>
 			</li>
@@ -574,72 +576,113 @@
 		</div>
 		<div  id="agregaMedi">
 			<div class="form-floating mb-3 medisInput">
-				<input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+				<input type="text" class="form-control" id="nombreMedic" placeholder="name@example.com">
 				<label for="floatingInput">NOMBRE</label>
 			</div>
 			<div class="form-floating mb-3 medisInput">
-				<input type="number" class="form-control" id="floatingInput" placeholder="name@example.com">
+				<input type="number" class="form-control" id="precioMedic" placeholder="name@example.com">
 				<label for="floatingInput">PRECIO</label>
 			</div>
 			<div>
 				<label for="">INGRESA LA FECHA DE EXPIRACION</label>
 				<div class="input-group flex-nowrap fecha">
-					<input type="date" class="form-control" aria-label="Username" aria-describedby="addon-wrapping">
+					<input type="date" class="form-control" aria-label="Username" aria-describedby="addon-wrapping" id="fechaExpiMedic">
 				</div>
 			</div>
 			<div class="form-floating mb-3 medisInput">
-				<input type="number" class="form-control" id="floatingInput" placeholder="name@example.com">
+				<input type="number" class="form-control" id="cantidadMedic" placeholder="name@example.com">
 				<label for="floatingInput">CANTIDAD</label>
 			</div>
-			<select class="form-select medisInput" aria-label="Default select example">
+			<select class="form-select medisInput" aria-label="Default select example" id="selectProvee">
 				<option selected>SELECCIONA AL PROVEEDOR</option>
 			</select>
-			<select class="form-select medisInput" aria-label="Default select example">
+			<select class="form-select medisInput" aria-label="Default select example" id="selectPresentac">
 				<option selected>SELECCIONA LA PRESENTACION</option>
 			</select>
-			<select class="form-select medisInput" aria-label="Default select example">
+			<select class="form-select medisInput" aria-label="Default select example" id="selectMarca">
 				<option selected>SELECCIONA LA MARCA</option>
 			</select>
-			<button type="button" class="btn btn-warning btEnvi">Enviar</button>
+			<button type="button" class="btn btn-warning btEnvi" onclick="crearMedicamento()">Enviar</button>
 		</div>
 		<div id="agregaProvee">
-			<div class="card">
-				<a class="card1" href="#">
-				<img class="imgCard" src="./imgs/cards.jpg" alt="">
-					<p>This is heading</p>
-					<p class="small">Card description with lots of great facts and interesting details.</p>
-					<div class="go-corner" href="#">
-						<div class="go-arrow">
-							→
-						</div>
-					</div>
-				</a>
+			<div class="form-floating mb-3 medisInput">
+				<input type="text" class="form-control" id="inputName" placeholder="name@example.com">
+				<label for="floatingInput">NOMBRE</label>
 			</div>
+			<div class="form-floating mb-3 medisInput">
+				<input type="number" class="form-control" id="inputContact" placeholder="name@example.com">
+				<label for="floatingInput">CONTACTO</label>
+			</div>
+			<select class="form-select medisInput" aria-label="Default select example" id="inputDirec">
+				<option selected>SELECCIONA TU DIRECCION</option>
+			</select>
+			<button type="button" class="btn btn-warning btEnviUbi">Enviar</button>
 		</div>
 		<div id="agregaPaciente">
 			<div class="form-floating mb-3 medisInput">
-				<input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+				<input type="text" class="form-control" id="inputTipoVia" placeholder="name@example.com">
 				<label for="floatingInput">TIPO VIA</label>
 			</div>
 			<div class="form-floating mb-3 medisInput">
-				<input type="number" class="form-control" id="floatingInput" placeholder="name@example.com">
+				<input type="number" class="form-control" id="inputNumeroVia" placeholder="name@example.com">
 				<label for="floatingInput">NUMERO VIA</label>
 			</div>
 			<div class="form-floating mb-3 medisInput">
-				<input type="number" class="form-control" id="floatingInput" placeholder="name@example.com">
+				<input type="number" class="form-control" id="inputNumeroViaSecunda" placeholder="name@example.com">
 				<label for="floatingInput">NUMERO VIA SECUNDARIO</label>
 			</div>
 			<div class="form-floating mb-3 medisInput">
-				<input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+				<input type="text" class="form-control" id="inputBarrio" placeholder="name@example.com">
 				<label for="floatingInput">BARRIO</label>
 			</div>
 			<div class="form-floating mb-3 medisInput">
-				<input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+				<input type="text" class="form-control" id="inputComplemento" placeholder="name@example.com">
 				<label for="floatingInput">COMPLEMENTO</label>
 			</div>
-			<select class="form-select medisInput" aria-label="Default select example">
+			<select class="form-select medisInput" aria-label="Default select example" id="inputCiudad">
 				<option selected>SELECCIONA LA CIUDAD</option>
 			</select>
+			<button type="button" class="btn btn-warning btEnviUbi">Enviar</button>
+		</div>
+		<div id="agregaPacienteReally">
+			<div class="form-floating mb-3 medisInput">
+				<input type="text" class="form-control" id="inputTipoVia" placeholder="name@example.com">
+				<label for="floatingInput">TIPO VIA</label>
+			</div>
+			<div class="form-floating mb-3 medisInput">
+				<input type="number" class="form-control" id="inputNumeroVia" placeholder="name@example.com">
+				<label for="floatingInput">NUMERO VIA</label>
+			</div>
+			<div class="form-floating mb-3 medisInput">
+				<input type="number" class="form-control" id="inputNumeroViaSecunda" placeholder="name@example.com">
+				<label for="floatingInput">NUMERO VIA SECUNDARIO</label>
+			</div>
+			<div class="form-floating mb-3 medisInput">
+				<input type="text" class="form-control" id="inputBarrio" placeholder="name@example.com">
+				<label for="floatingInput">BARRIO</label>
+			</div>
+			<div class="form-floating mb-3 medisInput">
+				<input type="text" class="form-control" id="inputComplemento" placeholder="name@example.com">
+				<label for="floatingInput">COMPLEMENTO</label>
+			</div>
+			<select class="form-select medisInput" aria-label="Default select example" id="inputCiudad">
+				<option selected>SELECCIONA LA CIUDAD</option>
+			</select>
+			<button type="button" class="btn btn-warning btEnviUbi">Enviar</button>
+		</div>
+		<div id="agregaEmpleado">
+			<div class="form-floating mb-3 medisInput">
+				<input type="text" class="form-control" id="inputNombre" placeholder="name@example.com">
+				<label for="floatingInput">Nombre</label>
+			</div>
+			<div class="form-floating mb-3 medisInput">
+				<input type="number" class="form-control" id="inputCargo" placeholder="name@example.com">
+				<label for="floatingInput">Cargo</label>
+			</div>
+			<div class="form-floating mb-3 medisInput">
+				<input type="number" class="form-control" id="inputFechaContratacion" placeholder="name@example.com">
+				<label for="floatingInput">Fecha Contratacion</label>
+			</div>
 			<button type="button" class="btn btn-warning btEnviUbi">Enviar</button>
 		</div>
 		<!-- -->
@@ -837,9 +880,116 @@
 		</main>
 		<!-- MAIN -->
 	</section>
+	<div class="modal fade" id="modalEditar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">EDITA TU PRODUCTO</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="">
+                        <input type="text" id="editarNombre" placeholder="NOMBRE DEL PRODUCTO">
+                        <input type="number" id="editarPrecio"  placeholder="PRECIO DEL PRODUCTO">
+                        <input type="text" id="editarFecha"  placeholder="DESCRIPCIÓN DEL PRODUCTO">
+                        <input type="number" id="editarCantidad"  placeholder="PRECIO DEL PRODUCTO">
+						<select class="form-select medisInput" id="medicProveEditar" aria-label="Default select example">
+							<option selected>SELECCIONA EL PROVEEDOR</option>
+						</select>
+						<select class="form-select medisInput" id="medicPresentaEditar" aria-label="Default select example">
+							<option selected>SELECCIONA LA PRESENTACION</option>
+						</select>
+						<select class="form-select medisInput" id="medicMarcaeEditar" aria-label="Default select example">
+							<option selected>SELECCIONA LA MARCA</option>
+						</select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="subirMedicamento()">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="modal fade" id="modalEditarDirecc" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">EDITA TU PRODUCTO</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="">
+                        <input type="text" id="editarVia" placeholder="TIPO VIA">
+                        <input type="number" id="editarNumeroVia"  placeholder="NUMERO VIA">
+                        <input type="number" id="editarNumeroViaSecundario"  placeholder="NUMERO VIA SECUNDARIO">
+                        <input type="text" id="editarBarrio"  placeholder="BARRIO">
+                        <input type="text" id="editarComplemento"  placeholder="COMPLEMENTO">
+						<select class="form-select medisInput" id="dieccCiudadEditar" aria-label="Default select example">
+							<option selected>SELECCIONA EL PROVEEDOR</option>
+						</select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="subirMedicamento()">Guardar</button>
+                </div>
+            </div>nombreMedic
+        </div>
+    </div>
+	<div class="modal fade" id="modalEditarEmple" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">EDITA TU PRODUCTO</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="">
+                        <input type="text" id="editarNombree" placeholder="NOMBRE">
+                        <input type="text" id="editarCargo"  placeholder="CARGO">
+                        <input type="date" id="editarFechaContratacion"  placeholder="FECHA CONTRATACION">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="subirMedicamento()">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="modal fade" id="modalEditarProvee" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">EDITA TU PRODUCTO</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="">
+                        <input type="text" id="editaName" placeholder="NOMBRE">
+                        <input type="text" id="editaContacto"  placeholder="CONTACTO">
+						<select class="form-select medisInput" id="editaDireccion" aria-label="Default select example">
+							<option selected>SELECCIONA TU DIRECCION</option>
+						</select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="subirMedicamento()">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 	<!-- NAVBAR -->
 	<script src="./app.js"></script>
 	<script src="./peticiones.js"></script>
+	<script src="./login/login.js"></script>
+	<script src="./register/register.js"></script>
+	<script src="./Cruds/direccion.js"></script>
+	<script src="./Cruds/medicamento.js"></script> 
+	<script src="./Cruds/empleado.js"></script> 
+	<script src="./Cruds/proveedor.js"></script> 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>

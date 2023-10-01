@@ -287,6 +287,16 @@
 	display: none;
 }
 
+#agregaPacienteReally
+{
+	display: none;
+}
+
+#agregaEmpleado
+{
+	display: none;
+}
+
 .imgCard
 {
 	border-radius: 50%;
