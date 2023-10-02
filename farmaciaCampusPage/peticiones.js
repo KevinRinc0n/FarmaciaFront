@@ -68,7 +68,7 @@ const mostrarMedicCompProveeA = (medicamentosComProveeA) => {
         <div class="card" style="width: 18rem;">
             <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">${medicamentoProveeA.Nombre}</h5>
+                <h5 class="card-title">${medicamentoProveeA.nombre}</h5>
             </div>
         </div>
         `;
@@ -106,9 +106,9 @@ const mostrarMedicamentoParace = (medicamentoParacetamol) =>{
         <div class="card" style="width: 18rem;">
             <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">${cadu2024.Id}</h5>
-                <h5 class="card-title">${cadu2024.Nombre}</h5>
-                <h5 class="card-title">${cadu2024.FechaExpiracion}</h5>
+                <h5 class="card-title">${cadu2024.id}</h5>
+                <h5 class="card-title">${cadu2024.nombre}</h5>
+                <h5 class="card-title">${cadu2024.fechaExpiracion}</h5>
             </div>
         </div>
         `
@@ -144,10 +144,10 @@ const mostrarRecetas = (recetas) =>{
     recetas.forEach(receta =>{
         listar += `
         <tr>
-            <th scope="row">${receta.Id}</th>
-            <td>${receta.IdPacienteFk}</td>
-            <td>${receta.MedicamentoRemitente}</td>
-            <td>${receta.Descripcion}</td>
+            <th scope="row">${receta.id}</th>
+            <td>${receta.idPacienteFk}</td>
+            <td>${receta.medicamentoRemitente}</td>
+            <td>${receta.descripcion}</td>
         </tr>
         `
     }); 
@@ -182,11 +182,11 @@ const mostrarCadu2024 = (medisCadu2024) =>{
     medisCadu2024.forEach(medicamentoCadu2024 =>{
         listar += `
         <tr>
-            <th scope="row">${medicamentoCadu2024.Id}</th>
-            <td>${medicamentoCadu2024.Nombre}</td>
-            <td>${medicamentoCadu2024.Precio}</td>
-            <td>${medicamentoCadu2024.FechaExpiracion}</td>
-            <td>${medicamentoCadu2024.IdProveedorFk}</td>
+            <th scope="row">${medicamentoCadu2024.id}</th>
+            <td>${medicamentoCadu2024.nombre}</td>
+            <td>${medicamentoCadu2024.precio}</td>
+            <td>${medicamentoCadu2024.fechaExpiracion}</td>
+            <td>${medicamentoCadu2024.idProveedorFk}</td>
         </tr>
         `
     }); 
@@ -223,10 +223,10 @@ const mostrarMedicXProvee = (medicXProvee) =>{
         <div class="card" style="width: 18rem;">
             <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">${totalMedicXProve.Id}</h5>
-                <p class="card-title">${totalMedicXProve.Nombre}</p>
-                <p class="card-text">${totalMedicXProve.Precio}</p>
-                <p class="card-text">${totalMedicXProve.IdProveedorFk}</p>
+                <h5 class="card-title">${totalMedicXProve.id}</h5>
+                <p class="card-title">${totalMedicXProve.nombre}</p>
+                <p class="card-text">${totalMedicXProve.precio}</p>
+                <p class="card-text">${totalMedicXProve.idProveedorFk}</p>
             </div>
         </div>
         `
@@ -301,9 +301,9 @@ const mostrarMedicNoVendi = (medisNoVendidos) =>{
     medisNoVendidos.forEach(medicamentoNoVend =>{
         listar += `
         <tr>
-            <th scope="row">${medicamentoNoVend.Id}</th>
-            <td>${medicamentoNoVend.Nombre}</td>
-            <td>${medicamentoNoVend.Precio}</td>
+            <th scope="row">${medicamentoNoVend.id}</th>
+            <td>${medicamentoNoVend.nombre}</td>
+            <td>${medicamentoNoVend.precio}</td>
         </tr>
         `
     }); 
@@ -378,10 +378,10 @@ const mostrarMedicaXProvee = (medicamentoXProvee) =>{
     medicamentoXProvee.forEach(medicamentoXProv =>{
         listar += `
         <tr>
-            <th scope="row">${medicamentoXProv.Id}</th>
-            <td>${medicamentoXProv.Nombre}</td>
-            <td>${medicamentoXProv.Precio}</td>
-            <td>${medicamentoXProv.IdProveedorFk}</td>
+            <th scope="row">${medicamentoXProv.id}</th>
+            <td>${medicamentoXProv.nombre}</td>
+            <td>${medicamentoXProv.precio}</td>
+            <td>${medicamentoXProv.idProveedorFk}</td>
         </tr>
         `
     }); 
@@ -416,8 +416,8 @@ const mostrarPacientePara = (pacienteCompraParace) =>{
     pacienteCompraParace.forEach(pacientComprParace =>{
         listar += `
         <tr>
-            <th scope="row">${pacientComprParace.Id}</th>
-            <td>${pacientComprParace.Nombre}</td>
+            <th scope="row">${pacientComprParace.id}</th>
+            <td>${pacientComprParace.nombre}</td>
         </tr>
         `
     }); 
@@ -452,9 +452,9 @@ const mostrarNoVentaProvee = (proveeNoVentas) =>{
     proveeNoVentas.forEach(proveeNoVenMediLastYear =>{
         listar += `
         <tr>
-            <th scope="row">${proveeNoVenMediLastYear.Id}</th>
-            <td>${proveeNoVenMediLastYear.Nombre}</td>
-            <td>${proveeNoVenMediLastYear.Contacto}</td>
+            <th scope="row">${proveeNoVenMediLastYear.id}</th>
+            <td>${proveeNoVenMediLastYear.nombre}</td>
+            <td>${proveeNoVenMediLastYear.contacto}</td>
         </tr>
         `
     }); 
@@ -529,8 +529,8 @@ const mostrarMedicMenosven = (medicMenosVendido) =>{
         <div class="card" style="width: 18rem;">
             <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">${medicamentoMenosVen.Id}</h5>
-                <p class="card-text">${medicamentoMenosVen.Nombre}</p>
+                <h5 class="card-title">${medicamentoMenosVen.id}</h5>
+                <p class="card-text">${medicamentoMenosVen.nombre}</p>
             </div>
         </div>
         `
@@ -606,9 +606,9 @@ const mostrarPromMedisVenta = (promMedisVentas) =>{
         <div class="card" style="width: 18rem;">
             <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">${promedioMedicamento.Id}</h5>
-                <p class="card-text">${promedioMedicamento.Nombre}</p>
-                <p class="card-text">${promedioMedicamento.Precio}</p>
+                <h5 class="card-title">${promedioMedicamento.id}</h5>
+                <p class="card-text">${promedioMedicamento.nombre}</p>
+                <p class="card-text">${promedioMedicamento.precio}</p>
                 <p class="card-text">${promedioMedicamento.promedio}</p>
             </div>
         </div>
@@ -685,9 +685,9 @@ const mostraMedicExpira2024 = (medicamentosExpiran2024) =>{
         <div class="card" style="width: 18rem;">
             <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">${medicamento2024Expira.Id}</h5>
-                <p class="card-text">${medicamento2024Expira.Nombre}</p>
-                <p class="card-text">${medicamento2024Expira.Ventas}</p>
+                <h5 class="card-title">${medicamento2024Expira.id}</h5>
+                <p class="card-text">${medicamento2024Expira.nombre}</p>
+                <p class="card-text">${medicamento2024Expira.ventas}</p>
             </div>
         </div>
         `
@@ -723,8 +723,8 @@ const mostraEmpleMas5ventas = (empleadosMas5Ventas) =>{
     empleadosMas5Ventas.forEach(empleMas5Ven =>{
         listar += `
         <tr>
-            <th scope="row">${empleMas5Ven.Id}</th>
-            <td>${empleMas5Ven.Nombre}</td>
+            <th scope="row">${empleMas5Ven.id}</th>
+            <td>${empleMas5Ven.nombre}</td>
         </tr>
         `
     }); 
@@ -761,8 +761,8 @@ const mostraMedicNuncaVent = (medicamentosNuncaVendidos) =>{
         <div class="card" style="width: 18rem;">
             <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">${medicamentoNeverVendi.Id}</h5>
-                <p class="card-text">${medicamentoNeverVendi.Nombre}</p>
+                <h5 class="card-title">${medicamentoNeverVendi.id}</h5>
+                <p class="card-text">${medicamentoNeverVendi.nombre}</p>
             </div>
         </div>
         `
@@ -800,8 +800,8 @@ const mostraPacienMasDinero = (pacienteMasDineroGasta) =>{
         <div class="card" style="width: 18rem;">
             <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">${pacienteMasDinero.Id}</h5>
-                <p class="card-text">${pacienteMasDinero.Nombre}</p>
+                <h5 class="card-title">${pacienteMasDinero.id}</h5>
+                <p class="card-text">${pacienteMasDinero.nombre}</p>
             </div>
         </div>
         `
@@ -839,8 +839,8 @@ const mostrarEmpleadosSinVentas = (empleadosSinVentas) =>{
         <div class="card" style="width: 18rem;">
             <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">${empleadoSinVentt.Id}</h5>
-                <p class="card-text">${empleadoSinVentt.Nombre}</p>
+                <h5 class="card-title">${empleadoSinVentt.id}</h5>
+                <p class="card-text">${empleadoSinVentt.nombre}</p>
             </div>
         </div>
         `
@@ -876,9 +876,9 @@ const mostrarProveeMasMedis = (proveeSuminisMasMedis) =>{
     proveeSuminisMasMedis.forEach(proveeSuminisMoreMedic =>{
         listar += `
         <tr>
-            <th scope="row">${proveeSuminisMoreMedic.Id}</th>
-            <td>${proveeSuminisMoreMedic.Nombre}</td>
-            <td>${proveeSuminisMoreMedic.Contacto}</td>
+            <th scope="row">${proveeSuminisMoreMedic.id}</th>
+            <td>${proveeSuminisMoreMedic.nombre}</td>
+            <td>${proveeSuminisMoreMedic.contacto}</td>
         </tr>
         `
     }); 
@@ -915,8 +915,8 @@ const mostrarmedicNoVenBodyce2023 = (pacienteCompraronParace2023) =>{
         <div class="card" style="width: 18rem;">
             <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">${pacienteParacc.Id}</h5>
-                <p class="card-text">${pacienteParacc.Nombre}</p>
+                <h5 class="card-title">${pacienteParacc.id}</h5>
+                <p class="card-text">${pacienteParacc.nombre}</p>
             </div>
         </div>
         `
@@ -993,8 +993,8 @@ const mostrarEmpleMenos5Vent2023 = (empleadosMenos5Ven2023) =>{
         <div class="card" style="width: 18rem;">
             <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">${empleadoMenos5Ventt.Id}</h5>
-                <p class="card-text">${empleadoMenos5Ventt.Nombre}</p>
+                <h5 class="card-title">${empleadoMenos5Ventt.id}</h5>
+                <p class="card-text">${empleadoMenos5Ventt.nombre}</p>
             </div>
         </div>
         `
@@ -1107,8 +1107,8 @@ const mostrarPacientNoCompraMedic = (pacientNoCompraron) =>{
         <div class="card" style="width: 18rem;">
             <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">${pacienteSinCom.Id}</h5>
-                <p class="card-text">${pacienteSinCom.Nombre}</p>
+                <h5 class="card-title">${pacienteSinCom.id}</h5>
+                <p class="card-text">${pacienteSinCom.nombre}</p>
             </div>
         </div>
         `
@@ -1146,8 +1146,8 @@ const mostrarMedisVendidosXMes2023 = (medisVendidoXMes) =>{
         <div class="card" style="width: 18rem;">
             <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">${medicamentoVenXMes.Id}</h5>
-                <p class="card-text">${medicamentoVenXMes.Nombre}</p>
+                <h5 class="card-title">${medicamentoVenXMes.id}</h5>
+                <p class="card-text">${medicamentoVenXMes.nombre}</p>
             </div>
         </div>
         `
@@ -1185,8 +1185,8 @@ const mostrarEmpleadoVendi = (empleadoVendidoMayorMedic) =>{
         <div class="card" style="width: 18rem;">
             <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">${empleadoMayorMedicDisnti.Id}</h5>
-                <p class="card-text">${empleadoMayorMedicDisnti.Nombre}</p>
+                <h5 class="card-title">${empleadoMayorMedicDisnti.id}</h5>
+                <p class="card-text">${empleadoMayorMedicDisnti.nombre}</p>
             </div>
         </div>
         `
@@ -1222,8 +1222,8 @@ const mostrarTotalPacientX2023 = (totalGastadoXPaci2023) =>{
     totalGastadoXPaci2023.forEach(pacienteTotalGast =>{
         listar += `
         <tr>
-            <th scope="row">${pacienteTotalGast.Id}</th>
-            <td>${pacienteTotalGast.Nombre}</td>
+            <th scope="row">${pacienteTotalGast.id}</th>
+            <td>${pacienteTotalGast.nombre}</td>
             <td>${pacienteTotalGast.TotalGastado}</td>
         </tr>
         `
@@ -1261,8 +1261,8 @@ const mostrarMedicamentosNoVendidos2023 = (mediNoVendido2023) =>{
         <div class="card" style="width: 18rem;">
             <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">${medicamentoNoVen2023.Id}</h5>
-                <p class="card-text">${medicamentoNoVen2023.Nombre}</p>
+                <h5 class="card-title">${medicamentoNoVen2023.id}</h5>
+                <p class="card-text">${medicamentoNoVen2023.nombre}</p>
             </div>
         </div>
         `
@@ -1298,9 +1298,9 @@ const mostrarProveeSumi5Medic2023 = (proveeSuminisAlmenos52023) =>{
     proveeSuminisAlmenos52023.forEach(provSuminis5MedicDifere =>{
         listar += `
         <tr>
-            <th scope="row">${provSuminis5MedicDifere.Id}</th>
-            <td>${provSuminis5MedicDifere.Nombre}</td>
-            <td>${provSuminis5MedicDifere.IdProveedorFk}</td>
+            <th scope="row">${provSuminis5MedicDifere.id}</th>
+            <td>${provSuminis5MedicDifere.nombre}</td>
+            <td>${provSuminis5MedicDifere.idProveedorFk}</td>
         </tr>
         `
     }); 
@@ -1373,8 +1373,8 @@ const mostrarEmpleadoSinVentas2023 = (empleSinVentas2023) =>{
     empleSinVentas2023.forEach(empleaSinVentt2023 =>{
         listar += `
         <tr>
-            <th scope="row">${empleaSinVentt2023.Id}</th>
-            <td>${empleaSinVentt2023.Nombre}</td>
+            <th scope="row">${empleaSinVentt2023.id}</th>
+            <td>${empleaSinVentt2023.nombre}</td>
         </tr>
         `
     }); 
@@ -1409,8 +1409,8 @@ const mostrarEmpleSinVentasEnAbril = (empleSinVentasEnAbril) =>{
     empleSinVentasEnAbril.forEach(empleaSinVentEnAbril =>{
         listar += `
         <tr>
-            <th scope="row">${empleaSinVentEnAbril.Id}</th>
-            <td>${empleaSinVentt2023.Nombre}</td>
+            <th scope="row">${empleaSinVentEnAbril.id}</th>
+            <td>${empleaSinVentt2023.nombre}</td>
         </tr>
         `
     }); 
@@ -1447,8 +1447,8 @@ const mostrarMedicPrecio50Stock100 = (medicPreci50StockMenor100) =>{
         <div class="card" style="width: 18rem;">
             <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">${medicamento500Y100.Id}</h5>
-                <p class="card-text">${medicamento500Y100.Nombre}</p>
+                <h5 class="card-title">${medicamento500Y100.id}</h5>
+                <p class="card-text">${medicamento500Y100.nombre}</p>
             </div>
         </div>
         `
