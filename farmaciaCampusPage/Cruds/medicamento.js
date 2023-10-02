@@ -46,10 +46,10 @@ const mostraarMedicamentos = (mnedicamentos) => {
             <td>${medicamento.nombre}</td>
             <td>${medicamento.precio}</td>
             <td>${medicamento.fechaExpiracion}</td>
-            <td>${medicamento.cantidad}</td>
-            <td>${medicamento.proveedor}</td>
-            <td>${medicamento.presentacion}</td>
-            <td>${medicamento.marca}</td>
+            <td>${medicamento.idInventarioFk.stock}</td>
+            <td>${medicamento.idProveedorFk}</td>
+            <td>${medicamento.idPresentacionFk}</td>
+            <td>${medicamento.idMarcaFk}</td>
             <td><button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEditar" onclick="editarMedicamento(${medicamento.id})">EDITAR</button></td>
             <td><button class="btn btn-danger" onclick="eliminarMedicamento(${medicamento.id})">ELIMINAR</button></td>
         </tr>
