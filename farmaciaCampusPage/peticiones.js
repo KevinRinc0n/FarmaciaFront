@@ -1032,7 +1032,7 @@ const mostrarProveeSumMedis = (totalProveeSumnisMedicamentos) =>{
         <div class="card divPeti" style="width: 18rem;">
             <img src="./imgs/moviInvent.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">${proveeSumMedic.TotalProveedores}</h5>
+                <h5 class="card-title">${proveeSumMedic.totalProveedores}</h5>
             </div>
         </div>
         `
@@ -1337,7 +1337,7 @@ const mostrarTotalMedicVen2023 = (medicVenTrimes2023) =>{
         <div class="card divPeti" style="width: 18rem;">
             <img src="./imgs/mediCard.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">${totalMedicTrimestre.Medicamentos}</h5>
+                <h5 class="card-title">${totalMedicTrimestre.medicamentos}</h5>
             </div>
         </div>
         `

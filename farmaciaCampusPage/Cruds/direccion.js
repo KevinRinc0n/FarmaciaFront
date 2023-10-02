@@ -22,8 +22,8 @@ const getDireccion = () => {
             direccionSelect.innerHTML = "";
             ddirecciones.forEach((ciudad) => {
                 const opcion = document.createElement("option");
-                opcion.value = ciudad.Id;
-                opcion.text = ciudad.IdCiudadFk;
+                opcion.value = ciudad.id;
+                opcion.text = ciudad.idCiudadFk;
                 direccionSelect.appendChild(opcion);
             });
         })

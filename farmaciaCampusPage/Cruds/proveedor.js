@@ -18,8 +18,8 @@ const getProveedores = () => {
         direccionSelect.innerHTML = "";
         pproveedores.forEach((direccion) => {
             const opcion = document.createElement("option");
-            opcion.value = direccion.Id;
-            opcion.textContent = direccion.Nombre; 
+            opcion.value = direccion.id;
+            opcion.textContent = direccion.nombre; 
             direccionSelect.appendChild(opcion);
         });
     })

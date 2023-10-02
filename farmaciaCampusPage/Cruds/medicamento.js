@@ -28,8 +28,8 @@ function llenarSelects(datos) {
         select.innerHTML = "";
         datos.forEach(dato => {
             const opcion = document.createElement("option");
-            opcion.value = dato.Id;
-            opcion.textContent = dato.Nombre;
+            opcion.value = dato.id;
+            opcion.textContent = dato.nombre;
             select.appendChild(opcion);
         });
     });

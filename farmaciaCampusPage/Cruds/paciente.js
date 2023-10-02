@@ -18,8 +18,8 @@ const getPacientes = () => {
 
             data.forEach((ciudad) => {
                 const opcion = document.createElement("option");
-                opcion.value = ciudad.Id;
-                opcion.text = ciudad.Nombre;
+                opcion.value = ciudad.id;
+                opcion.text = ciudad.nombre;
                 direccionSelect.appendChild(opcion);
             });
         })
