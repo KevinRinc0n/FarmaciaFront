@@ -30,7 +30,7 @@ export async function RefreshToken(){
     if (Date()>= getCookieValue(nombre)) {
         var seguir = window.confirm("Tu sesion ha caducado. ¿Deseas permanecer en e sitio?");
 
-        if (seguir) {
+        if (seguir == true) {
             const url = 'http://localhost:5297/User/refresh-token';
 
             var refreshToken = getCookieValue("miRefreshToken");
@@ -57,7 +57,7 @@ export async function RefreshToken(){
                     return response.json();
                 })
                 .then(result =>{
-                        console.log("Result:",result);
+                        /* console.log("Result:",result); */
                         var fechaActual = new Date();
                         var fechaFutura = new Date(fechaActual.getTime() + 5 * 60 * 1000);
 

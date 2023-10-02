@@ -1,4 +1,4 @@
-import { getCookieValue } from "./Cookies.js";
+/* import { getCookieValue } from "./Cookies.js";
 const token = getCookieValue("miToken");
 export function configuration(bodys = null, metodo =null){
     if (bodys == null && metodo == null) {
@@ -38,4 +38,4 @@ export function configuration(bodys = null, metodo =null){
             },
         };
     }
-}
+} */

@@ -3,15 +3,17 @@ import { rolpage } from "./Configuration/Cookies.js";
 var nombreCookie = "UserActivo";
 var nombreRol = "Rol";
 var seccionEmpleado = document.getElementById("agregaEmpleado");
-if (getCookieValue(nombreCookie)== "true" && getCookieValue(nombreRol) == "Administrador") {
-    seccionEmpleado.style.display = "block";
-}
-else if (getCookieValue(nombreCookie)== "true" && getCookieValue(nombreRol) == "Empleado") {
-    seccionEmpleado.style.display = "none";
-}
-else{
-    console.log("no tiene rol");
-}
+    if (getCookieValue(nombreCookie)== "true" && getCookieValue(nombreRol) == "Administrador") {
+        window.location.replace("../index.html");
+        seccionEmpleado.style.display = "block";
+    }
+    else if (getCookieValue(nombreCookie)== "true" && getCookieValue(nombreRol) == "Empleado") {
+        window.location.replace("../index.html");
+        seccionEmpleado.style.display = "none";
+    }
+    else{
+        console.log("no tiene rol");
+    }
 
 
 const login = document.getElementById("form");
@@ -41,7 +43,7 @@ login.addEventListener('submit',async (e) => {
         body: JSON.stringify(data)
     };
 
-try{
+
     await fetch(url, opciones)
     .then(response => {
         if (!response.ok) {
@@ -51,7 +53,7 @@ try{
         })
     .then(result => {
         
-        if (result.mesagge === "Usuario Existente"){
+        if (result.isAuthenticated === true){
 
             var fechaActual = new Date();
             var fechaFutura = new Date(fechaActual.getTime() + 5 * 60 * 1000);
@@ -74,8 +76,8 @@ try{
         }
         console.log("Resultado:", result);
     })
-}catch(error) {
+.catch(error=> {
             console.error("Error:", error);
             alert("Hubo un error al procesar la solicitud. Por favor, verifica la consola para más detalles.");
-        };
+        });
 });
