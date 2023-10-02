@@ -25,6 +25,7 @@ medis.addEventListener("click", function(){
     pacienCompraPara2023.style.display = "none";
     medicamenNoVendido.style.display = "none";
     medicamenExpi2024.style.display = "none";
+    cantidadVentaEmpleadoo.style.display = "none";
     pacienNoCompra2023.style.display = "none";
     medicamentosTotaParace.style.display = "none";
     medicamentosVenMazo2023.style.display = "none";
@@ -56,7 +57,7 @@ medis.addEventListener("click", function(){
     ganaciaXProvee2023.style.display = "none";
     proveeMenos50Medic.style.display = "none";
     pacienteMasDinero2023.style.display = "none";
-    totalGastXPacientrecetasDespues2023.style.display = "none";
+    // totalGastXPacientrecetasDespues2023.style.display = "none";
     comProveA.style.display = "none";
     agregaMedi.style.display = "none";
     agregaProvee.style.display = "none";
@@ -88,6 +89,7 @@ medicamentoComprado.addEventListener("click", function(){
     agregaPacienteReally.style.display = "none";
     medicamenNoVendido.style.display = "none";
     medicamenExpi2024.style.display = "none";
+    cantidadVentaEmpleadoo.style.display = "none";
     pacienNoCompra2023.style.display = "none";
     medicamentosTotaParace.style.display = "none";
     medicamentosVenMazo2023.style.display = "none";
@@ -119,7 +121,7 @@ medicamentoComprado.addEventListener("click", function(){
     ganaciaXProvee2023.style.display = "none";
     proveeMenos50Medic.style.display = "none";
     pacienteMasDinero2023.style.display = "none";
-    totalGastXPacientrecetasDespues2023.style.display = "none";
+    // totalGastXPacientrecetasDespues2023.style.display = "none";
     comProveA.style.display = "none";
     agregaMedi.style.display = "none";
     agregaProvee.style.display = "none";
@@ -152,6 +154,7 @@ pacienteCompra.addEventListener("click", function(){
     agregaPacienteReally.style.display = "none";
     medicamenNoVendido.style.display = "none";
     medicamenExpi2024.style.display = "none";
+    cantidadVentaEmpleadoo.style.display = "none";
     pacienNoCompra2023.style.display = "none";
     medicamentosTotaParace.style.display = "none";
     medicamentosVenMazo2023.style.display = "none";
@@ -183,7 +186,7 @@ pacienteCompra.addEventListener("click", function(){
     ganaciaXProvee2023.style.display = "none";
     proveeMenos50Medic.style.display = "none";
     pacienteMasDinero2023.style.display = "none";
-    totalGastXPacientrecetasDespues2023.style.display = "none";
+    // totalGastXPacientrecetasDespues2023.style.display = "none";
     comProveA.style.display = "none";
     agregaMedi.style.display = "none";
     agregaProvee.style.display = "none";
@@ -215,6 +218,7 @@ medisVenta.addEventListener("click", function(){
     agregaPacienteReally.style.display = "none";
     medicamenNoVendido.style.display = "none";
     medicamenExpi2024.style.display = "none";
+    cantidadVentaEmpleadoo.style.display = "none";
     pacienNoCompra2023.style.display = "none";
     medicamentosTotaParace.style.display = "none";
     medicamentosVenMazo2023.style.display = "none";
@@ -246,7 +250,7 @@ medisVenta.addEventListener("click", function(){
     ganaciaXProvee2023.style.display = "none";
     proveeMenos50Medic.style.display = "none";
     pacienteMasDinero2023.style.display = "none";
-    totalGastXPacientrecetasDespues2023.style.display = "none";
+    // totalGastXPacientrecetasDespues2023.style.display = "none";
     comProveA.style.display = "none";
     agregaMedi.style.display = "none";
     agregaProvee.style.display = "none";
@@ -278,6 +282,7 @@ empleVentas.addEventListener("click", function(){
     agregaPacienteReally.style.display = "none";
     medicamenNoVendido.style.display = "none";
     medicamenExpi2024.style.display = "none";
+    cantidadVentaEmpleadoo.style.display = "none";
     pacienNoCompra2023.style.display = "none";
     medicamentosTotaParace.style.display = "none";
     medicamentosVenMazo2023.style.display = "none";
@@ -309,7 +314,7 @@ empleVentas.addEventListener("click", function(){
     ganaciaXProvee2023.style.display = "none";
     proveeMenos50Medic.style.display = "none";
     pacienteMasDinero2023.style.display = "none";
-    totalGastXPacientrecetasDespues2023.style.display = "none";
+    // totalGastXPacientrecetasDespues2023.style.display = "none";
     comProveA.style.display = "none";
     agregaMedi.style.display = "none";
     agregaProvee.style.display = "none";
@@ -341,6 +346,7 @@ listProvedoVenta.addEventListener("click", function(){
     agregaPacienteReally.style.display = "none";
     medicamenNoVendido.style.display = "none";
     medicamenExpi2024.style.display = "none";
+    cantidadVentaEmpleadoo.style.display = "none";
     pacienNoCompra2023.style.display = "none";
     medicamentosTotaParace.style.display = "none";
     medicamentosVenMazo2023.style.display = "none";
@@ -372,7 +378,7 @@ listProvedoVenta.addEventListener("click", function(){
     ganaciaXProvee2023.style.display = "none";
     proveeMenos50Medic.style.display = "none";
     pacienteMasDinero2023.style.display = "none";
-    totalGastXPacientrecetasDespues2023.style.display = "none";
+    // totalGastXPacientrecetasDespues2023.style.display = "none";
     comProveA.style.display = "none";
     agregaMedi.style.display = "none";
     agregaProvee.style.display = "none";
@@ -404,6 +410,7 @@ proveeList.addEventListener("click", function(){
     agregaPacienteReally.style.display = "none";
     medicamenNoVendido.style.display = "none";
     medicamenExpi2024.style.display = "none";
+    cantidadVentaEmpleadoo.style.display = "none";
     pacienNoCompra2023.style.display = "none";
     medicamentosTotaParace.style.display = "none";
     medicamentosVenMazo2023.style.display = "none";
@@ -435,7 +442,7 @@ proveeList.addEventListener("click", function(){
     ganaciaXProvee2023.style.display = "none";
     proveeMenos50Medic.style.display = "none";
     pacienteMasDinero2023.style.display = "none";
-    totalGastXPacientrecetasDespues2023.style.display = "none";
+    // totalGastXPacientrecetasDespues2023.style.display = "none";
     comProveA.style.display = "none";
     agregaMedi.style.display = "none";
     agregaProvee.style.display = "none";
@@ -467,6 +474,7 @@ pacientList.addEventListener("click", function(){
     agregaPacienteReally.style.display = "none";
     medicamenNoVendido.style.display = "none";
     medicamenExpi2024.style.display = "none";
+    cantidadVentaEmpleadoo.style.display = "none";
     pacienNoCompra2023.style.display = "none";
     medicamentosTotaParace.style.display = "none";
     medicamentosVenMazo2023.style.display = "none";
@@ -498,7 +506,7 @@ pacientList.addEventListener("click", function(){
     ganaciaXProvee2023.style.display = "none";
     proveeMenos50Medic.style.display = "none";
     pacienteMasDinero2023.style.display = "none";
-    totalGastXPacientrecetasDespues2023.style.display = "none";
+    // totalGastXPacientrecetasDespues2023.style.display = "none";
     comProveA.style.display = "none";
     agregaMedi.style.display = "none";
     agregaProvee.style.display = "none";
@@ -530,6 +538,7 @@ recetaList.addEventListener("click", function(){
     agregaPacienteReally.style.display = "none";
     medicamenNoVendido.style.display = "none";
     medicamenExpi2024.style.display = "none";
+    cantidadVentaEmpleadoo.style.display = "none";
     pacienNoCompra2023.style.display = "none";
     medicamentosTotaParace.style.display = "none";
     medicamentosVenMazo2023.style.display = "none";
@@ -561,7 +570,7 @@ recetaList.addEventListener("click", function(){
     ganaciaXProvee2023.style.display = "none";
     proveeMenos50Medic.style.display = "none";
     pacienteMasDinero2023.style.display = "none";
-    totalGastXPacientrecetasDespues2023.style.display = "none";
+    // totalGastXPacientrecetasDespues2023.style.display = "none";
     comProveA.style.display = "none";
     agregaMedi.style.display = "none";
     agregaProvee.style.display = "none";
@@ -593,6 +602,7 @@ aggMedica.addEventListener("click", function(){
     agregaPacienteReally.style.display = "none";
     medicamenNoVendido.style.display = "none";
     medicamenExpi2024.style.display = "none";
+    cantidadVentaEmpleadoo.style.display = "none";
     pacienNoCompra2023.style.display = "none";
     medicamentosTotaParace.style.display = "none";
     medicamentosVenMazo2023.style.display = "none";
@@ -624,7 +634,7 @@ aggMedica.addEventListener("click", function(){
     ganaciaXProvee2023.style.display = "none";
     proveeMenos50Medic.style.display = "none";
     pacienteMasDinero2023.style.display = "none";
-    totalGastXPacientrecetasDespues2023.style.display = "none";
+    // totalGastXPacientrecetasDespues2023.style.display = "none";
     comProveA.style.display = "none";
     agregaProvee.style.display = "none";
     agregaPaciente.style.display = "none";
@@ -656,6 +666,7 @@ aggProvee.addEventListener("click", function(){
     agregaPacienteReally.style.display = "none";
     medicamenNoVendido.style.display = "none";
     medicamenExpi2024.style.display = "none";
+    cantidadVentaEmpleadoo.style.display = "none";
     pacienNoCompra2023.style.display = "none";
     medicamentosTotaParace.style.display = "none";
     medicamentosVenMazo2023.style.display = "none";
@@ -687,7 +698,7 @@ aggProvee.addEventListener("click", function(){
     ganaciaXProvee2023.style.display = "none";
     proveeMenos50Medic.style.display = "none";
     pacienteMasDinero2023.style.display = "none";
-    totalGastXPacientrecetasDespues2023.style.display = "none";
+    // totalGastXPacientrecetasDespues2023.style.display = "none";
     comProveA.style.display = "none";
     agregaPaciente.style.display = "none";
     ocultarMain.style.display = "none";
@@ -718,6 +729,7 @@ aggPacient.addEventListener("click", function(){
     agregaPacienteReally.style.display = "none";
     medicamenNoVendido.style.display = "none";
     medicamenExpi2024.style.display = "none";
+    cantidadVentaEmpleadoo.style.display = "none";
     pacienNoCompra2023.style.display = "none";
     medicamentosTotaParace.style.display = "none";
     medicamentosVenMazo2023.style.display = "none";
@@ -749,7 +761,7 @@ aggPacient.addEventListener("click", function(){
     ganaciaXProvee2023.style.display = "none";
     proveeMenos50Medic.style.display = "none";
     pacienteMasDinero2023.style.display = "none";
-    totalGastXPacientrecetasDespues2023.style.display = "none";
+    // totalGastXPacientrecetasDespues2023.style.display = "none";
     comProveA.style.display = "none";
     ocultarMain.style.display = "none";
     medisCompras.style.display = "none";
@@ -779,6 +791,7 @@ aggEmpl.addEventListener("click", function(){
     agregaPacienteReally.style.display = "none";
     medicamenNoVendido.style.display = "none";
     medicamenExpi2024.style.display = "none";
+    cantidadVentaEmpleadoo.style.display = "none";
     pacienNoCompra2023.style.display = "none";
     medicamentosTotaParace.style.display = "none";
     medicamentosVenMazo2023.style.display = "none";
@@ -810,7 +823,7 @@ aggEmpl.addEventListener("click", function(){
     ganaciaXProvee2023.style.display = "none";
     proveeMenos50Medic.style.display = "none";
     pacienteMasDinero2023.style.display = "none";
-    totalGastXPacientrecetasDespues2023.style.display = "none";
+    // totalGastXPacientrecetasDespues2023.style.display = "none";
     comProveA.style.display = "none";
     ocultarMain.style.display = "none";
     medisCompras.style.display = "none";
@@ -842,6 +855,7 @@ aggPacientRll.addEventListener("click", function(){
     agregaEmpleado.style.display  = "none";
     medicamenNoVendido.style.display  = "none";
     medicamenExpi2024.style.display  = "none";
+    cantidadVentaEmpleadoo.style.display = "none";
     pacienNoCompra2023.style.display  = "none";
     medicamentosTotaParace.style.display  = "none";
     medicamentosVenMazo2023.style.display  = "none";
@@ -873,7 +887,7 @@ aggPacientRll.addEventListener("click", function(){
     ganaciaXProvee2023.style.display  = "none";
     proveeMenos50Medic.style.display  = "none";
     pacienteMasDinero2023.style.display  = "none";
-    totalGastXPacientrecetasDespues2023.style.display  = "none";
+    // totalGastXPacientrecetasDespues2023.style.display  = "none";
     comProveA.style.display = "none";
     ocultarMain.style.display = "none";
     medisCompras.style.display = "none";
@@ -935,8 +949,8 @@ var proveeMenos50Medic = document.getElementById("proveeMenos50Medic");
 var pacienteMasDinero2023 = document.getElementById("pacienteMasDinero2023");
 var totalGastXPacient = document.getElementById("totalGastXPacient");
 var recetasDespues2023 = document.getElementById("recetasDespues2023");
-var totalGastXPacientrecetasDespues2023 = document.getElementById("totalGastXPacientrecetasDespues2023");
-
+// // var totalGastXPacientrecetasDespues2023 = document.getElementById("totalGastXPacientrecetasDespues2023");
+var cantidadVentaEmpleadoo = document.getElementById("cantidadVentaEmpleadoo");
 
 var medicComProveeA = document.getElementById("comProveA");
 medicComProveeA.addEventListener("click", function(){
@@ -1124,11 +1138,11 @@ medic50100.addEventListener("click", function(){
     medicamentosPre50Stock100.style.display = "flex";
 });
 
-var proveedoInfoContacto = document.getElementById("provInfoContacto");
-proveedoInfoContacto.addEventListener("click", function(){
-    proveeListar.style.display = "none";
-    proveeInfoContacto.style.display = "flex";
-});
+// var proveedoInfoContacto = document.getElementById("provInfoContacto");
+// proveedoInfoContacto.addEventListener("click", function(){
+//     proveeListar.style.display = "none";
+//     proveeInfoContacto.style.display = "flex";
+// });
 
 var cantiMedicaXProvee = document.getElementById("cantidadMedicXProvee");
 cantiMedicaXProvee.addEventListener("click", function(){
@@ -1164,4 +1178,10 @@ var recetas = document.getElementById("recetasMedicDespues2023");
 recetas.addEventListener("click", function(){
     recetaListar.style.display = "none";
     recetasDespues2023.style.display = "flex";
+});
+
+var cantiddVentaEmpleadoo = document.getElementById("provInfoContacto");
+cantiddVentaEmpleadoo.addEventListener("click", function(){
+    empleeVentas.style.display = "none";
+    cantidadVentaEmpleadoo.style.display = "flex";
 });

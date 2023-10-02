@@ -1,28 +1,27 @@
-const url = "http://localhost:5297/api/Proveedor";
+const urlProvee = "http://localhost:5297/api/Proveedor";
 let proveedores = [];
 
 window.addEventListener("DOMContentLoaded", () => {
     getProveedores();
 });
 
-const getProveedores = () =>{
-    fetch(url)
+const getProveedores = () => {
+    fetch(urlProvee)
     .then(respuesta => respuesta.json())
     .then(data => {
         proveedores = data;
         console.log(proveedores);
         mostrarProveedores(proveedores);
-    const direccionSelect = document.getElementById("inputDirec");
 
-    direccionSelect.forEach((select) => {
-        select.innerHTML = "";
+        const direccionSelect = document.getElementById("inputDirec");
 
-        datos.forEach((direccion) => {
+        direccionSelect.innerHTML = "";
+        proveedores.forEach((direccion) => {
             const opcion = document.createElement("option");
             opcion.value = direccion.Id;
-            select.appendChild(opcion);
+            opcion.textContent = direccion.Nombre; 
+            direccionSelect.appendChild(opcion);
         });
-    });
     })
     .catch(error => {
         alert("error", "Ha ocurrido un problema");
@@ -31,40 +30,38 @@ const getProveedores = () =>{
 
 const contenedorProveedores = document.getElementById("aggProveeBody");
 
-const mostrarProveedores = (proveedores) =>{
+const mostrarProveedores = (proveedores) => {
     let listar = "";
-    proveedores.foreach(proveedor =>{
+    proveedores.forEach(proveedor => {
         listar += `
         <tr>
             <th scope="row">${proveedor.Id}</th>
             <td>${proveedor.Nombre}</td>
             <td>${proveedor.Contacto}</td>
             <td>${proveedor.IdDireccionFk}</td>
-            <td><button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEditar" onclick="editarMedicamento(${proveedor.Id})>EDITAR</button></td>
-            <td><button class="btn btn-danger" onclick="eliminarrMedicamento(${proveedor.Id})>ELIMINAR</button></td>
+            <td><button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEditar" onclick="editarProveedor(${proveedor.Id})">EDITAR</button></td>
+            <td><button class="btn btn-danger" onclick="eliminarProveedor(${proveedor.Id})">ELIMINAR</button></td>
         </tr>
-        `
-    }); 
+        `;
+    });
     contenedorProveedores.innerHTML = listar;
 };
 
 const crearProveedor = () => {
     const formulario = document.getElementById("agregaProvee");
-    if (!formulario.getElementById('inputName').lenght || formulario.getElementById('inputContact').lenght || formulario.getElementById('inputDirec').lenght)
-    {
+    if (!formulario.getElementById('inputName').value || !formulario.getElementById('inputContact').value || !formulario.getElementById('inputDirec').value) {
         alert("DEBES LLENAR TODOS LOS CAMPOS");
         return;
+    }
+
+    const empleado = {
+        Nombre: formulario.getElementById("inputName").value,
+        Contacto: formulario.getElementById("inputContact").value,
+        IdDireccionFk: formulario.getElementById("inputDirec").value
     };
+    console.log(empleado);
 
-
-const empleado = {
-    Nombre: formulario.getElementById("inputName"),
-    Contacto: formulario.getElementById("inputContact"),
-    IdDireccionFk: formulario.getElementById("inputDirec")
-};
-console.log(empleado);
-
-    fetch(url,{
+    fetch(urlProvee, {
         method: "POST",
         body: JSON.stringify(empleado),
         headers: {
@@ -72,58 +69,55 @@ console.log(empleado);
         }
     })
     .then(respuesta => respuesta.json())
-    .then(respuestaa => {
-        alert("success", respuestaa,mensaje);
-        getProvee();
+    .then(respuesta => {
+        alert("success", respuesta.mensaje);
+        getProveedores();
     })
-    .catch(error =>{
+    .catch(error => {
         alert("error", error);
         document.getElementById("contenedor").reset();
     });
 };
 
-const editarProvee = (id) =>{
+const editarProveedor = (id) => {
     let prov = {};
-    proveedores.filter(provv => {
-        if(provv.Id == id){
+    proveedores.forEach(provv => {
+        if (provv.Id == id) {
             prov = provv;
-        };
+        }
     });
 
     const direccionSelect = document.getElementById("editaDireccion");
 
-    direccionSelect.forEach((select) => {
-        select.innerHTML = "";
-
-        datos.forEach((direccion) => {
-            const opcion = document.createElement("option");
-            opcion.value = direccion.Id;
-            select.appendChild(opcion);
-        });
+    direccionSelect.innerHTML = "";
+    proveedores.forEach((direccion) => {
+        const opcion = document.createElement("option");
+        opcion.value = direccion.Id;
+        opcion.textContent = direccion.Nombre; 
+        direccionSelect.appendChild(opcion);
     });
 
     document.getElementById("editaName").value = prov.Nombre;
     document.getElementById("editaContacto").value = prov.Contacto;
     document.getElementById("editaDireccion").value = prov.IdDireccionFk;
 
-    console.log(prov)
-    modalEdit();
+    console.log(prov);
 };
 
-const subirProveedor = () =>{
+const subirProveedor = () => {
     const empleado = {
         Nombre: document.getElementById("inputName").value,
         Contacto: document.getElementById("inputContact").value,
         IdDireccionFk: document.getElementById("inputDirec").value
     };
 
-    if (!empleado.Nombre || empleado.Contacto || empleado.IdDireccionFk){
+    if (!empleado.Nombre || !empleado.Contacto || !empleado.IdDireccionFk) {
         alert("DEBES LLENAR TODOS LOS CAMPOS");
         return;
-    };
-    document.getElementById("").innerHTML = "";
+    }
+    document.getElementById("agregaProvee").reset();
 
-    fetch(url,{
+    fetch(urlProvee, {
         method: "PUT",
         body: JSON.stringify(empleado),
         headers: {
@@ -131,27 +125,25 @@ const subirProveedor = () =>{
         }
     })
     .then(respuesta => respuesta.json())
-    .then(respuestaa => {
-        alert("success", respuestaa,mensaje);
+    .then(respuesta => {
+        alert("success", respuesta.mensaje);
         getProveedores();
     })
-    .catch(error =>{
+    .catch(error => {
         alert("error", error);
     });
-    document.getElementById("").reset();
 };
 
-const eliminarProveedor = (id) =>{
-    fetch(`${url}/${id}`,{
-        method : "DELETE"
+const eliminarProveedor = (id) => {
+    fetch(`${urlProvee}/${id}`, {
+        method: "DELETE"
     })
-
     .then(respuesta => respuesta.json())
-    .then(respuestaa =>{
-        alert("success", respuestaa.mensaje);
+    .then(respuesta => {
+        alert("success", respuesta.mensaje);
         getProveedores();
     })
-    .catch(error =>{
+    .catch(error => {
         alert("error", error);
     });
 };

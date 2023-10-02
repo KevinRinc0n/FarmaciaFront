@@ -484,19 +484,6 @@
 				<div class="card">
 					<a class="card1" href="#">
 					<img class="imgCard" src="./imgs/proveedor.jpg" alt="">
-						<p class="small">OBTEN PROVEEDORES CON INFORMACIÓN DE CONTACTO</p>
-						<div class="go-corner" href="#">
-							<div class="go-arrow" id="provInfoContacto">
-								→
-							</div>
-						</div>
-					</a>
-				</div>
-			</div>
-			<div>
-				<div class="card">
-					<a class="card1" href="#">
-					<img class="imgCard" src="./imgs/proveedor.jpg" alt="">
 						<p class="small">OBTEN CANTIDAD MEDICAMENTOS POR PROVEEDOR</p>
 						<div class="go-corner" href="#">
 							<div class="go-arrow" id="cantidadMedicXProvee">
@@ -526,6 +513,19 @@
 						<p class="small">OBTEN PROVEEDORES MENOS DE 50 UNIDADES MEDICAMENTOS</p>
 						<div class="go-corner" href="#">
 							<div class="go-arrow" id="proveeMenos50Medicamentos">
+								→
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div>
+				<div class="card">
+					<a class="card1" href="#">
+					<img class="imgCard" src="./imgs/proveedor.jpg" alt="">
+						<p class="small">CANTIDAD DE VENTA EMPLEADO</p>
+						<div class="go-corner" href="#">
+							<div class="go-arrow" id="provInfoContacto">
 								→
 							</div>
 						</div>
@@ -628,15 +628,15 @@
 			</table>
 		</div>
 		<div id="agregaProvee">
-			<div class="form-floating mb-3 medisInput">
+			<div class="form-floating mb-3 proveInput">
 				<input type="text" class="form-control" id="inputName" placeholder="name@example.com">
 				<label for="floatingInput">NOMBRE</label>
 			</div>
-			<div class="form-floating mb-3 medisInput">
+			<div class="form-floating mb-3 proveInput">
 				<input type="number" class="form-control" id="inputContact" placeholder="name@example.com">
 				<label for="floatingInput">CONTACTO</label>
 			</div>
-			<select class="form-select medisInput" aria-label="Default select example" id="inputDirec">
+			<select class="form-select proveInput" aria-label="Default select example" id="inputDirec">
 				<option selected>SELECCIONA TU DIRECCION</option>
 			</select>
 			<button type="button" class="btn btn-warning btEnviUbi" onclick="crearProveedor()">Enviar</button>
@@ -678,7 +678,7 @@
 			<select class="form-select medisInput" aria-label="Default select example" id="inputCiudad">
 				<option selected>SELECCIONA LA CIUDAD</option>
 			</select>
-			<button type="button" class="btn btn-warning btEnviUbi" onclick="crearDireccion()">Enviar</button>
+			<button type="button" class="btn btn-warning btEnviDirec" onclick="crearDireccion()">Enviar</button>
 			<table class="table">
 				<thead>
 				  <tr>
@@ -697,19 +697,19 @@
 			</table>
 		</div>
 		<div id="agregaPacienteReally">
-			<div class="form-floating mb-3 medisInput">
+			<div class="form-floating mb-3 empleaInput">
 				<input type="text" class="form-control" id="inputNaame" placeholder="name@example.com">
 				<label for="floatingInput">NOMBRE</label>
 			</div>
-			<div class="form-floating mb-3 medisInput">
+			<div class="form-floating mb-3 empleaInput">
 				<input type="number" class="form-control" id="inputTelefono" placeholder="name@example.com">
 				<label for="floatingInput">TELEFONO</label>
 			</div>
-			<select class="form-select medisInput" aria-label="Default select example" id="inputDireccion">
+			<select class="form-select paciInput" aria-label="Default select example" id="inputDireccion">
 				<option selected>SELECCIONA TU DIRECCION</option>
 			</select>
-			<button type="button" class="btn btn-warning btEnviUbi" onclick="crearPaciente()">Enviar</button>
-			<table class="table">
+			<button type="button" class="btn btn-warning btEnviEmple" onclick="crearPaciente()">Enviar</button>
+			<table class="table tableEmple">
 				<thead>
 				  <tr>
 					<th scope="col">Id</th>
@@ -724,32 +724,33 @@
 			</table>
 		</div>
 		<div id="agregaEmpleado">
-			<div class="form-floating mb-3 medisInput">
+			<div class="form-floating mb-3 empleaInput">
 				<input type="text" class="form-control" id="inputNombre" placeholder="name@example.com">
 				<label for="floatingInput">Nombre</label>
 			</div>
-			<div class="form-floating mb-3 medisInput">
+			<div class="form-floating mb-3 empleaInput">
 				<input type="number" class="form-control" id="inputCargo" placeholder="name@example.com">
 				<label for="floatingInput">Cargo</label>
 			</div>
-			<div class="form-floating mb-3 medisInput">
+			<div class="form-floating mb-3 empleaInput">
 				<input type="date" class="form-control" id="inputFechaContratacion" placeholder="name@example.com">
-				<label for="floatingInput">Fecha Contratacion</label>
 			</div>
-			<button type="button" class="btn btn-warning btEnviUbi" onclick="crearEmpleado()">Enviar</button>
-			<table class="table">
-				<thead>
-				  <tr>
-					<th scope="col">Id</th>
-					<th scope="col">Nombre</th>
-					<th scope="col">Cargo</th>
-					<th scope="col">Fecha Contratacion</th>
-					<th scope="col">Editar</th>
-					<th scope="col">Eliminar</th>
-				  </tr>
-				</thead>
-				<tbody id="aggEmpleadoBody"></tbody>
-			</table>
+			<button type="button" class="btn btn-warning btEnviEmple" onclick="crearEmpleado()">Enviar</button>
+			<div class="divTable">
+				<table class="table tableEmple">
+					<thead>
+					<tr>
+						<th scope="col">Id</th>
+						<th scope="col">Nombre</th>
+						<th scope="col">Cargo</th>
+						<th scope="col">Fecha Contratacion</th>
+						<th scope="col">Editar</th>
+						<th scope="col">Eliminar</th>
+					</tr>
+					</thead>
+					<tbody id="aggEmpleadoBody"></tbody>
+				</table>
+			</div>
 		</div>
 		<!-- -->
 		<div id="medicamentosProveeA">aa</div>
@@ -759,7 +760,6 @@
 				  <tr>
 					<th scope="col">Id</th>
 					<th scope="col">Nombre</th>
-					<th scope="col">Precio</th>
 					<th scope="col">Editar</th>
 					<th scope="col">Eliminar</th>
 				  </tr>
@@ -945,7 +945,7 @@
 				<tbody id="recetasBody"></tbody>
 			</table>
 		</div>
-		<div id="totalGastXPacientrecetasDespues2023">aa</div>
+		<div id="cantidadVentaEmpleadoo">aa</div>
 		<!-- MAIN -->
 		<main id="main">
 			

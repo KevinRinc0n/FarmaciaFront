@@ -1,65 +1,45 @@
-const url = "http://localhost:5297/api/Medicamento";
+const urlMedi = "http://localhost:5297/api/Medicamento";
 let medicaments = [];
 
 window.addEventListener("DOMContentLoaded", () => {
     getMedic();
 });
 
-const getMedic = () =>{
-    fetch(url)
-    .then(respuesta => respuesta.json())
-    .then(data => {
-        medicaments = data;
-        console.log(medicaments);
-        mostrarMedicamentos(medicaments);
-    const proveedorSelect = document.getElementById("selectProvee");
-
-    proveedorSelect.forEach((select) => {
-        select.innerHTML = "";
-
-        datos.forEach((proveedorr) => {
-            const opcion = document.createElement("option");
-            opcion.value = proveedorr.Id;
-            opcion.textContent = proveedorr.Nombre;
-            select.appendChild(opcion);
+const getMedic = () => {
+    fetch(urlMedi)
+        .then(respuesta => respuesta.json())
+        .then(data => {
+            medicaments = data;
+            console.log(medicaments);
+            mostrarMedicamentos(medicaments);
+            llenarSelects(datos);
+        })
+        .catch(error => {
+            alert("Ha ocurrido un problema al obtener los medicamentos.");
+            console.error(error);
         });
-    });
-    const presentacionSelect = document.getElementById("selectPresentac");
-
-    presentacionSelect.forEach((select) => {
-        select.innerHTML = "";
-
-        datos.forEach((presentacion) => {
-            const opcion = document.createElement("option");
-            opcion.value = presentacion.Id;
-            opcion.textContent = presentacion.Nombre;
-            select.appendChild(opcion);
-        });
-    });
-    const marcaSelect = document.getElementById("selectMarca");
-
-    marcaSelect.forEach((select) => {
-        select.innerHTML = "";
-
-        datos.forEach((marca) => {
-            const opcion = document.createElement("option");
-            opcion.value = marca.Id;
-            opcion.textContent = marca.Nombre;
-            select.appendChild(opcion);
-        });
-    });
-
-    })
-    .catch(error => {
-        alert("error", "Ha ocurrido un problema");
-    });
 };
+
+function llenarSelects(datos) {
+    const selects = ["selectProvee", "selectPresentac", "selectMarca"];
+
+    selects.forEach(selectId => {
+        const select = document.getElementById(selectId);
+        select.innerHTML = "";
+        datos.forEach(dato => {
+            const opcion = document.createElement("option");
+            opcion.value = dato.Id;
+            opcion.textContent = dato.Nombre;
+            select.appendChild(opcion);
+        });
+    });
+}
 
 const contenedorMedicamentos = document.getElementById("aggMedicBody");
 
-const mostrarMedicamentos = (medicamentos) =>{
+const mostrarMedicamentos = (medicamentos) => {
     let listar = "";
-    medicamentos.foreach(medicamento =>{
+    medicamentos.forEach(medicamento => {
         listar += `
         <tr>
             <th scope="row">${medicamento.Id}</th>
@@ -70,167 +50,150 @@ const mostrarMedicamentos = (medicamentos) =>{
             <td>${medicamento.Proveedor}</td>
             <td>${medicamento.Presentacion}</td>
             <td>${medicamento.Marca}</td>
-            <td><button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEditar" onclick="editarMedicamento(${medicamento.Id})>EDITAR</button></td>
-            <td><button class="btn btn-danger" onclick="eliminarrMedicamento(${medicamento.Id})>ELIMINAR</button></td>
+            <td><button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEditar" onclick="editarMedicamento(${medicamento.Id})">EDITAR</button></td>
+            <td><button class="btn btn-danger" onclick="eliminarMedicamento(${medicamento.Id})">ELIMINAR</button></td>
         </tr>
-        `
-    }); 
+        `;
+    });
     contenedorMedicamentos.innerHTML = listar;
 };
 
 const crearMedicamento = () => {
     const formulario = document.getElementById("agregaMedi");
-    if (!formulario.getElementById('nombreMedic').lenght || formulario.getElementById('precioMedic').lenght || formulario.getElementById('fechaExpiMedic').lenght || formulario.getElementById('cantidadMedic').lenght || formulario.getElementById('selectProvee').lenght || formulario.getElementById('selectPresentac').lenght || formulario.getElementById('selectMarca').lenght)
-    {
+
+    const nombre = formulario.getElementById("nombreMedic").value;
+    const precio = formulario.getElementById("precioMedic").value;
+    const fechaExpiracion = formulario.getElementById("fechaExpiMedic").value;
+    const cantidad = formulario.getElementById("cantidadMedic").value;
+    const proveedor = formulario.getElementById("selectProvee").value;
+    const presentacion = formulario.getElementById("selectPresentac").value;
+    const marca = formulario.getElementById("selectMarca").value;
+
+    if (!nombre || !precio || !fechaExpiracion || !cantidad || !proveedor || !presentacion || !marca) {
         alert("DEBES LLENAR TODOS LOS CAMPOS");
         return;
+    }
+
+    const medicamento = {
+        Nombre: nombre,
+        Precio: precio,
+        FechaExpiracion: fechaExpiracion,
+        Stock: cantidad,
+        IdProveedorFk: proveedor,
+        IdPresentacionFk: presentacion,
+        IdMarcaFk: marca
     };
 
-
-const medicamento = {
-    Nombre: formulario.getElementById("nombreMedic"),
-    Precio: formulario.getElementById("precioMedic"),
-    FechaExpiracion: formulario.getElementById("fechaExpiMedic"),
-    Stock: formulario.getElementById("cantidadMedic"),
-    IdProveedorFk: formulario.getElementById("selectProvee"),
-    IdPresentacionFk: formulario.getElementById("selectPresentac"),
-    IdMarcaFk: formulario.getElementById("selectMarca")
-};
-console.log(medicamento);
-
-    fetch(url,{
+    fetch(urlMedi, {
         method: "POST",
         body: JSON.stringify(medicamento),
         headers: {
             "Content-Type": "application/json"
         }
     })
-    .then(respuesta => respuesta.json())
-    .then(respuestaa => {
-        alert("success", respuestaa,mensaje);
-        getMedic();
-    })
-    .catch(error =>{
-        alert("error", error);
-        document.getElementById("contenedor").reset();
-    });
+        .then(respuesta => respuesta.json())
+        .then(respuestaa => {
+            alert("Medicamento creado exitosamente.");
+            getMedic();
+        })
+        .catch(error => {
+            alert("Ha ocurrido un error al crear el medicamento.");
+            console.error(error);
+        });
 };
 
-const editarMedicamento= (id) =>{
-    let medicamento = {};
-    medicaments.filter(medicament => {
-        if(medicament.Id == id){
-            medicamento = medicament;
-        };
-    });
+const editarMedicamento = (id) => {
+    const medicamento = medicaments.find(medicament => medicament.Id === id);
 
-    const proveedorSelect = document.getElementById("medicProveEditar");
+    if (!medicamento) {
+        alert("Medicamento no encontrado.");
+        return;
+    }
 
-    proveedorSelect.forEach((select) => {
-        select.innerHTML = "";
+    const editarNombre = document.getElementById("editarNombre");
+    const editarPrecio = document.getElementById("editarPrecio");
+    const editarFecha = document.getElementById("editarFecha");
+    const editarCantidad = document.getElementById("editarCantidad");
+    const medicProveEditar = document.getElementById("medicProveEditar");
+    const medicPresentaEditar = document.getElementById("medicPresentaEditar");
+    const medicMarcaeEditar = document.getElementById("medicMarcaeEditar");
 
-        datos.forEach((proveedorr) => {
-            const opcion = document.createElement("option");
-            opcion.value = proveedorr.Id;
-            opcion.textContent = proveedorr.Nombre;
-            select.appendChild(opcion);
-        });
-    });
-    const presentacionSelect = document.getElementById("medicPresentaEditar");
-
-    presentacionSelect.forEach((select) => {
-        select.innerHTML = "";
-
-        datos.forEach((presentacion) => {
-            const opcion = document.createElement("option");
-            opcion.value = presentacion.Id;
-            opcion.textContent = presentacion.Nombre;
-            select.appendChild(opcion);
-        });
-    });
-    const marcaSelect = document.getElementById("medicMarcaeEditar");
-
-    marcaSelect.forEach((select) => {
-        select.innerHTML = "";
-
-        datos.forEach((marca) => {
-            const opcion = document.createElement("option");
-            opcion.value = marca.Id;
-            opcion.textContent = marca.Nombre;
-            select.appendChild(opcion);
-        });
-    });
-    
-    document.getElementById("editarNombre").value = medicamento.Nombre;
-    document.getElementById("editarPrecio").value = medicamento.Precio;
-    document.getElementById("editarFecha").value = medicamento.FechaExpiracion;
-    document.getElementById("editarCantidad").value = medicamento.Stock;
-    document.getElementById("medicProveEditar").value = medicamento.IdProveedorFk;
-    document.getElementById("medicPresentaEditar").value = medicamento.IdPresentacionFk;
-    document.getElementById("medicMarcaeEditar").value = medicamento.IdMarcaFk;
-
-    console.log(medicamento)
-    modalEdit();
+    editarNombre.value = medicamento.Nombre;
+    editarPrecio.value = medicamento.Precio;
+    editarFecha.value = medicamento.FechaExpiracion;
+    editarCantidad.value = medicamento.Stock;
+    medicProveEditar.value = medicamento.IdProveedorFk;
+    medicPresentaEditar.value = medicamento.IdPresentacionFk;
+    medicMarcaeEditar.value = medicamento.IdMarcaFk;
 };
 
-const subirMedicamento = () =>{
-    const medicamento = {
-        Nombre: document.getElementById("nombreMedic").value,
-        Precio: document.getElementById("precioMedic").value,
-        FechaExpiracion: document.getElementById("fechaExpiMedic").value,
-        Stock: document.getElementById("cantidadMedic").value,
-        IdProveedorFk: document.getElementById("selectProvee").value,
-        IdPresentacionFk: document.getElementById("selectPresentac").value,
-        IdMarcaFk: document.getElementById("selectMarca").value
-    };
+const subirMedicamento = () => {
+    const nombre = document.getElementById("nombreMedic").value;
+    const precio = document.getElementById("precioMedic").value;
+    const fechaExpiracion = document.getElementById("fechaExpiMedic").value;
+    const cantidad = document.getElementById("cantidadMedic").value;
+    const proveedor = document.getElementById("selectProvee").value;
+    const presentacion = document.getElementById("selectPresentac").value;
+    const marca = document.getElementById("selectMarca").value;
 
-    if (!medicamento.Nombre || medicamento.Precio || medicamento.FechaExpiracion || medicamento.Stock || medicamento.IdProveedorFk || medicamento.IdPresentacionFk || medicamento.IdMarcaFk){
+    if (!nombre || !precio || !fechaExpiracion || !cantidad || !proveedor || !presentacion || !marca) {
         alert("DEBES LLENAR TODOS LOS CAMPOS");
         return;
-    };
-    document.getElementById("").innerHTML = "";
+    }
 
-    fetch(url,{
+    const medicamento = {
+        Nombre: nombre,
+        Precio: precio,
+        FechaExpiracion: fechaExpiracion,
+        Stock: cantidad,
+        IdProveedorFk: proveedor,
+        IdPresentacionFk: presentacion,
+        IdMarcaFk: marca
+    };
+
+    fetch(urlMedi, {
         method: "PUT",
         body: JSON.stringify(medicamento),
         headers: {
             "Content-Type": "application/json"
         }
     })
-    .then(respuesta => respuesta.json())
-    .then(respuestaa => {
-        alert("success", respuestaa,mensaje);
-        getMedic();
-    })
-    .catch(error =>{
-        alert("error", error);
-    });
-    document.getElementById("").reset();
+        .then(respuesta => respuesta.json())
+        .then(respuestaa => {
+            alert("Medicamento actualizado exitosamente.");
+            getMedic();
+        })
+        .catch(error => {
+            alert("Ha ocurrido un error al actualizar el medicamento.");
+            console.error(error);
+        });
+
+    document.getElementById("agregaMedi").reset();
 };
 
-const eliminarMedicamento = (id) =>{
-    fetch(`${url}/${id}`,{
-        method : "DELETE"
+const eliminarMedicamento = (id) => {
+    fetch(`${urlMedi}/${id}`, {
+        method: "DELETE"
     })
-
-    .then(respuesta => respuesta.json())
-    .then(respuestaa =>{
-        alert("success", respuestaa.mensaje);
-        getMedic();
-    })
-    .catch(error =>{
-        alert("error", error);
-    });
+        .then(respuesta => respuesta.json())
+        .then(respuestaa => {
+            alert("Medicamento eliminado exitosamente.");
+            getMedic();
+        })
+        .catch(error => {
+            alert("Ha ocurrido un error al eliminar el medicamento.");
+            console.error(error);
+        });
 };
 
-function filterTable(){
+function filterTable() {
     const buscarIgual = document.querySelector("#search").value.toLowerCase();
-  
-    const filtrarMedicamentos = medicaments.filter((medicamento) =>{
-      return(
-        medicamento.Id.toString().includes(buscarIgual) ||
-        medicamento.Nombre.toString().includes(buscarIgual)
-      );
+
+    const filtrarMedicamentos = medicaments.filter(medicamento => {
+        return (
+            medicamento.Id.toString().includes(buscarIgual) ||
+            medicamento.Nombre.toString().includes(buscarIgual)
+        );
     });
-    mostrarMedicamentos(filtrarMedicamentos)
-  };
+    mostrarMedicamentos(filtrarMedicamentos);
+}

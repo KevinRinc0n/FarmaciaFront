@@ -1,40 +1,36 @@
-const url = "http://localhost:5297/api/Direccion";
+const urlDirec = "http://localhost:5297/api/Direccion";
 let direcciones = [];
 
 window.addEventListener("DOMContentLoaded", () => {
-    getMedic();
+    getDireccion();
 });
 
-const getDireccion = () =>{
-    fetch(url)
-    .then(respuesta => respuesta.json())
-    .then(data => {
-        direcciones = data;
-        console.log(direcciones);
-        mostrarDireccion(direcciones);
-    const direccionSelect = document.getElementById("inputCiudad");
-
-    direccionSelect.forEach((select) => {
-        select.innerHTML = "";
-
-        datos.forEach((ciudad) => {
-            const opcion = document.createElement("option");
-            opcion.value = ciudad.Id;
-            opcion.value = ciudad.IdCiudadFk;
-            select.appendChild(opcion);
+const getDireccion = () => {
+    fetch(urlDirec)
+        .then(respuesta => respuesta.json())
+        .then(data => {
+            direcciones = data;
+            console.log(direcciones);
+            mostrarDireccion(direcciones);
+            const direccionSelect = document.getElementById("inputCiudad");
+            direccionSelect.innerHTML = "";
+            direcciones.forEach((ciudad) => {
+                const opcion = document.createElement("option");
+                opcion.value = ciudad.Id;
+                opcion.text = ciudad.IdCiudadFk;
+                direccionSelect.appendChild(opcion);
+            });
+        })
+        .catch(error => {
+            console.error("Ha ocurrido un problema: ", error);
         });
-    });
-    })
-    .catch(error => {
-        alert("error", "Ha ocurrido un problema");
-    });
 };
 
 const contenedorDirecciones = document.getElementById("aggDireccBody");
 
-const mostrarDireccion = (direcciones) =>{
+const mostrarDireccion = (direcciones) => {
     let listar = "";
-    direcciones.foreach(direccion =>{
+    direcciones.forEach(direccion => {
         listar += `
         <tr>
             <th scope="row">${direccion.Id}</th>
@@ -44,70 +40,58 @@ const mostrarDireccion = (direcciones) =>{
             <td>${direccion.Barrio}</td>
             <td>${direccion.Complemento}</td>
             <td>${direccion.IdCiudadFk}</td>
-            <td><button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEditar" onclick="editarMedicamento(${direccion.Id})>EDITAR</button></td>
-            <td><button class="btn btn-danger" onclick="eliminarrMedicamento(${direccion.Id})>ELIMINAR</button></td>
+            <td><button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEditar" onclick="editarDireccion(${direccion.Id})">EDITAR</button></td>
+            <td><button class="btn btn-danger" onclick="eliminarDireccion(${direccion.Id})">ELIMINAR</button></td>
         </tr>
-        `
-    }); 
+        `;
+    });
     contenedorDirecciones.innerHTML = listar;
 };
 
 const crearDireccion = () => {
     const formulario = document.getElementById("agregaPaciente");
-    if (!formulario.getElementById('inputTipoVia').lenght || formulario.getElementById('inputNumeroVia').lenght || formulario.getElementById('inputNumeroViaSecunda').lenght || formulario.getElementById('inputBarrio').lenght || formulario.getElementById('inputComplemento').lenght || formulario.getElementById('inputCiudad').lenght)
-    {
+    if (!formulario.inputTipoVia.value || !formulario.inputNumeroVia.value || !formulario.inputNumeroViaSecunda.value || !formulario.inputBarrio.value || !formulario.inputComplemento.value || !formulario.inputCiudad.value) {
         alert("DEBES LLENAR TODOS LOS CAMPOS");
         return;
+    }
+
+    const direccion = {
+        TipoViaPrincipal: formulario.inputTipoVia.value,
+        NumeroViaPrincipal: formulario.inputNumeroVia.value,
+        NumeroViaSecundaria: formulario.inputNumeroViaSecunda.value,
+        Barrio: formulario.inputBarrio.value,
+        Complemento: formulario.inputComplemento.value,
+        IdCiudadFk: formulario.inputCiudad.value
     };
 
-
-const direccion = {
-    TipoViaPrincipal: formulario.getElementById("inputTipoVia"),
-    NumeroViaPrincipal: formulario.getElementById("inputNumeroVia"),
-    NumeroViaSecundaria: formulario.getElementById("inputNumeroViaSecunda"),
-    Barrio: formulario.getElementById("inputBarrio"),
-    Complemento: formulario.getElementById("inputComplemento"),
-    IdCiudadFk: formulario.getElementById("inputCiudad")
-    };
-console.log(direccion);
-
-    fetch(url,{
+    fetch(urlDirec, {
         method: "POST",
         body: JSON.stringify(direccion),
         headers: {
             "Content-Type": "application/json"
         }
     })
-    .then(respuesta => respuesta.json())
-    .then(respuestaa => {
-        alert("success", respuestaa,mensaje);
-        getDireccion();
-    })
-    .catch(error =>{
-        alert("error", error);
-        document.getElementById("contenedor").reset();
-    });
+        .then(respuesta => respuesta.json())
+        .then(respuestaa => {
+            alert("success", respuestaa.mensaje);
+            getDireccion();
+        })
+        .catch(error => {
+            alert("error", error);
+            formulario.reset();
+        });
 };
 
-const editarDireccion= (id) =>{
-    let direccion = {};
-    direcciones.filter(direction => {
-        if(direction.Id == id){
-            direccion = direction;
-        };
-    });
+const editarDireccion = (id) => {
+    let direccion = direcciones.find(direction => direction.Id === id);
 
     const direccionSelect = document.getElementById("dieccCiudadEditar");
-
-    direccionSelect.forEach((select) => {
-        select.innerHTML = "";
-
-        datos.forEach((ciudad) => {
-            const opcion = document.createElement("option");
-            opcion.value = ciudad.Id;
-            opcion.value = ciudad.IdCiudadFk;
-            select.appendChild(opcion);
-        });
+    direccionSelect.innerHTML = "";
+    direcciones.forEach((ciudad) => {
+        const opcion = document.createElement("option");
+        opcion.value = ciudad.Id;
+        opcion.text = ciudad.IdCiudadFk;
+        direccionSelect.appendChild(opcion);
     });
 
     document.getElementById("editarVia").value = direccion.TipoViaPrincipal;
@@ -117,56 +101,45 @@ const editarDireccion= (id) =>{
     document.getElementById("editarComplemento").value = direccion.Complemento;
     document.getElementById("dieccCiudadEditar").value = direccion.IdCiudadFk;
 
-    console.log(direccion)
-    modalEdit();
+    console.log(direccion);
 };
 
-const subirDireccion = () =>{
+const subirDireccion = () => {
     const direccion = {
-        Nombre: document.getElementById("nombreMedic").value,
-        Precio: document.getElementById("precioMedic").value,
-        FechaExpiracion: document.getElementById("fechaExpiMedic").value,
-        Stock: document.getElementById("cantidadMedic").value,
-        IdProveedorFk: document.getElementById("selectProvee").value,
-        IdPresentacionFk: document.getElementById("selectPresentac").value,
-        IdMarcaFk: document.getElementById("selectMarca").value
     };
 
-    if (!direccion.TipoViaPrincipal || direccion.NumeroViaPrincipal || direccion.NumeroViaSecundaria || direccion.Barrio || direccion.Complemento || direccion.IdCiudadFk){
+    if (!direccion.TipoViaPrincipal || !direccion.NumeroViaPrincipal || !direccion.NumeroViaSecundaria || !direccion.Barrio || !direccion.Complemento || !direccion.IdCiudadFk) {
         alert("DEBES LLENAR TODOS LOS CAMPOS");
         return;
-    };
-    document.getElementById("").innerHTML = "";
+    }
 
-    fetch(url,{
+    fetch(`${urlDirec}/${direccion.Id}`, {
         method: "PUT",
         body: JSON.stringify(direccion),
         headers: {
             "Content-Type": "application/json"
         }
     })
-    .then(respuesta => respuesta.json())
-    .then(respuestaa => {
-        alert("success", respuestaa,mensaje);
-        getDireccion();
-    })
-    .catch(error =>{
-        alert("error", error);
-    });
-    document.getElementById("").reset();
+        .then(respuesta => respuesta.json())
+        .then(respuestaa => {
+            alert("success", respuestaa.mensaje);
+            getDireccion();
+        })
+        .catch(error => {
+            alert("error", error);
+        });
 };
 
-const eliminarDireccion = (id) =>{
-    fetch(`${url}/${id}`,{
-        method : "DELETE"
+const eliminarDireccion = (id) => {
+    fetch(`${urlDirec}/${id}`, {
+        method: "DELETE"
     })
-
-    .then(respuesta => respuesta.json())
-    .then(respuestaa =>{
-        alert("success", respuestaa.mensaje);
-        getDireccion();
-    })
-    .catch(error =>{
-        alert("error", error);
-    });
+        .then(respuesta => respuesta.json())
+        .then(respuestaa => {
+            alert("success", respuestaa.mensaje);
+            getDireccion();
+        })
+        .catch(error => {
+            alert("error", error);
+        });
 };

@@ -1,59 +1,56 @@
-const url = "http://localhost:5297/api/Empleado";
+const urlEmple = "http://localhost:5297/api/Empleado";
 let empleados = [];
 
 window.addEventListener("DOMContentLoaded", () => {
-    getEmplado();
+    getEmpleado();
 });
 
-const getEmplado = () =>{
-    fetch(url)
-    .then(respuesta => respuesta.json())
-    .then(data => {
-        empleados = data;
-        console.log(empleados);
-        mostrarEmpleados(empleados);
-    })
-    .catch(error => {
-        alertManager("error", "Ha ocurrido un problema");
-    });
+const getEmpleado = () => {
+    fetch(urlEmple)
+        .then(respuesta => respuesta.json())
+        .then(data => {
+            empleados = data;
+            console.log(empleados);
+            mostrarEmpleados(empleados);
+        })
+        .catch(error => {
+            alert("error", "Ha ocurrido un problema");
+        });
 };
 
 const contenedorEmpleados = document.getElementById("aggEmpleadoBody");
 
-const mostrarEmpleados = (empleados) =>{
+const mostrarEmpleados = (empleados) => {
     let listar = "";
-    empleados.foreach(empleado =>{
+    empleados.forEach(empleado => {
         listar += `
         <tr>
             <th scope="row">${empleado.Id}</th>
             <td>${empleado.Nombre}</td>
             <td>${empleado.Cargo}</td>
             <td>${empleado.FechaContratacion}</td>
-            <td><button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEditar" onclick="editarMedicamento(${empleado.Id})>EDITAR</button></td>
-            <td><button class="btn btn-danger" onclick="eliminarrMedicamento(${empleado.Id})>ELIMINAR</button></td>
+            <td><button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEditar" onclick="editarEmpleado(${empleado.Id})">EDITAR</button></td>
+            <td><button class="btn btn-danger" onclick="eliminarEmpleado(${empleado.Id})">ELIMINAR</button></td>
         </tr>
-        `
-    }); 
+        `;
+    });
     contenedorEmpleados.innerHTML = listar;
 };
 
 const crearEmpleado = () => {
     const formulario = document.getElementById("agregaEmpleado");
-    if (!formulario.getElementById('inputNombre').lenght || formulario.getElementById('inputCargo').lenght || formulario.getElementById('inputFechaContratacion').lenght)
-    {
+    if (!formulario.elements['inputNombre'].value || !formulario.elements['inputCargo'].value || !formulario.elements['inputFechaContratacion'].value) {
         alert("DEBES LLENAR TODOS LOS CAMPOS");
         return;
+    }
+
+    const empleado = {
+        Nombre: formulario.elements["inputNombre"].value,
+        Cargo: formulario.elements["inputCargo"].value,
+        FechaContratacion: formulario.elements["inputFechaContratacion"].value,
     };
 
-
-const empleado = {
-    Nombre: formulario.getElementById("inputNombre"),
-    Cargo: formulario.getElementById("inputCargo"),
-    FechaContratacion: formulario.getElementById("inputFechaContratacion")
-};
-console.log(empleado);
-
-    fetch(url,{
+    fetch(urlEmple, {
         method: "POST",
         body: JSON.stringify(empleado),
         headers: {
@@ -61,46 +58,37 @@ console.log(empleado);
         }
     })
     .then(respuesta => respuesta.json())
-    .then(respuestaa => {
-        alertManager("success", respuestaa,mensaje);
-        getEmplado();
+    .then(respuesta => {
+        alert("success", respuesta.mensaje);
+        getEmpleado();
     })
-    .catch(error =>{
-        alertManager("error", error);
-        document.getElementById("contenedor").reset();
+    .catch(error => {
+        alert("error", error);
+        document.getElementById("agregaEmpleado").reset();
     });
 };
 
-const editarEmpleado = (id) =>{
-    let emplead = {};
-    empleados.filter(emplee => {
-        if(emplee.Id == id){
-            emplead = emplee;
-        };
-    });
+const editarEmpleado = (id) => {
+    let empleado = empleados.find(emp => emp.Id === id);
 
-    document.getElementById("editarNombree").value = emplead.Nombre;
-    document.getElementById("editarCargo").value = emplead.Cargo;
-    document.getElementById("editarFechaContratacion").value = emplead.FechaContratacion;
-
-    console.log(emplead)
-    modalEdit();
+    document.getElementById("editarNombre").value = empleado.Nombre;
+    document.getElementById("editarCargo").value = empleado.Cargo;
+    document.getElementById("editarFechaContratacion").value = empleado.FechaContratacion;
 };
 
-const subirEmpleado = () =>{
+const subirEmpleado = () => {
     const empleado = {
-        Nombre: document.getElementById("inputNombre").value,
-        Cargo: document.getElementById("inputCargo").value,
-        FechaContratacion: document.getElementById("inputFechaContratacion").value
+        Nombre: document.getElementById("editarNombre").value,
+        Cargo: document.getElementById("editarCargo").value,
+        FechaContratacion: document.getElementById("editarFechaContratacion").value
     };
 
-    if (!empleado.Nombre || empleado.Cargo || empleado.FechaContratacion){
+    if (!empleado.Nombre || !empleado.Cargo || !empleado.FechaContratacion) {
         alert("DEBES LLENAR TODOS LOS CAMPOS");
         return;
-    };
-    document.getElementById("").innerHTML = "";
+    }
 
-    fetch(url,{
+    fetch(urlEmple + `/${empleado.Id}`, {
         method: "PUT",
         body: JSON.stringify(empleado),
         headers: {
@@ -108,27 +96,26 @@ const subirEmpleado = () =>{
         }
     })
     .then(respuesta => respuesta.json())
-    .then(respuestaa => {
-        alert("success", respuestaa,mensaje);
-        getEmplado();
+    .then(respuesta => {
+        alert("success", respuesta.mensaje);
+        getEmpleado();
     })
-    .catch(error =>{
+    .catch(error => {
         alert("error", error);
     });
-    document.getElementById("").reset();
+    document.getElementById("modalEditar").reset();
 };
 
-const eliminarEmpleado = (id) =>{
-    fetch(`${url}/${id}`,{
-        method : "DELETE"
+const eliminarEmpleado = (id) => {
+    fetch(`${urlEmple}/${id}`, {
+        method: "DELETE"
     })
-
     .then(respuesta => respuesta.json())
-    .then(respuestaa =>{
-        alert("success", respuestaa.mensaje);
-        getEmplado();
+    .then(respuesta => {
+        alert("success", respuesta.mensaje);
+        getEmpleado();
     })
-    .catch(error =>{
+    .catch(error => {
         alert("error", error);
     });
 };

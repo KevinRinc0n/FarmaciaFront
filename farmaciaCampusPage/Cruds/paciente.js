@@ -1,159 +1,137 @@
-const url = "http://localhost:5297/api/Paciente";
+const urlPacie = "http://localhost:5297/api/Paciente";
 let pacientes = [];
 
 window.addEventListener("DOMContentLoaded", () => {
     getPacientes();
 });
 
-const getPacientes = () =>{
-    fetch(url)
-    .then(respuesta => respuesta.json())
-    .then(data => {
-        pacientes = data;
-        console.log(pacientes);
-        mostrarPacientes(pacientes);
+const getPacientes = () => {
+    fetch(urlPacie)
+        .then(respuesta => respuesta.json())
+        .then(data => {
+            pacientes = data;
+            console.log(pacientes);
+            mostrarPacientes(pacientes);
 
-    const direccionSelect = document.getElementById("inputDireccion");
+            const direccionSelect = document.getElementById("inputDireccion");
 
-    direccionSelect.forEach((select) => {
-        select.innerHTML = "";
+            direccionSelect.innerHTML = "";
 
-        datos.forEach((ciudad) => {
-            const opcion = document.createElement("option");
-            opcion.value = ciudad.Id;
-            opcion.value = ciudad.IdCiudadFk;
-            select.appendChild(opcion);
+            data.forEach((ciudad) => {
+                const opcion = document.createElement("option");
+                opcion.value = ciudad.Id;
+                opcion.text = ciudad.Nombre;
+                direccionSelect.appendChild(opcion);
+            });
+        })
+        .catch(error => {
+            alert("Ha ocurrido un problema al obtener los pacientes");
+            console.error(error);
         });
-    });
-    })
-    .catch(error => {
-        alert("error", "Ha ocurrido un problema");
-    });
 };
 
 const contenedorPacientes = document.getElementById("aggPacientBody");
 
-const mostrarPacientes = (pacientes) =>{
+const mostrarPacientes = (pacientes) => {
     let listar = "";
-    pacientes.foreach(paciente =>{
+    pacientes.forEach(paciente => {
         listar += `
         <tr>
             <th scope="row">${paciente.Id}</th>
             <td>${paciente.Nombre}</td>
             <td>${paciente.Telefono}</td>
             <td>${paciente.IdDireccionFk}</td>
-            <td><button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEditar" onclick="editarMedicamento(${paciente.Id})>EDITAR</button></td>
-            <td><button class="btn btn-danger" onclick="eliminarrMedicamento(${paciente.Id})>ELIMINAR</button></td>
+            <td><button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEditar" onclick="editarPaciente(${paciente.Id})">EDITAR</button></td>
+            <td><button class="btn btn-danger" onclick="eliminarPaciente(${paciente.Id})">ELIMINAR</button></td>
         </tr>
-        `
-    }); 
+        `;
+    });
     contenedorPacientes.innerHTML = listar;
 };
 
 const crearPaciente = () => {
     const formulario = document.getElementById("agregaPacienteReally");
-    if (!formulario.getElementById('inputNaame').lenght || formulario.getElementById('inputTelefono').lenght || formulario.getElementById('inputDireccion').lenght)
-    {
+    if (!formulario.elements.inputNaame.value || !formulario.elements.inputTelefono.value || !formulario.elements.inputDireccion.value) {
         alert("DEBES LLENAR TODOS LOS CAMPOS");
         return;
+    }
+
+    const paciente = {
+        Nombre: formulario.elements.inputNaame.value,
+        Telefono: formulario.elements.inputTelefono.value,
+        IdDireccionFk: formulario.elements.inputDireccion.value
     };
 
-
-const paciente = {
-    Nombre: formulario.getElementById("inputNaame"),
-    Telefono: formulario.getElementById("inputTelefono"),
-    IdDireccionFk: formulario.getElementById("inputDireccion")
-};
-console.log(paciente);
-
-    fetch(url,{
+    fetch(urlPacie, {
         method: "POST",
         body: JSON.stringify(paciente),
         headers: {
             "Content-Type": "application/json"
         }
     })
-    .then(respuesta => respuesta.json())
-    .then(respuestaa => {
-        alert("success", respuestaa,mensaje);
-        getProvee();
-    })
-    .catch(error =>{
-        alert("error", error);
-        document.getElementById("contenedor").reset();
-    });
+        .then(respuesta => respuesta.json())
+        .then(respuesta => {
+            alert("Paciente creado exitosamente");
+            getPacientes();
+            formulario.reset();
+        })
+        .catch(error => {
+            alert("Ha ocurrido un error al crear el paciente");
+            console.error(error);
+        });
 };
 
-const editarPacient = (id) =>{
-    let pacient = {};
-    pacientes.filter(pacientt => {
-        if(pacientt.Id == id){
-            pacient = pacientt;
-        };
-    });
+const editarPaciente = (id) => {
+    let paciente = pacientes.find(p => p.Id === id);
 
-    const direccionSelect = document.getElementById("editaDireccionn");
+    document.getElementById("editaNaame").value = paciente.Nombre;
+    document.getElementById("editaTele").value = paciente.Telefono;
+    document.getElementById("editaDireccionn").value = paciente.IdDireccionFk;
 
-    direccionSelect.forEach((select) => {
-        select.innerHTML = "";
-
-        datos.forEach((direccion) => {
-            const opcion = document.createElement("option");
-            opcion.value = direccion.IdDireccionFk;
-            select.appendChild(opcion);
-        });
-    });
-
-    document.getElementById("editaNaame").value = pacient.Nombre;
-    document.getElementById("editaTele").value = pacient.Telefono;
-    document.getElementById("editaDireccionn").value = pacient.IdDireccionFk;
-
-    console.log(pacient)
     modalEdit();
 };
 
-const subirPacient = () =>{
+const subirPaciente = () => {
     const paciente = {
-        Nombre: document.getElementById("inputNaame").value,
-        Telefono: document.getElementById("inputTelefono").value,
-        IdDireccionFk: document.getElementById("inputDireccion").value
+        Nombre: document.getElementById("editaNaame").value,
+        Telefono: document.getElementById("editaTele").value,
+        IdDireccionFk: document.getElementById("editaDireccionn").value
     };
 
-    if (!paciente.Nombre || paciente.Telefono || paciente.IdDireccionFk){
+    if (!paciente.Nombre || !paciente.Telefono || !paciente.IdDireccionFk) {
         alert("DEBES LLENAR TODOS LOS CAMPOS");
         return;
-    };
-    document.getElementById("").innerHTML = "";
+    }
 
-    fetch(url,{
+    fetch(`${urlPacie}/${paciente.Id}`, {
         method: "PUT",
         body: JSON.stringify(paciente),
         headers: {
             "Content-Type": "application/json"
         }
     })
-    .then(respuesta => respuesta.json())
-    .then(respuestaa => {
-        alert("success", respuestaa,mensaje);
-        getPacientes();
-    })
-    .catch(error =>{
-        alert("error", error);
-    });
-    document.getElementById("").reset();
+        .then(respuesta => respuesta.json())
+        .then(respuesta => {
+            alert("Paciente actualizado exitosamente");
+            getPacientes();
+        })
+        .catch(error => {
+            alert("Ha ocurrido un error al actualizar el paciente");
+            console.error(error);
+        });
 };
 
-const eliminarProveedor = (id) =>{
-    fetch(`${url}/${id}`,{
-        method : "DELETE"
+const eliminarPaciente = (id) => {
+    fetch(`${urlPacie}/${id}`, {
+        method: "DELETE"
     })
-
-    .then(respuesta => respuesta.json())
-    .then(respuestaa =>{
-        alert("success", respuestaa.mensaje);
-        getPacientes();
-    })
-    .catch(error =>{
-        alert("error", error);
-    });
+        .then(respuesta => respuesta.json())
+        .then(respuesta => {
+            alert("Paciente eliminado exitosamente");
+            getPacientes();
+        })
+        .catch(error => {
+            alert("Ha ocurrido un error al eliminar el paciente");
+            console.error(error);
+        });
 };

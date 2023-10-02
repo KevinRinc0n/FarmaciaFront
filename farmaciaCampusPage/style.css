@@ -157,6 +157,11 @@
 	display: none; 
 }
 
+#cantidadVentaEmpleadoo
+{
+	display: none; 
+}
+
 #proveeInfoContacto
 {
 	display: none; 
@@ -206,9 +211,36 @@
 
 .btEnviUbi
 {
-	margin-left: -50%;
-	margin-top: 20%;
+	margin-left: -10%;
+	margin-top: 10%;
+	margin-bottom: 10%;
 	width: 30%;
+}
+
+.btEnviPaci
+{
+	margin-top: 8%;
+	width: 30%;
+	height: 20%;
+	margin-left: -30%;
+}
+
+.tablePacie
+{
+	margin-right: 50%;	
+	margin-top: 20%;
+}
+
+.tableEmple
+{
+	margin-right: 20%;	
+	margin-top: 20%;
+}
+
+.divTable
+{
+	margin-right: 30%;
+	margin-top: 20%;
 }
 
 .fecha
@@ -216,10 +248,55 @@
 	margin-top: 16%;
 }
 
+.paciInput
+{
+	height: 20%;
+	margin-top: 5%;
+	margin-left: 5%;
+}
+
 .medisInput
 {
 	width: 20%;
 	margin-top: 5%;
+	margin-right: 2%;
+}
+
+.pacientInput
+{
+	height: 20%;
+	width: 52%;
+	margin-top: 2%;
+}
+
+.proveInput
+{
+	width: 20%;
+	margin-top: 5%;
+	margin-right: 5%;
+}
+
+.btEnviDirec
+{
+	margin-top: 5%;
+	margin-bottom: 5%;
+	margin-right: 15%;
+}
+
+.empleaInput
+{
+	width: 90%;
+	margin-top: 5%;
+	margin-bottom: 5%;
+	margin-left: 10%;
+}
+
+.btEnviEmple
+{
+	width: 50%;
+	height: 20%;
+	margin-top: 15%;
+	margin-left: -30%;
 }
 
 #cards
