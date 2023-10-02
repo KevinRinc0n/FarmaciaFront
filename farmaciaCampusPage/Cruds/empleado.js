@@ -14,7 +14,7 @@ const getEmpleado = () => {
             mostrarEmpleados(empleados);
         })
         .catch(error => {
-            alert("error", "Ha ocurrido un problema");
+            alert("Error: Ha ocurrido un problema");
         });
 };
 
@@ -40,7 +40,7 @@ const mostrarEmpleados = (empleados) => {
 const crearEmpleado = () => {
     const formulario = document.getElementById("agregaEmpleado");
     if (!formulario.elements['inputNombre'].value || !formulario.elements['inputCargo'].value || !formulario.elements['inputFechaContratacion'].value) {
-        alert("DEBES LLENAR TODOS LOS CAMPOS");
+        alert("Error: DEBES LLENAR TODOS LOS CAMPOS");
         return;
     }
 
@@ -59,11 +59,11 @@ const crearEmpleado = () => {
     })
     .then(respuesta => respuesta.json())
     .then(respuesta => {
-        alert("success", respuesta.mensaje);
+        alert("Success: " + respuesta.mensaje);
         getEmpleado();
     })
     .catch(error => {
-        alert("error", error);
+        alert("Error: " + error);
         document.getElementById("agregaEmpleado").reset();
     });
 };
@@ -74,17 +74,23 @@ const editarEmpleado = (id) => {
     document.getElementById("editarNombre").value = empleado.Nombre;
     document.getElementById("editarCargo").value = empleado.Cargo;
     document.getElementById("editarFechaContratacion").value = empleado.FechaContratacion;
+
+    document.getElementById("modalEditar").addEventListener("submit", function(event) {
+        event.preventDefault();
+        subirEmpleado(id);
+    });
 };
 
-const subirEmpleado = () => {
+const subirEmpleado = (id) => {
     const empleado = {
+        Id: id,
         Nombre: document.getElementById("editarNombre").value,
         Cargo: document.getElementById("editarCargo").value,
         FechaContratacion: document.getElementById("editarFechaContratacion").value
     };
 
     if (!empleado.Nombre || !empleado.Cargo || !empleado.FechaContratacion) {
-        alert("DEBES LLENAR TODOS LOS CAMPOS");
+        alert("Error: DEBES LLENAR TODOS LOS CAMPOS");
         return;
     }
 
@@ -97,13 +103,12 @@ const subirEmpleado = () => {
     })
     .then(respuesta => respuesta.json())
     .then(respuesta => {
-        alert("success", respuesta.mensaje);
+        alert("Success: " + respuesta.mensaje);
         getEmpleado();
     })
     .catch(error => {
-        alert("error", error);
+        alert("Error: " + error);
     });
-    document.getElementById("modalEditar").reset();
 };
 
 const eliminarEmpleado = (id) => {
@@ -112,10 +117,10 @@ const eliminarEmpleado = (id) => {
     })
     .then(respuesta => respuesta.json())
     .then(respuesta => {
-        alert("success", respuesta.mensaje);
+        alert("Success: " + respuesta.mensaje);
         getEmpleado();
     })
     .catch(error => {
-        alert("error", error);
+        alert("Error: " + error);
     });
 };

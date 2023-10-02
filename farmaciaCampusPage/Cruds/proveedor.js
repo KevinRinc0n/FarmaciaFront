@@ -24,7 +24,7 @@ const getProveedores = () => {
         });
     })
     .catch(error => {
-        alert("error", "Ha ocurrido un problema");
+        console.alert("Ha ocurrido un problema:", error);
     });
 };
 
@@ -49,15 +49,15 @@ const mostrarProveedores = (proveedores) => {
 
 const crearProveedor = () => {
     const formulario = document.getElementById("agregaProvee");
-    if (!formulario.getElementById('inputName').value || !formulario.getElementById('inputContact').value || !formulario.getElementById('inputDirec').value) {
+    if (!formulario.querySelector('#inputName').value || !formulario.querySelector('#inputContact').value || !formulario.querySelector('#inputDirec').value) {
         alert("DEBES LLENAR TODOS LOS CAMPOS");
         return;
     }
 
     const empleado = {
-        Nombre: formulario.getElementById("inputName").value,
-        Contacto: formulario.getElementById("inputContact").value,
-        IdDireccionFk: formulario.getElementById("inputDirec").value
+        Nombre: formulario.querySelector("#inputName").value,
+        Contacto: formulario.querySelector("#inputContact").value,
+        IdDireccionFk: formulario.querySelector("#inputDirec").value
     };
     console.log(empleado);
 
@@ -74,8 +74,8 @@ const crearProveedor = () => {
         getProveedores();
     })
     .catch(error => {
-        alert("error", error);
-        document.getElementById("contenedor").reset();
+        console.alert("Ha ocurrido un error:", error);
+        formulario.reset();
     });
 };
 
@@ -106,18 +106,17 @@ const editarProveedor = (id) => {
 
 const subirProveedor = () => {
     const empleado = {
-        Nombre: document.getElementById("inputName").value,
-        Contacto: document.getElementById("inputContact").value,
-        IdDireccionFk: document.getElementById("inputDirec").value
+        Nombre: document.getElementById("editaName").value,
+        Contacto: document.getElementById("editaContacto").value,
+        IdDireccionFk: document.getElementById("editaDireccion").value
     };
 
     if (!empleado.Nombre || !empleado.Contacto || !empleado.IdDireccionFk) {
         alert("DEBES LLENAR TODOS LOS CAMPOS");
         return;
     }
-    document.getElementById("agregaProvee").reset();
 
-    fetch(urlProvee, {
+    fetch(`${urlProvee}/${empleado.Id}`, {
         method: "PUT",
         body: JSON.stringify(empleado),
         headers: {
@@ -130,7 +129,7 @@ const subirProveedor = () => {
         getProveedores();
     })
     .catch(error => {
-        alert("error", error);
+        console.alert("Ha ocurrido un error:", error);
     });
 };
 
@@ -144,6 +143,6 @@ const eliminarProveedor = (id) => {
         getProveedores();
     })
     .catch(error => {
-        alert("error", error);
+        console.alert("Ha ocurrido un error:", error);
     });
 };

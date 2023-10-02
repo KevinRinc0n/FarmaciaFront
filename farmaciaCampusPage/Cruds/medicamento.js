@@ -1,5 +1,5 @@
 const urlMedi = "http://localhost:5297/api/Medicamento";
-let medicaments = [];
+let medicamentos = [];
 
 window.addEventListener("DOMContentLoaded", () => {
     getMedic();
@@ -9,14 +9,14 @@ const getMedic = () => {
     fetch(urlMedi)
         .then(respuesta => respuesta.json())
         .then(data => {
-            medicaments = data;
-            console.log(medicaments);
-            mostrarMedicamentos(medicaments);
-            llenarSelects(datos);
+            medicamentos = data;
+            console.log(medicamentos);
+            mostrarMedicamentos(medicamentos);
+            llenarSelects(data);
         })
         .catch(error => {
             alert("Ha ocurrido un problema al obtener los medicamentos.");
-            console.error(error);
+            console.alert(error);
         });
 };
 
@@ -61,13 +61,13 @@ const mostrarMedicamentos = (medicamentos) => {
 const crearMedicamento = () => {
     const formulario = document.getElementById("agregaMedi");
 
-    const nombre = formulario.getElementById("nombreMedic").value;
-    const precio = formulario.getElementById("precioMedic").value;
-    const fechaExpiracion = formulario.getElementById("fechaExpiMedic").value;
-    const cantidad = formulario.getElementById("cantidadMedic").value;
-    const proveedor = formulario.getElementById("selectProvee").value;
-    const presentacion = formulario.getElementById("selectPresentac").value;
-    const marca = formulario.getElementById("selectMarca").value;
+    const nombre = document.getElementById("nombreMedic").value;
+    const precio = document.getElementById("precioMedic").value;
+    const fechaExpiracion = document.getElementById("fechaExpiMedic").value;
+    const cantidad = document.getElementById("cantidadMedic").value;
+    const proveedor = document.getElementById("selectProvee").value;
+    const presentacion = document.getElementById("selectPresentac").value;
+    const marca = document.getElementById("selectMarca").value;
 
     if (!nombre || !precio || !fechaExpiracion || !cantidad || !proveedor || !presentacion || !marca) {
         alert("DEBES LLENAR TODOS LOS CAMPOS");
@@ -78,7 +78,7 @@ const crearMedicamento = () => {
         Nombre: nombre,
         Precio: precio,
         FechaExpiracion: fechaExpiracion,
-        Stock: cantidad,
+        Cantidad: cantidad,
         IdProveedorFk: proveedor,
         IdPresentacionFk: presentacion,
         IdMarcaFk: marca
@@ -98,12 +98,12 @@ const crearMedicamento = () => {
         })
         .catch(error => {
             alert("Ha ocurrido un error al crear el medicamento.");
-            console.error(error);
+            console.alert(error);
         });
 };
 
 const editarMedicamento = (id) => {
-    const medicamento = medicaments.find(medicament => medicament.Id === id);
+    const medicamento = medicamentos.find(medicament => medicament.Id === id);
 
     if (!medicamento) {
         alert("Medicamento no encontrado.");
@@ -121,7 +121,7 @@ const editarMedicamento = (id) => {
     editarNombre.value = medicamento.Nombre;
     editarPrecio.value = medicamento.Precio;
     editarFecha.value = medicamento.FechaExpiracion;
-    editarCantidad.value = medicamento.Stock;
+    editarCantidad.value = medicamento.Cantidad;
     medicProveEditar.value = medicamento.IdProveedorFk;
     medicPresentaEditar.value = medicamento.IdPresentacionFk;
     medicMarcaeEditar.value = medicamento.IdMarcaFk;
@@ -145,7 +145,7 @@ const subirMedicamento = () => {
         Nombre: nombre,
         Precio: precio,
         FechaExpiracion: fechaExpiracion,
-        Stock: cantidad,
+        Cantidad: cantidad,
         IdProveedorFk: proveedor,
         IdPresentacionFk: presentacion,
         IdMarcaFk: marca
@@ -165,7 +165,7 @@ const subirMedicamento = () => {
         })
         .catch(error => {
             alert("Ha ocurrido un error al actualizar el medicamento.");
-            console.error(error);
+            console.alert(error);
         });
 
     document.getElementById("agregaMedi").reset();
@@ -182,17 +182,17 @@ const eliminarMedicamento = (id) => {
         })
         .catch(error => {
             alert("Ha ocurrido un error al eliminar el medicamento.");
-            console.error(error);
+            console.alert(error);
         });
 };
 
 function filterTable() {
     const buscarIgual = document.querySelector("#search").value.toLowerCase();
 
-    const filtrarMedicamentos = medicaments.filter(medicamento => {
+    const filtrarMedicamentos = medicamentos.filter(medicamento => {
         return (
             medicamento.Id.toString().includes(buscarIgual) ||
-            medicamento.Nombre.toString().includes(buscarIgual)
+            medicamento.Nombre.toLowerCase().includes(buscarIgual)
         );
     });
     mostrarMedicamentos(filtrarMedicamentos);

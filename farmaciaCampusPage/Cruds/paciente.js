@@ -1,7 +1,7 @@
 const urlPacie = "http://localhost:5297/api/Paciente";
 let pacientes = [];
 
-window.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
     getPacientes();
 });
 
@@ -14,7 +14,6 @@ const getPacientes = () => {
             mostrarPacientes(pacientes);
 
             const direccionSelect = document.getElementById("inputDireccion");
-
             direccionSelect.innerHTML = "";
 
             data.forEach((ciudad) => {
@@ -26,7 +25,7 @@ const getPacientes = () => {
         })
         .catch(error => {
             alert("Ha ocurrido un problema al obtener los pacientes");
-            console.error(error);
+            console.alert(error);
         });
 };
 
@@ -51,15 +50,19 @@ const mostrarPacientes = (pacientes) => {
 
 const crearPaciente = () => {
     const formulario = document.getElementById("agregaPacienteReally");
-    if (!formulario.elements.inputNaame.value || !formulario.elements.inputTelefono.value || !formulario.elements.inputDireccion.value) {
+    const nombre = formulario.elements.inputNaame.value;
+    const telefono = formulario.elements.inputTelefono.value;
+    const direccion = formulario.elements.inputDireccion.value;
+
+    if (!nombre || !telefono || !direccion) {
         alert("DEBES LLENAR TODOS LOS CAMPOS");
         return;
     }
 
     const paciente = {
-        Nombre: formulario.elements.inputNaame.value,
-        Telefono: formulario.elements.inputTelefono.value,
-        IdDireccionFk: formulario.elements.inputDireccion.value
+        Nombre: nombre,
+        Telefono: telefono,
+        IdDireccionFk: direccion
     };
 
     fetch(urlPacie, {
@@ -77,12 +80,12 @@ const crearPaciente = () => {
         })
         .catch(error => {
             alert("Ha ocurrido un error al crear el paciente");
-            console.error(error);
+            console.alert(error);
         });
 };
 
 const editarPaciente = (id) => {
-    let paciente = pacientes.find(p => p.Id === id);
+    const paciente = pacientes.find(p => p.Id === id);
 
     document.getElementById("editaNaame").value = paciente.Nombre;
     document.getElementById("editaTele").value = paciente.Telefono;
@@ -92,16 +95,22 @@ const editarPaciente = (id) => {
 };
 
 const subirPaciente = () => {
-    const paciente = {
-        Nombre: document.getElementById("editaNaame").value,
-        Telefono: document.getElementById("editaTele").value,
-        IdDireccionFk: document.getElementById("editaDireccionn").value
-    };
+    const id = parseInt(document.getElementById("editaId").value);
+    const nombre = document.getElementById("editaNaame").value;
+    const telefono = document.getElementById("editaTele").value;
+    const direccion = document.getElementById("editaDireccionn").value;
 
-    if (!paciente.Nombre || !paciente.Telefono || !paciente.IdDireccionFk) {
+    if (!nombre || !telefono || !direccion) {
         alert("DEBES LLENAR TODOS LOS CAMPOS");
         return;
     }
+
+    const paciente = {
+        Id: id,
+        Nombre: nombre,
+        Telefono: telefono,
+        IdDireccionFk: direccion
+    };
 
     fetch(`${urlPacie}/${paciente.Id}`, {
         method: "PUT",
@@ -117,7 +126,7 @@ const subirPaciente = () => {
         })
         .catch(error => {
             alert("Ha ocurrido un error al actualizar el paciente");
-            console.error(error);
+            console.alert(error);
         });
 };
 
@@ -132,6 +141,6 @@ const eliminarPaciente = (id) => {
         })
         .catch(error => {
             alert("Ha ocurrido un error al eliminar el paciente");
-            console.error(error);
+            console.alert(error);
         });
 };

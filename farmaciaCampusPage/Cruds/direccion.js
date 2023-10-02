@@ -5,6 +5,12 @@ window.addEventListener("DOMContentLoaded", () => {
     getDireccion();
 });
 
+const mostrarMensaje = (mensaje, tipo) => {
+    const mensajeDiv = document.getElementById("mensaje");
+    mensajeDiv.textContent = mensaje;
+    mensajeDiv.className = tipo;
+};
+
 const getDireccion = () => {
     fetch(urlDirec)
         .then(respuesta => respuesta.json())
@@ -22,7 +28,7 @@ const getDireccion = () => {
             });
         })
         .catch(error => {
-            console.error("Ha ocurrido un problema: ", error);
+            console.alert("Ha ocurrido un problema: ", error);
         });
 };
 
@@ -50,10 +56,6 @@ const mostrarDireccion = (direcciones) => {
 
 const crearDireccion = () => {
     const formulario = document.getElementById("agregaPaciente");
-    if (!formulario.inputTipoVia.value || !formulario.inputNumeroVia.value || !formulario.inputNumeroViaSecunda.value || !formulario.inputBarrio.value || !formulario.inputComplemento.value || !formulario.inputCiudad.value) {
-        alert("DEBES LLENAR TODOS LOS CAMPOS");
-        return;
-    }
 
     const direccion = {
         TipoViaPrincipal: formulario.inputTipoVia.value,
@@ -64,6 +66,11 @@ const crearDireccion = () => {
         IdCiudadFk: formulario.inputCiudad.value
     };
 
+    if (!direccion.TipoViaPrincipal || !direccion.NumeroViaPrincipal || !direccion.NumeroViaSecundaria || !direccion.Barrio || !direccion.Complemento || !direccion.IdCiudadFk) {
+        mostrarMensaje("DEBES LLENAR TODOS LOS CAMPOS", "error");
+        return;
+    }
+
     fetch(urlDirec, {
         method: "POST",
         body: JSON.stringify(direccion),
@@ -73,12 +80,12 @@ const crearDireccion = () => {
     })
         .then(respuesta => respuesta.json())
         .then(respuestaa => {
-            alert("success", respuestaa.mensaje);
+            mostrarMensaje(respuestaa.mensaje, "success");
             getDireccion();
         })
         .catch(error => {
-            alert("error", error);
-            formulario.reset();
+            mostrarMensaje("Error al crear la dirección.", "error");
+            console.alert("Error:", error);
         });
 };
 
@@ -100,20 +107,26 @@ const editarDireccion = (id) => {
     document.getElementById("editarBarrio").value = direccion.Barrio;
     document.getElementById("editarComplemento").value = direccion.Complemento;
     document.getElementById("dieccCiudadEditar").value = direccion.IdCiudadFk;
-
-    console.log(direccion);
 };
 
-const subirDireccion = () => {
+const subirDireccion = (id) => {
+    const formulario = document.getElementById("tuFormulario"); 
+
     const direccion = {
+        TipoViaPrincipal: formulario.editarVia.value,
+        NumeroViaPrincipal: formulario.editarNumeroVia.value,
+        NumeroViaSecundaria: formulario.editarNumeroViaSecundario.value,
+        Barrio: formulario.editarBarrio.value,
+        Complemento: formulario.editarComplemento.value,
+        IdCiudadFk: formulario.dieccCiudadEditar.value
     };
 
     if (!direccion.TipoViaPrincipal || !direccion.NumeroViaPrincipal || !direccion.NumeroViaSecundaria || !direccion.Barrio || !direccion.Complemento || !direccion.IdCiudadFk) {
-        alert("DEBES LLENAR TODOS LOS CAMPOS");
+        mostrarMensaje("DEBES LLENAR TODOS LOS CAMPOS", "error");
         return;
     }
 
-    fetch(`${urlDirec}/${direccion.Id}`, {
+    fetch(`${urlDirec}/${id}`, {
         method: "PUT",
         body: JSON.stringify(direccion),
         headers: {
@@ -122,11 +135,12 @@ const subirDireccion = () => {
     })
         .then(respuesta => respuesta.json())
         .then(respuestaa => {
-            alert("success", respuestaa.mensaje);
+            mostrarMensaje(respuestaa.mensaje, "success");
             getDireccion();
         })
         .catch(error => {
-            alert("error", error);
+            mostrarMensaje("Error al editar la dirección.", "error");
+            console.alert("Error:", error);
         });
 };
 
@@ -136,10 +150,11 @@ const eliminarDireccion = (id) => {
     })
         .then(respuesta => respuesta.json())
         .then(respuestaa => {
-            alert("success", respuestaa.mensaje);
+            mostrarMensaje(respuestaa.mensaje, "success");
             getDireccion();
         })
         .catch(error => {
-            alert("error", error);
+            mostrarMensaje("Error al eliminar la dirección.", "error");
+            console.alert("Error:", error);
         });
 };
