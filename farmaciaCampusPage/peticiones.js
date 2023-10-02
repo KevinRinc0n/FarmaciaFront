@@ -15,7 +15,7 @@ const getMedicamentos = () => {
             mostrarMedicamentos(medicamentos);
         })
         .catch(error => {
-            alert("Ha ocurrido un problema: " + error);
+            console.log("Ha ocurrido un problema: " + error);
         });
 };
 
@@ -55,7 +55,7 @@ const getMedicCompProveeA = () => {
         mostrarMedicCompProveeA(medicamentosComProveeA);
     })
     .catch(error => {
-        alert("Ha ocurrido un problema: " + error);
+        console.log("Ha ocurrido un problema: " + error);
     });
 };
 
@@ -93,7 +93,7 @@ const getMedicamentoParace = ()  =>{
         mostrarMedicamentoParace(medicamentoParacetamol);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        console.log(error, "Ha ocurrido un problema");
     });
 };
 
@@ -133,7 +133,7 @@ const getRecetas = ()  =>{
         mostrarRecetas(recetas);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        console.log(error, "Ha ocurrido un problema");
     });
 };
 
@@ -171,7 +171,7 @@ const getMediCadu2024 = ()  =>{
         mostrarCadu2024(medisCadu2024);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        console.log(error, "Ha ocurrido un problema");
     });
 };
 
@@ -210,7 +210,7 @@ const getMedicVenXProvee = ()  =>{
         mostrarMedicXProvee(medicXProvee);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        console.log(error, "Ha ocurrido un problema");
     });
 };
 
@@ -251,7 +251,7 @@ const mostrarMedicXProvee = (medicXProvee) =>{
 //         mostrarTotalRecaudado(recaudadoXVenta);
 //     })
 //     .catch(error =>{
-//         alert(error, "Ha ocurrido un problema");
+//         console.log(error, "Ha ocurrido un problema");
 //     });
 // };
 
@@ -290,7 +290,7 @@ const getNoVendidos = ()  =>{
         mostrarMedicNoVendi(medisNoVendidos);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        console.log(error, "Ha ocurrido un problema");
     });
 };
 
@@ -327,7 +327,7 @@ const mostrarMedicNoVendi = (medisNoVendidos) =>{
 //         mostrarMasCaro(medicCaro);
 //     })
 //     .catch(error =>{
-//         alert(error, "Ha ocurrido un problema");
+//         console.log(error, "Ha ocurrido un problema");
 //     });
 // };
 
@@ -367,7 +367,7 @@ const getMedicXProvee = ()  =>{
         mostrarMedicaXProvee(medicamentoXProvee);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        console.log(error, "Ha ocurrido un problema");
     });
 };
 
@@ -405,7 +405,7 @@ const getPacientePara = ()  =>{
         mostrarPacientePara(pacienteCompraParace);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        console.log(error, "Ha ocurrido un problema");
     });
 };
 
@@ -441,7 +441,7 @@ const getNoventasProvee = ()  =>{
         mostrarNoVentaProvee(proveeNoVentas);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        console.log(error, "Ha ocurrido un problema");
     });
 };
 
@@ -478,7 +478,7 @@ const getMedicamentoMarzo = () => {
             mostrarMedicMarzo(medicamentosMarzo);
         })
         .catch(error => {
-            alert("Ha ocurrido un problema: " + error);
+            console.log("Ha ocurrido un problema: " + error);
         });
 };
 
@@ -516,7 +516,7 @@ const getMediMenosVen2023 = ()  =>{
         mostrarMedicMenosven(medicMenosVendido);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        console.log(error, "Ha ocurrido un problema");
     });
 };
 
@@ -555,7 +555,7 @@ const mostrarMedicMenosven = (medicMenosVendido) =>{
 //         mostrarGananciaProvee(gananciaXProvee);
 //     })
 //     .catch(error =>{
-//         alert(error, "Ha ocurrido un problema");
+//         console.log(error, "Ha ocurrido un problema");
 //     });
 // };
 
@@ -593,7 +593,7 @@ const getPromMedis = ()  =>{
         mostrarPromMedisVenta(promMedisVentas);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        console.log(error, "Ha ocurrido un problema");
     });
 };
 
@@ -634,7 +634,7 @@ const getVentaEmple2023 = ()  =>{
         mostrarVentaEmpleados2023(ventasEmple2023);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        console.log(error, "Ha ocurrido un problema");
     });
 };
 
@@ -672,7 +672,7 @@ const getMedisExpi2024 = ()  =>{
         mostraMedicExpira2024(medicamentosExpiran2024);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        console.log(error, "Ha ocurrido un problema");
     });
 };
 
@@ -712,7 +712,7 @@ const getEmpleMas5Vent = ()  =>{
         mostraEmpleMas5ventas(empleadosMas5Ventas);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        console.log(error, "Ha ocurrido un problema");
     });
 };
 
@@ -748,7 +748,7 @@ const getMedisNuncaVen = ()  =>{
         mostraMedicNuncaVent(medicamentosNuncaVendidos);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        console.log(error, "Ha ocurrido un problema");
     });
 };
 
@@ -787,7 +787,7 @@ const getPaciente = ()  =>{
         mostraPacienMasDinero(pacienteMasDineroGasta);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        console.log(error, "Ha ocurrido un problema");
     });
 };
 
@@ -826,7 +826,7 @@ const getEmpleadosSinVentas = ()  =>{
         mostrarEmpleadosSinVentas(empleadosSinVentas);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        console.log(error, "Ha ocurrido un problema");
     });
 };
 
@@ -865,7 +865,7 @@ const getproveeSuminisMasMedis = ()  =>{
         mostrarProveeMasMedis(proveeSuminisMasMedis);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        console.log(error, "Ha ocurrido un problema");
     });
 };
 
@@ -902,7 +902,7 @@ const getpacienteComprarParace2023 = ()  =>{
         mostrarmedicNoVenBodyce2023(pacienteCompraronParace2023);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        console.log(error, "Ha ocurrido un problema");
     });
 };
 
@@ -941,7 +941,7 @@ const mostrarmedicNoVenBodyce2023 = (pacienteCompraronParace2023) =>{
 //         mostrarMedisVenXMes(totalMedicvendiXMes);
 //     })
 //     .catch(error =>{
-//         alert(error, "Ha ocurrido un problema");
+//         console.log(error, "Ha ocurrido un problema");
 //     });
 // };
 
@@ -980,7 +980,7 @@ const getEmpleMenos5Vent2023 = ()  =>{
         mostrarEmpleMenos5Vent2023(empleadosMenos5Ven2023);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        console.log(error, "Ha ocurrido un problema");
     });
 };
 
@@ -1019,7 +1019,7 @@ const getProveeSumMedis = ()  =>{
         mostrarProveeSumMedis(totalProveeSumnisMedicamentos);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        console.log(error, "Ha ocurrido un problema");
     });
 };
 
@@ -1057,7 +1057,7 @@ const mostrarProveeSumMedis = (totalProveeSumnisMedicamentos) =>{
 //         mostrarProveeMedic50(proveMedicMenos50Stock);
 //     })
 //     .catch(error =>{
-//         alert(error, "Ha ocurrido un problema");
+//         console.log(error, "Ha ocurrido un problema");
 //     });
 // };
 
@@ -1094,7 +1094,7 @@ const getPacientNoCompraMedic = ()  =>{
         mostrarPacientNoCompraMedic(pacientNoCompraron);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        console.log(error, "Ha ocurrido un problema");
     });
 };
 
@@ -1133,7 +1133,7 @@ const getMedisVendidosXMes2023 = ()  =>{
         mostrarMedisVendidosXMes2023(medisVendidoXMes);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        console.log(error, "Ha ocurrido un problema");
     });
 };
 
@@ -1172,7 +1172,7 @@ const getEmpleadoVendi = ()  =>{
         mostrarEmpleadoVendi(empleadoVendidoMayorMedic);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        console.log(error, "Ha ocurrido un problema");
     });
 };
 
@@ -1211,7 +1211,7 @@ const getTotalPacientX2023 = ()  =>{
         mostrarTotalPacientX2023(totalGastadoXPaci2023);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        console.log(error, "Ha ocurrido un problema");
     });
 };
 
@@ -1248,7 +1248,7 @@ const getMedicamentosNoVendidos2023 = ()  =>{
         mostrarMedicamentosNoVendidos2023(mediNoVendido2023);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        console.log(error, "Ha ocurrido un problema");
     });
 };
 
@@ -1287,7 +1287,7 @@ const getProveeSumi5Medic2023 = ()  =>{
         mostrarProveeSumi5Medic2023(proveeSuminisAlmenos52023);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        console.log(error, "Ha ocurrido un problema");
     });
 };
 
@@ -1324,7 +1324,7 @@ const getTotalMedicVen2023 = ()  =>{
         mostrarTotalMedicVen2023(medicVenTrimes2023);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        console.log(error, "Ha ocurrido un problema");
     });
 };
 
@@ -1362,7 +1362,7 @@ const getEmpleadoSinVentas2023 = ()  =>{
         mostrarEmpleadoSinVentas2023(empleSinVentas2023);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        console.log(error, "Ha ocurrido un problema");
     });
 };
 
@@ -1398,7 +1398,7 @@ const getEmpleSinVentasEnAbril = ()  =>{
         mostrarEmpleSinVentasEnAbril(empleSinVentasEnAbril);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        console.log(error, "Ha ocurrido un problema");
     });
 };
 
@@ -1434,7 +1434,7 @@ const getMedicPrecio50Stock100 = ()  =>{
         mostrarMedicPrecio50Stock100(medicPreci50StockMenor100);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        console.log(error, "Ha ocurrido un problema");
     });
 };
 

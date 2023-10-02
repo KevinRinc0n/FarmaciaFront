@@ -28,7 +28,7 @@ const getDireccion = () => {
             });
         })
         .catch(error => {
-            console.alert("Ha ocurrido un problema: ", error);
+            console.log("Ha ocurrido un problema: ", error);
         });
 };
 
@@ -85,7 +85,7 @@ const crearDireccion = () => {
         })
         .catch(error => {
             mostrarMensaje("Error al crear la dirección.", "error");
-            console.alert("Error:", error);
+            console.log("Error:", error);
         });
 };
 
@@ -140,7 +140,7 @@ const subirDireccion = (id) => {
         })
         .catch(error => {
             mostrarMensaje("Error al editar la dirección.", "error");
-            console.alert("Error:", error);
+            console.log("Error:", error);
         });
 };
 
@@ -155,6 +155,6 @@ const eliminarDireccion = (id) => {
         })
         .catch(error => {
             mostrarMensaje("Error al eliminar la dirección.", "error");
-            console.alert("Error:", error);
+            console.log("Error:", error);
         });
 };

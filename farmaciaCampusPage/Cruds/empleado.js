@@ -14,7 +14,7 @@ const getEmpleado = () => {
             mostrarEmpleados(eempleados);
         })
         .catch(error => {
-            alert("Error: Ha ocurrido un problema");
+            console.log("Error: Ha ocurrido un problema");
         });
 };
 
@@ -63,7 +63,7 @@ const crearEmpleado = () => {
         getEmpleado();
     })
     .catch(error => {
-        alert("Error: " + error);
+        console.log("Error: " + error);
         document.getElementById("agregaEmpleado").reset();
     });
 };
@@ -107,7 +107,7 @@ const subirEmpleado = (id) => {
         getEmpleado();
     })
     .catch(error => {
-        alert("Error: " + error);
+        console.log("Error: " + error);
     });
 };
 
@@ -121,6 +121,6 @@ const eliminarEmpleado = (id) => {
         getEmpleado();
     })
     .catch(error => {
-        alert("Error: " + error);
+        console.log("Error: " + error);
     });
 };

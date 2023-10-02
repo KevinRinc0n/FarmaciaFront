@@ -15,7 +15,7 @@ const getMedic = () => {
             llenarSelects(data);
         })
         .catch(error => {
-            alert("Ha ocurrido un problema al obtener los medicamentos.");
+            console.log("Ha ocurrido un problema al obtener los medicamentos.");
             console.alert(error);
         });
 };

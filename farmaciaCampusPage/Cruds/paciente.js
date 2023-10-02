@@ -24,7 +24,7 @@ const getPacientes = () => {
             });
         })
         .catch(error => {
-            alert("Ha ocurrido un problema al obtener los pacientes");
+            console.log("Ha ocurrido un problema al obtener los pacientes");
             console.alert(error);
         });
 };
