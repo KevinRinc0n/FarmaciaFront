@@ -25,12 +25,12 @@ const mostrarEmpleados = (eempleados) => {
     eempleados.forEach(empleado => {
         listar += `
         <tr>
-            <th scope="row">${empleado.Id}</th>
-            <td>${empleado.Nombre}</td>
-            <td>${empleado.Cargo}</td>
-            <td>${empleado.FechaContratacion}</td>
-            <td><button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEditar" onclick="editarEmpleado(${empleado.Id})">EDITAR</button></td>
-            <td><button class="btn btn-danger" onclick="eliminarEmpleado(${empleado.Id})">ELIMINAR</button></td>
+            <th scope="row">${empleado.id}</th>
+            <td>${empleado.nombre}</td>
+            <td>${empleado.cargo}</td>
+            <td>${empleado.fechaContratacion}</td>
+            <td><button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEditar" onclick="editarEmpleado(${empleado.id})">EDITAR</button></td>
+            <td><button class="btn btn-danger" onclick="eliminarEmpleado(${empleado.id})">ELIMINAR</button></td>
         </tr>
         `;
     });

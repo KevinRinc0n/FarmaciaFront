@@ -39,15 +39,15 @@ const mostrarDireccion = (ddirecciones) => {
     ddirecciones.forEach(direccion => {
         listar += `
         <tr>
-            <th scope="row">${direccion.Id}</th>
-            <td>${direccion.TipoViaPrincipal}</td>
-            <td>${direccion.NumeroViaPrincipal}</td>
-            <td>${direccion.NumeroViaSecundaria}</td>
-            <td>${direccion.Barrio}</td>
-            <td>${direccion.Complemento}</td>
-            <td>${direccion.IdCiudadFk}</td>
-            <td><button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEditar" onclick="editarDireccion(${direccion.Id})">EDITAR</button></td>
-            <td><button class="btn btn-danger" onclick="eliminarDireccion(${direccion.Id})">ELIMINAR</button></td>
+            <th scope="row">${direccion.id}</th>
+            <td>${direccion.tipoViaPrincipal}</td>
+            <td>${direccion.numeroViaPrincipal}</td>
+            <td>${direccion.numeroViaSecundaria}</td>
+            <td>${direccion.barrio}</td>
+            <td>${direccion.complemento}</td>
+            <td>${direccion.idCiudadFk}</td>
+            <td><button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEditar" onclick="editarDireccion(${direccion.id})">EDITAR</button></td>
+            <td><button class="btn btn-danger" onclick="eliminarDireccion(${direccion.id})">ELIMINAR</button></td>
         </tr>
         `;
     });

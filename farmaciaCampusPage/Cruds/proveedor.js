@@ -35,12 +35,12 @@ const mostrarProveedores = (pproveedores) => {
     pproveedores.forEach(proveedor => {
         listar += `
         <tr>
-            <th scope="row">${proveedor.Id}</th>
-            <td>${proveedor.Nombre}</td>
-            <td>${proveedor.Contacto}</td>
-            <td>${proveedor.IdDireccionFk}</td>
-            <td><button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEditar" onclick="editarProveedor(${proveedor.Id})">EDITAR</button></td>
-            <td><button class="btn btn-danger" onclick="eliminarProveedor(${proveedor.Id})">ELIMINAR</button></td>
+            <th scope="row">${proveedor.id}</th>
+            <td>${proveedor.nombre}</td>
+            <td>${proveedor.contacto}</td>
+            <td>${proveedor.idDireccionFk}</td>
+            <td><button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEditar" onclick="editarProveedor(${proveedor.id})">EDITAR</button></td>
+            <td><button class="btn btn-danger" onclick="eliminarProveedor(${proveedor.id})">ELIMINAR</button></td>
         </tr>
         `;
     });

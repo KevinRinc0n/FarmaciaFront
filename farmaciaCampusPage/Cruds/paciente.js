@@ -36,12 +36,12 @@ const mostrarPacientes = (ppacientes) => {
     ppacientes.forEach(paciente => {
         listar += `
         <tr>
-            <th scope="row">${paciente.Id}</th>
-            <td>${paciente.Nombre}</td>
-            <td>${paciente.Telefono}</td>
-            <td>${paciente.IdDireccionFk}</td>
-            <td><button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEditar" onclick="editarPaciente(${paciente.Id})">EDITAR</button></td>
-            <td><button class="btn btn-danger" onclick="eliminarPaciente(${paciente.Id})">ELIMINAR</button></td>
+            <th scope="row">${paciente.id}</th>
+            <td>${paciente.nombre}</td>
+            <td>${paciente.telefono}</td>
+            <td>${paciente.idDireccionFk}</td>
+            <td><button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEditar" onclick="editarPaciente(${paciente.id})">EDITAR</button></td>
+            <td><button class="btn btn-danger" onclick="eliminarPaciente(${paciente.id})">ELIMINAR</button></td>
         </tr>
         `;
     });

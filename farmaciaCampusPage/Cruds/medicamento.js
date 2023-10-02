@@ -42,16 +42,16 @@ const mostraarMedicamentos = (mnedicamentos) => {
     mnedicamentos.forEach(medicamento => {
         listar += `
         <tr>
-            <th scope="row">${medicamento.Id}</th>
-            <td>${medicamento.Nombre}</td>
-            <td>${medicamento.Precio}</td>
-            <td>${medicamento.FechaExpiracion}</td>
-            <td>${medicamento.Cantidad}</td>
-            <td>${medicamento.Proveedor}</td>
-            <td>${medicamento.Presentacion}</td>
-            <td>${medicamento.Marca}</td>
-            <td><button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEditar" onclick="editarMedicamento(${medicamento.Id})">EDITAR</button></td>
-            <td><button class="btn btn-danger" onclick="eliminarMedicamento(${medicamento.Id})">ELIMINAR</button></td>
+            <th scope="row">${medicamento.id}</th>
+            <td>${medicamento.nombre}</td>
+            <td>${medicamento.precio}</td>
+            <td>${medicamento.fechaExpiracion}</td>
+            <td>${medicamento.cantidad}</td>
+            <td>${medicamento.proveedor}</td>
+            <td>${medicamento.presentacion}</td>
+            <td>${medicamento.marca}</td>
+            <td><button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEditar" onclick="editarMedicamento(${medicamento.id})">EDITAR</button></td>
+            <td><button class="btn btn-danger" onclick="eliminarMedicamento(${medicamento.id})">ELIMINAR</button></td>
         </tr>
         `;
     });
