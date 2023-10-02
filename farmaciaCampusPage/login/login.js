@@ -1,6 +1,6 @@
 import { getCookieValue } from "./Configuration/Cookies.js";
 import { rolpage } from "./Configuration/Cookies.js";
-/* var nombreCookie = "UserActivo";
+var nombreCookie = "UserActivo";
 var nombreRol = "Rol";
 var seccionEmpleado = document.getElementById("agregaEmpleado");
 if (getCookieValue(nombreCookie)== "true" && getCookieValue(nombreRol) == "Administrador") {
@@ -12,7 +12,7 @@ else if (getCookieValue(nombreCookie)== "true" && getCookieValue(nombreRol) == "
 else{
     console.log("no tiene rol");
 }
- */
+
 
 const login = document.getElementById("form");
 
@@ -51,7 +51,7 @@ try{
         })
     .then(result => {
         
-        if (result.isAuthenticated === true){
+        if (result.mesagge === "Usuario Existente"){
 
             var fechaActual = new Date();
             var fechaFutura = new Date(fechaActual.getTime() + 5 * 60 * 1000);
@@ -62,12 +62,13 @@ try{
             document.cookie = `Username=${result.userName}`;
             document.cookie = `Rol=${result.roles}`;
             document.cookie = `ExpireToken=${fechaFutura}`;
-            /* window.location.replace("../index.html"); */
+            window.location.replace("../index.html");
             rolpage();
-        }if (result.isAuthenticated === false) {
+        }
+        if (result.mesagge === "Usuario no Existe") {
             alert("El usario no existe");
         }
-        else{
+        if(result.mesagge ==="Credenciales incorrectas para el usuario"){
             console.log("La autenticacion Fallo");
             alert("Credenciales incorrectas o usuario no registrado");
         }
