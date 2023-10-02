@@ -30,7 +30,7 @@ const mostrarMedicamentos = (medicamentos) => {
             <div class="card-body">
                 <h5 class="card-title">${medicamento.id}</h5> 
                 <p class="card-text">${medicamento.nombre}</p> 
-                <p class="card-text">${medicamento.stock}</p>
+                <p class="card-text">${medicamento.precio}</p>
             </div>
         </div>
         `;
@@ -1224,7 +1224,7 @@ const mostrarTotalPacientX2023 = (totalGastadoXPaci2023) =>{
         <tr>
             <th scope="row">${pacienteTotalGast.id}</th>
             <td>${pacienteTotalGast.nombre}</td>
-            <td>${pacienteTotalGast.TotalGastado}</td>
+            <td>${pacienteTotalGast.totalGastado}</td>
         </tr>
         `
     }); 
