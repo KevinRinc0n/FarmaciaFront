@@ -1,5 +1,5 @@
 const urlMedi = "http://localhost:5297/api/Medicamento";
-let medicamentos = [];
+let mnedicamentos = [];
 
 window.addEventListener("DOMContentLoaded", () => {
     getMedic();
@@ -9,9 +9,9 @@ const getMedic = () => {
     fetch(urlMedi)
         .then(respuesta => respuesta.json())
         .then(data => {
-            medicamentos = data;
-            console.log(medicamentos);
-            mostrarMedicamentos(medicamentos);
+            mnedicamentos = data;
+            console.log(mnedicamentos);
+            mostraarMedicamentos(mnedicamentos);
             llenarSelects(data);
         })
         .catch(error => {
@@ -35,11 +35,11 @@ function llenarSelects(datos) {
     });
 }
 
-const contenedorMedicamentos = document.getElementById("aggMedicBody");
+const contenedorMedicameentos = document.getElementById("aggMedicBody");
 
-const mostrarMedicamentos = (medicamentos) => {
+const mostraarMedicamentos = (mnedicamentos) => {
     let listar = "";
-    medicamentos.forEach(medicamento => {
+    mnedicamentos.forEach(medicamento => {
         listar += `
         <tr>
             <th scope="row">${medicamento.Id}</th>
@@ -55,7 +55,7 @@ const mostrarMedicamentos = (medicamentos) => {
         </tr>
         `;
     });
-    contenedorMedicamentos.innerHTML = listar;
+    contenedorMedicameentos.innerHTML = listar;
 };
 
 const crearMedicamento = () => {
@@ -103,7 +103,7 @@ const crearMedicamento = () => {
 };
 
 const editarMedicamento = (id) => {
-    const medicamento = medicamentos.find(medicament => medicament.Id === id);
+    const medicamento = mnedicamentos.find(medicament => medicament.Id === id);
 
     if (!medicamento) {
         alert("Medicamento no encontrado.");
@@ -189,11 +189,11 @@ const eliminarMedicamento = (id) => {
 function filterTable() {
     const buscarIgual = document.querySelector("#search").value.toLowerCase();
 
-    const filtrarMedicamentos = medicamentos.filter(medicamento => {
+    const filtrarMedicamentos = mnedicamentos.filter(medicamento => {
         return (
             medicamento.Id.toString().includes(buscarIgual) ||
             medicamento.Nombre.toLowerCase().includes(buscarIgual)
         );
     });
-    mostrarMedicamentos(filtrarMedicamentos);
+    mostraarMedicamentos(filtrarMedicamentos);
 }

@@ -1236,7 +1236,7 @@ const mostrarTotalPacientX2023 = (totalGastadoXPaci2023) =>{
 let mediNoVendido2023 = [];
 
 window.addEventListener("DOMContentLoaded", () =>{
-    getmedicamentosTotalTrimes2023();
+    getMedicamentosNoVendidos2023();
 });
 
 const getMedicamentosNoVendidos2023 = ()  =>{

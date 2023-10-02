@@ -1,5 +1,5 @@
 const urlDirec = "http://localhost:5297/api/Direccion";
-let direcciones = [];
+let ddirecciones = [];
 
 window.addEventListener("DOMContentLoaded", () => {
     getDireccion();
@@ -15,12 +15,12 @@ const getDireccion = () => {
     fetch(urlDirec)
         .then(respuesta => respuesta.json())
         .then(data => {
-            direcciones = data;
-            console.log(direcciones);
-            mostrarDireccion(direcciones);
+            ddirecciones = data;
+            console.log(ddirecciones);
+            mostrarDireccion(ddirecciones);
             const direccionSelect = document.getElementById("inputCiudad");
             direccionSelect.innerHTML = "";
-            direcciones.forEach((ciudad) => {
+            ddirecciones.forEach((ciudad) => {
                 const opcion = document.createElement("option");
                 opcion.value = ciudad.Id;
                 opcion.text = ciudad.IdCiudadFk;
@@ -34,9 +34,9 @@ const getDireccion = () => {
 
 const contenedorDirecciones = document.getElementById("aggDireccBody");
 
-const mostrarDireccion = (direcciones) => {
+const mostrarDireccion = (ddirecciones) => {
     let listar = "";
-    direcciones.forEach(direccion => {
+    ddirecciones.forEach(direccion => {
         listar += `
         <tr>
             <th scope="row">${direccion.Id}</th>
@@ -90,11 +90,11 @@ const crearDireccion = () => {
 };
 
 const editarDireccion = (id) => {
-    let direccion = direcciones.find(direction => direction.Id === id);
+    let direccion = ddirecciones.find(direction => direction.Id === id);
 
     const direccionSelect = document.getElementById("dieccCiudadEditar");
     direccionSelect.innerHTML = "";
-    direcciones.forEach((ciudad) => {
+    ddirecciones.forEach((ciudad) => {
         const opcion = document.createElement("option");
         opcion.value = ciudad.Id;
         opcion.text = ciudad.IdCiudadFk;
@@ -125,7 +125,7 @@ const subirDireccion = (id) => {
         mostrarMensaje("DEBES LLENAR TODOS LOS CAMPOS", "error");
         return;
     }
-
+    
     fetch(`${urlDirec}/${id}`, {
         method: "PUT",
         body: JSON.stringify(direccion),

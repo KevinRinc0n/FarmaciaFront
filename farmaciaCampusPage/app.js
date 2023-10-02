@@ -1174,8 +1174,8 @@ gastadoXPaciente2023.addEventListener("click", function(){
     totalGastXPacient.style.display = "flex";
 });
 
-var recetas = document.getElementById("recetasMedicDespues2023");
-recetas.addEventListener("click", function(){
+var recetass = document.getElementById("recetasMedicDespues2023");
+recetass.addEventListener("click", function(){
     recetaListar.style.display = "none";
     recetasDespues2023.style.display = "flex";
 });

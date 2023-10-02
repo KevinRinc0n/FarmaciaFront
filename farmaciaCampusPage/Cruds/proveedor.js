@@ -1,5 +1,5 @@
 const urlProvee = "http://localhost:5297/api/Proveedor";
-let proveedores = [];
+let pproveedores = [];
 
 window.addEventListener("DOMContentLoaded", () => {
     getProveedores();
@@ -9,14 +9,14 @@ const getProveedores = () => {
     fetch(urlProvee)
     .then(respuesta => respuesta.json())
     .then(data => {
-        proveedores = data;
-        console.log(proveedores);
-        mostrarProveedores(proveedores);
+        pproveedores = data;
+        console.log(pproveedores);
+        mostrarProveedores(pproveedores);
 
         const direccionSelect = document.getElementById("inputDirec");
 
         direccionSelect.innerHTML = "";
-        proveedores.forEach((direccion) => {
+        pproveedores.forEach((direccion) => {
             const opcion = document.createElement("option");
             opcion.value = direccion.Id;
             opcion.textContent = direccion.Nombre; 
@@ -30,9 +30,9 @@ const getProveedores = () => {
 
 const contenedorProveedores = document.getElementById("aggProveeBody");
 
-const mostrarProveedores = (proveedores) => {
+const mostrarProveedores = (pproveedores) => {
     let listar = "";
-    proveedores.forEach(proveedor => {
+    pproveedores.forEach(proveedor => {
         listar += `
         <tr>
             <th scope="row">${proveedor.Id}</th>
@@ -81,7 +81,7 @@ const crearProveedor = () => {
 
 const editarProveedor = (id) => {
     let prov = {};
-    proveedores.forEach(provv => {
+    pproveedores.forEach(provv => {
         if (provv.Id == id) {
             prov = provv;
         }
@@ -90,7 +90,7 @@ const editarProveedor = (id) => {
     const direccionSelect = document.getElementById("editaDireccion");
 
     direccionSelect.innerHTML = "";
-    proveedores.forEach((direccion) => {
+    pproveedores.forEach((direccion) => {
         const opcion = document.createElement("option");
         opcion.value = direccion.Id;
         opcion.textContent = direccion.Nombre; 

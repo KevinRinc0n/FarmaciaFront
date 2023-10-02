@@ -1,5 +1,5 @@
 const urlPacie = "http://localhost:5297/api/Paciente";
-let pacientes = [];
+let ppacientes = [];
 
 document.addEventListener("DOMContentLoaded", () => {
     getPacientes();
@@ -9,9 +9,9 @@ const getPacientes = () => {
     fetch(urlPacie)
         .then(respuesta => respuesta.json())
         .then(data => {
-            pacientes = data;
-            console.log(pacientes);
-            mostrarPacientes(pacientes);
+            ppacientes = data;
+            console.log(ppacientes);
+            mostrarPacientes(ppacientes);
 
             const direccionSelect = document.getElementById("inputDireccion");
             direccionSelect.innerHTML = "";
@@ -31,9 +31,9 @@ const getPacientes = () => {
 
 const contenedorPacientes = document.getElementById("aggPacientBody");
 
-const mostrarPacientes = (pacientes) => {
+const mostrarPacientes = (ppacientes) => {
     let listar = "";
-    pacientes.forEach(paciente => {
+    ppacientes.forEach(paciente => {
         listar += `
         <tr>
             <th scope="row">${paciente.Id}</th>
@@ -85,7 +85,7 @@ const crearPaciente = () => {
 };
 
 const editarPaciente = (id) => {
-    const paciente = pacientes.find(p => p.Id === id);
+    const paciente = ppacientes.find(p => p.Id === id);
 
     document.getElementById("editaNaame").value = paciente.Nombre;
     document.getElementById("editaTele").value = paciente.Telefono;

@@ -1,5 +1,5 @@
 const urlEmple = "http://localhost:5297/api/Empleado";
-let empleados = [];
+let eempleados = [];
 
 window.addEventListener("DOMContentLoaded", () => {
     getEmpleado();
@@ -9,9 +9,9 @@ const getEmpleado = () => {
     fetch(urlEmple)
         .then(respuesta => respuesta.json())
         .then(data => {
-            empleados = data;
-            console.log(empleados);
-            mostrarEmpleados(empleados);
+            eempleados = data;
+            console.log(eempleados);
+            mostrarEmpleados(eempleados);
         })
         .catch(error => {
             alert("Error: Ha ocurrido un problema");
@@ -20,9 +20,9 @@ const getEmpleado = () => {
 
 const contenedorEmpleados = document.getElementById("aggEmpleadoBody");
 
-const mostrarEmpleados = (empleados) => {
+const mostrarEmpleados = (eempleados) => {
     let listar = "";
-    empleados.forEach(empleado => {
+    eempleados.forEach(empleado => {
         listar += `
         <tr>
             <th scope="row">${empleado.Id}</th>
@@ -69,7 +69,7 @@ const crearEmpleado = () => {
 };
 
 const editarEmpleado = (id) => {
-    let empleado = empleados.find(emp => emp.Id === id);
+    let empleado = eempleados.find(emp => emp.Id === id);
 
     document.getElementById("editarNombre").value = empleado.Nombre;
     document.getElementById("editarCargo").value = empleado.Cargo;
