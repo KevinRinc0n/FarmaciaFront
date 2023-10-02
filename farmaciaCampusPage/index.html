@@ -764,7 +764,7 @@
 					<th scope="col">Eliminar</th>
 				  </tr>
 				</thead>
-				<tbody id="medicNoVenBody"></tbody>
+				<tbody id="pacienCompraParaBody"></tbody>
 			</table>
 		</div>
 		<div id="pacienCompraPara2023"></div>
@@ -775,7 +775,17 @@
 		<div id="medicamentosPromeXVen"></div>
 		<div id="medicamentosNoVendidos"></div>
 		<div id="medicamentosVenXMes2023"></div>
-		<div id="medicamentosVenPorMes2023"></div>
+		<div id="medicamentosVenPorMes2023">
+			<table class="table">
+				<thead>
+				  <tr>
+					<th scope="col">Id</th>
+					<th scope="col">Nombre</th>
+				  </tr>
+				</thead>
+				<tbody id="medicamentosVenPorMes2023Body"></tbody>
+			</table>
+		</div>
 		<div id="medicamentosNoVendidos2023"></div>
 		<div id="medicamentosTotalTrimes2023"></div>
 		<div id="ventaXEmpleado"></div>
@@ -811,9 +821,10 @@
 				  <tr>
 					<th scope="col">Id</th>
 					<th scope="col">Nombre</th>
+					<th scope="col">Contacto</th>
 				  </tr>
 				</thead>
-				<tbody id="medicNoVenBody"></tbody>
+				<tbody id="proveeNoVenMedicUltiAnoBody"></tbody>
 			</table>
 		</div>
 		<div id="proveedorSumiMasMedic2023">
@@ -858,18 +869,28 @@
 		</div>
 		<div id="totalRecaudadoXVenMedic"></div>
 		<div id="medicamentosNoVendidos">
-			<!-- <table class="table">
+			<table class="table">
 				<thead>
 				  <tr>
-					<th scope="col">#</th>
-					<th scope="col">First</th>
-					<th scope="col">Last</th>
+					<th scope="col">Id</th>
+					<th scope="col">Nombre</th>
 				  </tr>
 				</thead>
-				<tbody id="medicNoVenBody"></tbody>
-			</table> -->
+				<tbody id="medicNoVenBody2023"></tbody>
+			</table>
 		</div>
-		<div id="medicamentoMasCaro"></div>
+		<div id="medicamentoMasCaro">
+			<table class="table">
+				<thead>
+				  <tr>
+					<th scope="col">Id</th>
+					<th scope="col">Nombre</th>
+					<th scope="col">Precio</th>
+				  </tr>
+				</thead>
+				<tbody id="medicamentoMasCaroBody"></tbody>
+			</table>
+		</div>
 		<div id="medicamentoExpi2024"></div>
 		<div id="medicamentosPre50Stock100"></div>
 		<div id="proveeInfoContacto"></div>
@@ -879,8 +900,8 @@
 				  <tr>
 					<th scope="col">Id</th>
 					<th scope="col">Nombre</th>
-					<th scope="col">Contacto</th>
-					<th scope="col">Ganancia</th>
+					<th scope="col">Precio</th>
+					<th scope="col">Proveedor</th>
 				  </tr>
 				</thead>
 				<tbody id="ventXProveBody"> </tbody>
@@ -1035,18 +1056,18 @@
                 </div>
                 <div class="modal-body">
                     <div id="">
-                        <input type="text" id="editarNombre" placeholder="NOMBRE DEL MEDICAMENTO">
-                        <input type="number" id="editarPrecio"  placeholder="PRECIO DEL MEDICAMENTO">
+                        <input type="text" id="editarNombre" placeholder="NOMBRE DEL MEDICAMENTO" class="editAll">
+                        <input type="number" id="editarPrecio"  placeholder="PRECIO DEL MEDICAMENTO" class="editAll">
 						<label for="">EDITA LA FECHA DE EXPIRACION</label>
-                        <input type="date" id="editarFecha">
-                        <input type="number" id="editarCantidad"  placeholder="CANTIDAD DEL MEDICAMENTO">
-						<select class="form-select medisInput" id="medicProveEditar" aria-label="Default select example">
+                        <input type="date" id="editarFecha" class="editAll">
+                        <input type="number" id="editarCantidad"  placeholder="CANTIDAD DEL MEDICAMENTO" class="editAll">
+						<select class="form-select medisInput editAll" id="medicProveEditar" aria-label="Default select example">
 							<option selected>SELECCIONA EL PROVEEDOR</option>
 						</select>
-						<select class="form-select medisInput" id="medicPresentaEditar" aria-label="Default select example">
+						<select class="form-select medisInput editAll" id="medicPresentaEditar" aria-label="Default select example">
 							<option selected>SELECCIONA LA PRESENTACION</option>
 						</select>
-						<select class="form-select medisInput" id="medicMarcaeEditar" aria-label="Default select example">
+						<select class="form-select medisInput editAll" id="medicMarcaeEditar" aria-label="Default select example">
 							<option selected>SELECCIONA LA MARCA</option>
 						</select>
                     </div>
@@ -1067,12 +1088,12 @@
                 </div>
                 <div class="modal-body">
                     <div id="">
-                        <input type="text" id="editarVia" placeholder="TIPO VIA">
-                        <input type="number" id="editarNumeroVia"  placeholder="NUMERO VIA">
-                        <input type="number" id="editarNumeroViaSecundario"  placeholder="NUMERO VIA SECUNDARIO">
-                        <input type="text" id="editarBarrio"  placeholder="BARRIO">
-                        <input type="text" id="editarComplemento"  placeholder="COMPLEMENTO">
-						<select class="form-select medisInput" id="dieccCiudadEditar" aria-label="Default select example">
+                        <input class="editAll" type="text" id="editarVia" placeholder="TIPO VIA">
+                        <input class="editAll" type="number" id="editarNumeroVia"  placeholder="NUMERO VIA">
+                        <input class="editAll" type="number" id="editarNumeroViaSecundario"  placeholder="NUMERO VIA SECUNDARIO">
+                        <input class="editAll" type="text" id="editarBarrio"  placeholder="BARRIO">
+                        <input class="editAll" type="text" id="editarComplemento"  placeholder="COMPLEMENTO">
+						<select class="form-select medisInput editAll" id="dieccCiudadEditar" aria-label="Default select example">
 							<option selected>SELECCIONA LA CIUDAD</option>
 						</select>
                     </div>
@@ -1093,10 +1114,10 @@
                 </div>
                 <div class="modal-body">
                     <div id="">
-                        <input type="text" id="editarNombree" placeholder="NOMBRE">
-                        <input type="text" id="editarCargo"  placeholder="CARGO">
+                        <input class="editAll" type="text" id="editarNombree" placeholder="NOMBRE">
+                        <input class="editAll" type="text" id="editarCargo"  placeholder="CARGO">
 						<label for="">EDITA LA FECHA DE CONTRATACION</label>
-                        <input type="date" id="editarFechaContratacion">
+                        <input class="editAll" type="date" id="editarFechaContratacion">
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -1115,9 +1136,9 @@
                 </div>
                 <div class="modal-body">
                     <div id="">
-                        <input type="text" id="editaName" placeholder="NOMBRE">
-                        <input type="number" id="editaContacto"  placeholder="CONTACTO">
-						<select class="form-select medisInput" id="editaDireccion" aria-label="Default select example">
+                        <input class="editAll" type="text" id="editaName" placeholder="NOMBRE">
+                        <input class="editAll" type="number" id="editaContacto"  placeholder="CONTACTO">
+						<select class="form-select medisInput editAll" id="editaDireccion" aria-label="Default select example">
 							<option selected>SELECCIONA TU DIRECCION</option>
 						</select>
                     </div>
@@ -1138,9 +1159,9 @@
                 </div>
                 <div class="modal-body">
                     <div id="">
-                        <input type="text" id="editaNaame" placeholder="NOMBRE">
-                        <input type="number" id="editaTele"  placeholder="TELEFONO">
-						<select class="form-select medisInput" id="editaDireccionn" aria-label="Default select example">
+                        <input class="editAll" type="text" id="editaNaame" placeholder="NOMBRE">
+                        <input class="editAll" type="number" id="editaTele"  placeholder="TELEFONO">
+						<select class="form-select medisInput editAll" id="editaDireccionn" aria-label="Default select example">
 							<option selected>SELECCIONA TU DIRECCION</option>
 						</select>
                     </div>

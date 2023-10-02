@@ -25,8 +25,8 @@ const mostrarMedicamentos = (medicamentos) => {
     let listar = "";
     medicamentos.forEach(medicamento => { 
         listar += `
-        <div class="card" style="width: 18rem;">
-            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+        <div class="card divPeti" style="width: 18rem;">
+            <img src="./imgs/mediCard.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">${medicamento.id}</h5> 
                 <p class="card-text">${medicamento.nombre}</p> 
@@ -65,8 +65,8 @@ const mostrarMedicCompProveeA = (medicamentosComProveeA) => {
     let listar = "";
     medicamentosComProveeA.forEach(medicamentoProveeA => {
         listar += `
-        <div class="card" style="width: 18rem;">
-            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+        <div class="card divPeti" style="width: 18rem;">
+            <img src="./imgs/mediCard.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">${medicamentoProveeA.nombre}</h5>
             </div>
@@ -103,8 +103,8 @@ const mostrarMedicamentoParace = (medicamentoParacetamol) =>{
     let listar = "";
     medicamentoParacetamol.forEach(cadu2024 =>{                                           
         listar += `
-        <div class="card" style="width: 18rem;">
-            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+        <div class="card divPeti" style="width: 18rem;">
+            <img src="./imgs/mediCard.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">${cadu2024.id}</h5>
                 <h5 class="card-title">${cadu2024.nombre}</h5>
@@ -220,8 +220,8 @@ const mostrarMedicXProvee = (medicXProvee) =>{
     let listar = "";
     medicXProvee.forEach(totalMedicXProve =>{
         listar += `
-        <div class="card" style="width: 18rem;">
-            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+        <div class="card divPeti" style="width: 18rem;">
+            <img src="./imgs/dinero.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">${totalMedicXProve.id}</h5>
                 <p class="card-title">${totalMedicXProve.nombre}</p>
@@ -261,8 +261,8 @@ const mostrarMedicXProvee = (medicXProvee) =>{
 //     let listar = "";
 //     recaudadoXVenta.forEach(totalRecaudado =>{
 //         listar += `
-//         <div class="card" style="width: 18rem;">
-//             <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+//         <div class="card divPeti" style="width: 18rem;">
+//             <img src="./imgs/mediCard.jpg" class="card-img-top" alt="...">
 //             <div class="card-body">
 //                 <h5 class="card-title">${totalRecaudado.Id}</h5>
 //                 <p class="card-text">${totalRecaudado.Nombre}</p>
@@ -294,7 +294,7 @@ const getNoVendidos = ()  =>{
     });
 };
 
-const contenedorNoVendidos = document.getElementById("medicamentoMasCaro");
+const contenedorNoVendidos = document.getElementById("medicamentoMasCaroBody");
 
 const mostrarMedicNoVendi = (medisNoVendidos) =>{
     let listar = "";
@@ -337,8 +337,8 @@ const mostrarMedicNoVendi = (medisNoVendidos) =>{
 //     let listar = "";
 //     medicCaro.forEach(medicamentoMoreCaro =>{
 //         listar += `
-//         <div class="card" style="width: 18rem;">
-//             <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+//         <div class="card divPeti" style="width: 18rem;">
+//             <img src="./imgs/mediCard.jpg" class="card-img-top" alt="...">
 //             <div class="card-body">
 //                 <h5 class="card-title">${medicamentoMoreCaro.Id}</h5>
 //                 <p class="card-text">${medicamentoMoreCaro.Nombre}</p>
@@ -409,7 +409,7 @@ const getPacientePara = ()  =>{
     });
 };
 
-const contenedorPacientePara = document.getElementById("pacienCompraPara");
+const contenedorPacientePara = document.getElementById("pacienCompraParaBody");
 
 const mostrarPacientePara = (pacienteCompraParace) =>{
     let listar = "";
@@ -445,7 +445,7 @@ const getNoventasProvee = ()  =>{
     });
 };
 
-const contenedorProveeNoVentas = document.getElementById("proveeNoVenMedicUltiAño");
+const contenedorProveeNoVentas = document.getElementById("proveeNoVenMedicUltiAnoBody");
 
 const mostrarNoVentaProvee = (proveeNoVentas) =>{
     let listar = "";
@@ -488,8 +488,8 @@ const mostrarMedicMarzo = (medicamentosMarzo) => {
     let listar = "";
     medicamentosMarzo.forEach(totalMedicamentoMarzo => {
         listar += `
-        <div class="card" style="width: 18rem;">
-            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+        <div class="card divPeti" style="width: 18rem;">
+            <img src="./imgs/mediCard.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">${totalMedicamentoMarzo}</h5>
             </div>
@@ -526,8 +526,8 @@ const mostrarMedicMenosven = (medicMenosVendido) =>{
     let listar = "";
     medicMenosVendido.forEach(medicamentoMenosVen =>{
         listar += `
-        <div class="card" style="width: 18rem;">
-            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+        <div class="card divPeti" style="width: 18rem;">
+            <img src="./imgs/mediCard.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">${medicamentoMenosVen.id}</h5>
                 <p class="card-text">${medicamentoMenosVen.nombre}</p>
@@ -603,8 +603,8 @@ const mostrarPromMedisVenta = (promMedisVentas) =>{
     let listar = "";
     promMedisVentas.forEach(promedioMedicamento =>{
         listar += `
-        <div class="card" style="width: 18rem;">
-            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+        <div class="card divPeti" style="width: 18rem;">
+            <img src="./imgs/mediCard.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">${promedioMedicamento.id}</h5>
                 <p class="card-text">${promedioMedicamento.nombre}</p>
@@ -644,8 +644,8 @@ const mostrarVentaEmpleados2023 = (ventasEmple2023) =>{
     let listar = "";
     ventasEmple2023.forEach(ventaXEmple =>{
         listar += `
-        <div class="card" style="width: 18rem;">
-            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+        <div class="card divPeti" style="width: 18rem;">
+            <img src="./imgs/parace.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <p class="card-text">El total de ventas del medicamento paracetamol es: ${ventaXEmple.unidadesVendidas}</p>
             </div>
@@ -682,8 +682,8 @@ const mostraMedicExpira2024 = (medicamentosExpiran2024) =>{
     let listar = "";
     medicamentosExpiran2024.forEach(medicamento2024Expira =>{
         listar += `
-        <div class="card" style="width: 18rem;">
-            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+        <div class="card divPeti" style="width: 18rem;">
+            <img src="./imgs/moviInvent.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">${medicamento2024Expira.id}</h5>
                 <p class="card-text">${medicamento2024Expira.nombre}</p>
@@ -716,7 +716,7 @@ const getEmpleMas5Vent = ()  =>{
     });
 };
 
-const contenedorEmpleMas5Ventas = document.getElementById("empleadoMas5Ventas");
+const contenedorEmpleMas5Ventas = document.getElementById("empleMas5VentasBody");
 
 const mostraEmpleMas5ventas = (empleadosMas5Ventas) =>{
     let listar = "";
@@ -758,8 +758,8 @@ const mostraMedicNuncaVent = (medicamentosNuncaVendidos) =>{
     let listar = "";
     medicamentosNuncaVendidos.forEach(medicamentoNeverVendi =>{
         listar += `
-        <div class="card" style="width: 18rem;">
-            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+        <div class="card divPeti" style="width: 18rem;">
+            <img src="./imgs/mediCard.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">${medicamentoNeverVendi.id}</h5>
                 <p class="card-text">${medicamentoNeverVendi.nombre}</p>
@@ -797,8 +797,8 @@ const mostraPacienMasDinero = (pacienteMasDineroGasta) =>{
     let listar = "";
     pacienteMasDineroGasta.forEach(pacienteMasDinero =>{
         listar += `
-        <div class="card" style="width: 18rem;">
-            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+        <div class="card divPeti" style="width: 18rem;">
+            <img src="./imgs/dinero.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">${pacienteMasDinero.id}</h5>
                 <p class="card-text">${pacienteMasDinero.nombre}</p>
@@ -836,8 +836,8 @@ const mostrarEmpleadosSinVentas = (empleadosSinVentas) =>{
     let listar = "";
     empleadosSinVentas.forEach(empleadoSinVentt =>{
         listar += `
-        <div class="card" style="width: 18rem;">
-            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+        <div class="card divPeti" style="width: 18rem;">
+            <img src="./imgs/farmac.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">${empleadoSinVentt.id}</h5>
                 <p class="card-text">${empleadoSinVentt.nombre}</p>
@@ -912,8 +912,8 @@ const mostrarmedicNoVenBodyce2023 = (pacienteCompraronParace2023) =>{
     let listar = "";
     pacienteCompraronParace2023.forEach(pacienteParacc =>{
         listar += `
-        <div class="card" style="width: 18rem;">
-            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+        <div class="card divPeti" style="width: 18rem;">
+            <img src="./imgs/mediCard.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">${pacienteParacc.id}</h5>
                 <p class="card-text">${pacienteParacc.nombre}</p>
@@ -951,8 +951,8 @@ const mostrarmedicNoVenBodyce2023 = (pacienteCompraronParace2023) =>{
 //     let listar = "";
 //     totalMedicvendiXMes.forEach(medicamentoVenPorMe =>{
 //         listar += `
-//         <div class="card" style="width: 18rem;">
-//             <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+//         <div class="card divPeti" style="width: 18rem;">
+//             <img src="./imgs/mediCard.jpg" class="card-img-top" alt="...">
 //             <div class="card-body">
 //                 <h5 class="card-title">${medicamentoVenPorMe.Id}</h5>
 //                 <p class="card-text">${medicamentoVenPorMe.Nombre}</p>
@@ -990,8 +990,8 @@ const mostrarEmpleMenos5Vent2023 = (empleadosMenos5Ven2023) =>{
     let listar = "";
     empleadosMenos5Ven2023.forEach(empleadoMenos5Ventt =>{
         listar += `
-        <div class="card" style="width: 18rem;">
-            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+        <div class="card divPeti" style="width: 18rem;">
+            <img src="./imgs/farmac.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">${empleadoMenos5Ventt.id}</h5>
                 <p class="card-text">${empleadoMenos5Ventt.nombre}</p>
@@ -1029,8 +1029,8 @@ const mostrarProveeSumMedis = (totalProveeSumnisMedicamentos) =>{
     let listar = "";
     totalProveeSumnisMedicamentos.forEach(proveeSumMedic =>{
         listar += `
-        <div class="card" style="width: 18rem;">
-            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+        <div class="card divPeti" style="width: 18rem;">
+            <img src="./imgs/moviInvent.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">${proveeSumMedic.TotalProveedores}</h5>
             </div>
@@ -1104,8 +1104,8 @@ const mostrarPacientNoCompraMedic = (pacientNoCompraron) =>{
     let listar = "";
     pacientNoCompraron.forEach(pacienteSinCom =>{
         listar += `
-        <div class="card" style="width: 18rem;">
-            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+        <div class="card divPeti" style="width: 18rem;">
+            <img src="./imgs/noCompra.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">${pacienteSinCom.id}</h5>
                 <p class="card-text">${pacienteSinCom.nombre}</p>
@@ -1143,8 +1143,8 @@ const mostrarMedisVendidosXMes2023 = (medisVendidoXMes) =>{
     let listar = "";
     medisVendidoXMes.forEach(medicamentoVenXMes =>{
         listar += `
-        <div class="card" style="width: 18rem;">
-            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+        <div class="card divPeti" style="width: 18rem;">
+            <img src="./imgs/mediCard.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">${medicamentoVenXMes.id}</h5>
                 <p class="card-text">${medicamentoVenXMes.nombre}</p>
@@ -1182,8 +1182,8 @@ const mostrarEmpleadoVendi = (empleadoVendidoMayorMedic) =>{
     let listar = "";
     empleadoVendidoMayorMedic.forEach(empleadoMayorMedicDisnti =>{
         listar += `
-        <div class="card" style="width: 18rem;">
-            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+        <div class="card divPeti" style="width: 18rem;">
+            <img src="./imgs/moviInvent.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">${empleadoMayorMedicDisnti.id}</h5>
                 <p class="card-text">${empleadoMayorMedicDisnti.nombre}</p>
@@ -1215,7 +1215,7 @@ const getTotalPacientX2023 = ()  =>{
     });
 };
 
-const contenedorTotalPacientX2023 = document.getElementById("totalGastXPacientrecetasDespues2023");
+const contenedorTotalPacientX2023 = document.getElementById("totalGastXPacientBody");
 
 const mostrarTotalPacientX2023 = (totalGastadoXPaci2023) =>{
     let listar = "";
@@ -1258,8 +1258,8 @@ const mostrarMedicamentosNoVendidos2023 = (mediNoVendido2023) =>{
     let listar = "";
     mediNoVendido2023.forEach(medicamentoNoVen2023 =>{
         listar += `
-        <div class="card" style="width: 18rem;">
-            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+        <div class="card divPeti" style="width: 18rem;">
+            <img src="./imgs/mediCard.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">${medicamentoNoVen2023.id}</h5>
                 <p class="card-text">${medicamentoNoVen2023.nombre}</p>
@@ -1300,7 +1300,7 @@ const mostrarProveeSumi5Medic2023 = (proveeSuminisAlmenos52023) =>{
         <tr>
             <th scope="row">${provSuminis5MedicDifere.id}</th>
             <td>${provSuminis5MedicDifere.nombre}</td>
-            <td>${provSuminis5MedicDifere.idProveedorFk}</td>
+            <td>${provSuminis5MedicDifere.proveedoresConMedicamentos2023}</td>
         </tr>
         `
     }); 
@@ -1334,8 +1334,8 @@ const mostrarTotalMedicVen2023 = (medicVenTrimes2023) =>{
     let listar = "";
     medicVenTrimes2023.forEach(totalMedicTrimestre =>{
         listar += `
-        <div class="card" style="width: 18rem;">
-            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+        <div class="card divPeti" style="width: 18rem;">
+            <img src="./imgs/mediCard.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">${totalMedicTrimestre.Medicamentos}</h5>
             </div>
@@ -1402,7 +1402,7 @@ const getEmpleSinVentasEnAbril = ()  =>{
     });
 };
 
-const contenedorEmpleSinVentasEnAbril = document.getElementById("medicamentosVenPorMes2023");
+const contenedorEmpleSinVentasEnAbril = document.getElementById("medicamentosVenPorMes2023Body");
 
 const mostrarEmpleSinVentasEnAbril = (empleSinVentasEnAbril) =>{
     let listar = "";
@@ -1410,7 +1410,7 @@ const mostrarEmpleSinVentasEnAbril = (empleSinVentasEnAbril) =>{
         listar += `
         <tr>
             <th scope="row">${empleaSinVentEnAbril.id}</th>
-            <td>${empleaSinVentt2023.nombre}</td>
+            <td>${empleaSinVentEnAbril.nombre}</td>
         </tr>
         `
     }); 
@@ -1444,8 +1444,8 @@ const mostrarMedicPrecio50Stock100 = (medicPreci50StockMenor100) =>{
     let listar = "";
     medicPreci50StockMenor100.forEach(medicamento500Y100 =>{
         listar += `
-        <div class="card" style="width: 18rem;">
-            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+        <div class="card divPeti" style="width: 18rem;">
+            <img src="./imgs/mediCard.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">${medicamento500Y100.id}</h5>
                 <p class="card-text">${medicamento500Y100.nombre}</p>

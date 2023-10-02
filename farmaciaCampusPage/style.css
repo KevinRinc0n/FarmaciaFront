@@ -7,6 +7,17 @@
 	box-sizing: border-box;
 }
 
+.editAll
+{
+	margin-bottom: 4%;
+}
+
+.divPeti
+{
+	margin-left: 5%;
+	margin-top: 5%;
+}
+
 #medicamentosProveeA
 {
 	display: none; 
