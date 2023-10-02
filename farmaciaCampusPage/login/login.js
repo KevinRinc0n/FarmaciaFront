@@ -1,3 +1,19 @@
+import { getCookieValue } from "./Configuration/Cookies.js";
+import { rolpage } from "./Configuration/Cookies.js";
+/* var nombreCookie = "UserActivo";
+var nombreRol = "Rol";
+var seccionEmpleado = document.getElementById("agregaEmpleado");
+if (getCookieValue(nombreCookie)== "true" && getCookieValue(nombreRol) == "Administrador") {
+    seccionEmpleado.style.display = "block";
+}
+else if (getCookieValue(nombreCookie)== "true" && getCookieValue(nombreRol) == "Empleado") {
+    seccionEmpleado.style.display = "none";
+}
+else{
+    console.log("no tiene rol");
+}
+ */
+
 const login = document.getElementById("form");
 
 login.addEventListener('submit',async (e) => {
@@ -25,7 +41,7 @@ login.addEventListener('submit',async (e) => {
         body: JSON.stringify(data)
     };
 
-
+try{
     await fetch(url, opciones)
     .then(response => {
         if (!response.ok) {
@@ -37,20 +53,28 @@ login.addEventListener('submit',async (e) => {
         
         if (result.isAuthenticated === true){
 
-            document.cookie = `miToken=${result.UserToken}`;
-            document.cookie = `miRefreshToken=${result.refreshToken}`;
-            document.cookie = `UserActve=${true}`;
-            document.cookie = `Username=${result.Username}`;
-            document.cookie = `Rol=${result.userRoles}`;
-            window.location.replace("../index.html");
-        } else{
+            var fechaActual = new Date();
+            var fechaFutura = new Date(fechaActual.getTime() + 5 * 60 * 1000);
+
+            document.cookie = `miToken=${result.token}`;
+            document.cookie = `miRefreshToken=${result.refreshTokenExpiration}`;
+            document.cookie = `UserActivo=${true}`;
+            document.cookie = `Username=${result.userName}`;
+            document.cookie = `Rol=${result.roles}`;
+            document.cookie = `ExpireToken=${fechaFutura}`;
+            /* window.location.replace("../index.html"); */
+            rolpage();
+        }if (result.isAuthenticated === false) {
+            alert("El usario no existe");
+        }
+        else{
             console.log("La autenticacion Fallo");
             alert("Credenciales incorrectas o usuario no registrado");
         }
         console.log("Resultado:", result);
     })
-    .catch(error => {
+}catch(error) {
             console.error("Error:", error);
             alert("Hubo un error al procesar la solicitud. Por favor, verifica la consola para más detalles.");
-        });
+        };
 });
