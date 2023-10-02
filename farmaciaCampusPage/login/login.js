@@ -3,50 +3,54 @@ const login = document.getElementById("form");
 login.addEventListener('submit',async (e) => {
     e.preventDefault();
 
-let data = Object.fromEntries(new FormData(e.target));
+    let data = {
+        "Username": document.querySelector('input[name="Username"]').value,
+        "Password": document.querySelector('input[name="Password"]').value
+    };
 
-const url = 'http://localhost:5297/api/Empleado/token';
+    const url = 'http://localhost:5297/api/user/token';
 
-var empleado = {
-    "Username": data.Username,
-    "Password": data.Password
-};
+/*     var usuario = {
+        "Username": data.Username,
+        "Password": data.Password
+    };
 
-var informacion = JSON.stringify(empleado)
+    var informacion = JSON.stringify(usuario) */
 
-const post = {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json'
-    },
-    body: informacion
+    const opciones = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
     };
 
 
-    fetch(url, post)
+    await fetch(url, opciones)
     .then(response => {
         if (!response.ok) {
             throw new Error(`La solicitud no se cumplio. (${response.status})`);
         }
         return response.json(); 
         })
-        .then(result => {
+    .then(result => {
         
-        if (result.Message === "Empleado existente"){
+        if (result.isAuthenticated === true){
 
+            document.cookie = `miToken=${result.UserToken}`;
+            document.cookie = `miRefreshToken=${result.refreshToken}`;
+            document.cookie = `UserActve=${true}`;
+            document.cookie = `Username=${result.Username}`;
+            document.cookie = `Rol=${result.userRoles}`;
             window.location.replace("../index.html");
-        }    
-
-        if (result.Message === "Empleado No Existe"){
-            alert("Empleado no existente")
-        }
-
-        if(result.Message === `Credenciales incorrectas para el empleado ${result.Nombre}`){
-            alert("La clave es Incorrecta")
+        } else{
+            console.log("La autenticacion Fallo");
+            alert("Credenciales incorrectas o usuario no registrado");
         }
         console.log("Resultado:", result);
-        })
-        .catch(error => {
-        console.error("Error:", error);
+    })
+    .catch(error => {
+            console.error("Error:", error);
+            alert("Hubo un error al procesar la solicitud. Por favor, verifica la consola para más detalles.");
         });
 });
