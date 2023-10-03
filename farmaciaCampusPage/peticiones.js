@@ -1,4 +1,4 @@
-const url = "http://localhost:5297/api/";
+/* const url = "http://localhost:5297/api/";
 
 let medicamentos = [];
 
@@ -153,7 +153,7 @@ const mostrarRecetas = (recetas) =>{
     }); 
     contenedorRecetas.innerHTML = listar;
 };
-
+ */
 /////////////////////////////////////////////////////////////////
 
 /* const urlCaducan2024 = "http://localhost:5297/api/Medicamentos/GetCadu2024";
@@ -196,7 +196,7 @@ const mostrarCadu2024 = (medisCadu2024) =>{
 
 /////////////////////////////////////////////////////////////////
 
-let medicXProvee = [];
+/* let medicXProvee = [];
 
 window.addEventListener("DOMContentLoaded", () =>{
     getMedicVenXProvee();
@@ -234,7 +234,7 @@ const mostrarMedicXProvee = (medicXProvee) =>{
     }); 
     contenedorMedicXProvee.innerHTML = listar;
 };
-
+ */
 /////////////////////////////////////////////////////////////////
 
 /* const urlDineroXVenta = "http://localhost:5297/api/MovimientoInventario/GetTotalRecaudado";
@@ -394,7 +394,7 @@ const mostrarMedicNoVendi = (medisNoVendidos) =>{
 
 /////////////////////////////////////////////////////////////////
 
-let medicamentoXProvee = [];
+/* let medicamentoXProvee = [];
 
 window.addEventListener("DOMContentLoaded", () =>{
     getMedicXProvee();
@@ -1271,7 +1271,7 @@ const mostrarTotalPacientX2023 = (totalGastadoXPaci2023) =>{
         `
     }); 
     contenedorTotalPacientX2023.innerHTML = listar;
-};
+}; */
 
 /////////////////////////////////////////////////////////////////
 
@@ -1315,7 +1315,7 @@ const mostrarMedicamentosNoVendidos2023 = (mediNoVendido2023) =>{
  */
 /////////////////////////////////////////////////////////////////
 
-let proveeSuminisAlmenos52023 = [];
+/* let proveeSuminisAlmenos52023 = [];
 
 window.addEventListener("DOMContentLoaded", () =>{
     getProveeSumi5Medic2023();
@@ -1430,7 +1430,7 @@ let empleSinVentasEnAbril = [];
 
 window.addEventListener("DOMContentLoaded", () =>{
     getEmpleSinVentasEnAbril();
-});
+}); */
 
 // const getEmpleSinVentasEnAbril = ()  =>{
 //     fetch(empleSinVentaAbri)
@@ -1462,7 +1462,7 @@ const contenedorEmpleSinVentasEnAbril = document.getElementById("medicamentosVen
 
 /////////////////////////////////////////////////////////////////
 
-let medicPreci50StockMenor100 = [];
+/* let medicPreci50StockMenor100 = [];
 
 window.addEventListener("DOMContentLoaded", () =>{
     getMedicPrecio50Stock100();
@@ -1480,8 +1480,8 @@ const getMedicPrecio50Stock100 = ()  =>{
         alert( "Ha ocurrido un problema",error);
     });
 };
-
-const contenedorMedicPrecio50Stock100 = document.getElementById("medicamentosPre50Stock100");
+ */
+/* const contenedorMedicPrecio50Stock100 = document.getElementById("medicamentosPre50Stock100");
 
 const mostrarMedicPrecio50Stock100 = (medicPreci50StockMenor100) =>{
     let listar = "";
@@ -1497,4 +1497,4 @@ const mostrarMedicPrecio50Stock100 = (medicPreci50StockMenor100) =>{
         `
     }); 
     contenedorMedicPrecio50Stock100.innerHTML = listar;     
-};
+}; */
