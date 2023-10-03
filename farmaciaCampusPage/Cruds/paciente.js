@@ -39,9 +39,8 @@ const mostrarPacientes = (ppacientes) => {
             <th scope="row">${paciente.id}</th>
             <td>${paciente.nombre}</td>
             <td>${paciente.telefono}</td>
-            <td>${paciente.idDireccionFk}</td>
-            <td><button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEditar" onclick="editarPaciente(${paciente.id})">EDITAR</button></td>
-            <td><button class="btn btn-danger" onclick="eliminarPaciente(${paciente.id})">ELIMINAR</button></td>
+            <td><button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEditarPacient" onClick="editarPaciente(${paciente.id})">EDITAR</button></td>
+            <td><button class="btn btn-danger" onClick="eliminarPaciente(${paciente.id})">ELIMINAR</button></td>
         </tr>
         `;
     });

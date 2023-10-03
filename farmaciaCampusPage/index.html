@@ -602,7 +602,7 @@
 			<select class="form-select medisInput" aria-label="Default select example" id="selectMarca">
 				<option selected>SELECCIONA LA MARCA</option>
 			</select>
-			<button type="button" class="btn btn-warning btEnvi" onclick="crearMedicamento()">Enviar</button>
+			<button class="btn btn-warning btEnvi" onclick="crearMedicamento()">Enviar</button>
 			<div class="container mt5 pb-5 pt-5">
 				<div class="row">
 				  <div class="offset-md-3 col-md-6"></div>
@@ -636,17 +636,13 @@
 				<input type="number" class="form-control" id="inputContact" placeholder="name@example.com">
 				<label for="floatingInput">CONTACTO</label>
 			</div>
-			<select class="form-select proveInput" aria-label="Default select example" id="inputDirec">
-				<option selected>SELECCIONA TU DIRECCION</option>
-			</select>
-			<button type="button" class="btn btn-warning btEnviUbi" onclick="crearProveedor()">Enviar</button>
+			<button class="btn btn-warning btEnviUbi" onclick="crearProveedor()">Enviar</button>
 			<table class="table">
 				<thead>
 				  <tr>
 					<th scope="col">Id</th>
 					<th scope="col">Nombre</th>
 					<th scope="col">Contacto</th>
-					<th scope="col">Direccion</th>
 					<th scope="col">Editar</th>
 					<th scope="col">Eliminar</th>
 				  </tr>
@@ -678,7 +674,7 @@
 			<select class="form-select medisInput" aria-label="Default select example" id="inputCiudad">
 				<option selected>SELECCIONA LA CIUDAD</option>
 			</select>
-			<button type="button" class="btn btn-warning btEnviDirec" onclick="crearDireccion()">Enviar</button>
+			<button class="btn btn-warning btEnviDirec" onclick="crearDireccion()">Enviar</button>
 			<table class="table">
 				<thead>
 				  <tr>
@@ -705,17 +701,13 @@
 				<input type="number" class="form-control" id="inputTelefono" placeholder="name@example.com">
 				<label for="floatingInput">TELEFONO</label>
 			</div>
-			<select class="form-select paciInput" aria-label="Default select example" id="inputDireccion">
-				<option selected>SELECCIONA TU DIRECCION</option>
-			</select>
-			<button type="button" class="btn btn-warning btEnviEmple" onclick="crearPaciente()">Enviar</button>
+			<button class="btn btn-warning btEnviEmple" onclick="crearPaciente()">Enviar</button>
 			<table class="table tableEmple">
 				<thead>
 				  <tr>
 					<th scope="col">Id</th>
 					<th scope="col">Nombre</th>
 					<th scope="col">Telefono</th>
-					<th scope="col">Direccion</th>
 					<th scope="col">Editar</th>
 					<th scope="col">Eliminar</th>
 				  </tr>
@@ -725,33 +717,30 @@
 		</div>
 		<div id="agregaEmpleado">
 			<div class="form-floating mb-3 empleaInput">
-				<input type="text" class="form-control" id="inputNombre" placeholder="name@example.com">
-				<label for="floatingInput">Nombre</label>
+				<input type="text" class="form-control" id="inputNombre" placeholder="Nombre">
+				<label for="inputNombre">Nombre</label>
 			</div>
 			<div class="form-floating mb-3 empleaInput">
-				<input type="number" class="form-control" id="inputCargo" placeholder="name@example.com">
-				<label for="floatingInput">Cargo</label>
+				<input type="text" class="form-control" id="inputCargo" placeholder="Cargo">
+				<label for="inputCargo">Cargo</label>
 			</div>
-			<div class="form-floating mb-3 empleaInput">
-				<input type="date" class="form-control" id="inputFechaContratacion" placeholder="name@example.com">
-			</div>
-			<button type="button" class="btn btn-warning btEnviEmple" onclick="crearEmpleado()">Enviar</button>
+			<button class="btn btn-warning btEnviEmple" onclick="crearEmpleado()">Enviar</button>
 			<div class="divTable">
 				<table class="table tableEmple">
 					<thead>
-					<tr>
-						<th scope="col">Id</th>
-						<th scope="col">Nombre</th>
-						<th scope="col">Cargo</th>
-						<th scope="col">Fecha Contratacion</th>
-						<th scope="col">Editar</th>
-						<th scope="col">Eliminar</th>
-					</tr>
+						<tr>
+							<th scope="col">Id</th>
+							<th scope="col">Nombre</th>
+							<th scope="col">Cargo</th>
+							<th scope="col">Editar</th>
+							<th scope="col">Eliminar</th>
+						</tr>
 					</thead>
 					<tbody id="aggEmpleadoBody"></tbody>
 				</table>
 			</div>
 		</div>
+		
 		<!-- -->
 		<div id="medicamentosProveeA"></div>
 		<div id="pacienCompraPara">
@@ -1100,7 +1089,7 @@
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="subirDireccion()">Guardar</button>
                 </div>
-            </div>nombreMedic
+            </div>
         </div>
     </div>
 	<div class="modal fade" id="modalEditarEmple" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -1114,8 +1103,6 @@
                     <div id="">
                         <input class="editAll" type="text" id="editarNombree" placeholder="NOMBRE">
                         <input class="editAll" type="text" id="editarCargo"  placeholder="CARGO">
-						<label for="">EDITA LA FECHA DE CONTRATACION</label>
-                        <input class="editAll" type="date" id="editarFechaContratacion">
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -1136,9 +1123,6 @@
                     <div id="">
                         <input class="editAll" type="text" id="editaName" placeholder="NOMBRE">
                         <input class="editAll" type="number" id="editaContacto"  placeholder="CONTACTO">
-						<select class="form-select medisInput editAll" id="editaDireccion" aria-label="Default select example">
-							<option selected>SELECCIONA TU DIRECCION</option>
-						</select>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -1159,9 +1143,6 @@
                     <div id="">
                         <input class="editAll" type="text" id="editaNaame" placeholder="NOMBRE">
                         <input class="editAll" type="number" id="editaTele"  placeholder="TELEFONO">
-						<select class="form-select medisInput editAll" id="editaDireccionn" aria-label="Default select example">
-							<option selected>SELECCIONA TU DIRECCION</option>
-						</select>
                     </div>
                 </div>
                 <div class="modal-footer">

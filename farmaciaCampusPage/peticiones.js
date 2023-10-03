@@ -894,7 +894,7 @@ window.addEventListener("DOMContentLoaded", () =>{
 });
 
 const getpacienteComprarParace2023 = ()  =>{
-    fetch(`${url}Paciente/compraron--2023`)
+    fetch(`${url}Paciente/compraron-paracetamol-2023`)
     .then(respuesta  => respuesta.json())
     .then(data  => {
         pacienteCompraronParace2023 = data;
@@ -1390,7 +1390,7 @@ window.addEventListener("DOMContentLoaded", () =>{
 });
 
 const getEmpleSinVentasEnAbril = ()  =>{
-    fetch(`${url}total-medicamentos-vendidosxmes-2023/{mes}`)
+    fetch(`${url}Medicamento/total-medicamentos-vendidosXmes-2023/{mes}`)
     .then(respuesta  => respuesta.json())
     .then(data  => {
         empleSinVentasEnAbril = data;

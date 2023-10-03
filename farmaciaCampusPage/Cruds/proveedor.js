@@ -38,9 +38,8 @@ const mostrarProveedores = (pproveedores) => {
             <th scope="row">${proveedor.id}</th>
             <td>${proveedor.nombre}</td>
             <td>${proveedor.contacto}</td>
-            <td>${proveedor.idDireccionFk}</td>
-            <td><button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEditar" onclick="editarProveedor(${proveedor.id})">EDITAR</button></td>
-            <td><button class="btn btn-danger" onclick="eliminarProveedor(${proveedor.id})">ELIMINAR</button></td>
+            <td><button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEditarProvee" onClick="editarProveedor(${proveedor.id})">EDITAR</button></td>
+            <td><button class="btn btn-danger" onClick="eliminarProveedor(${proveedor.id})">ELIMINAR</button></td>
         </tr>
         `;
     });

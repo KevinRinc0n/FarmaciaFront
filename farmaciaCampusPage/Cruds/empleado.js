@@ -28,9 +28,8 @@ const mostrarEmpleados = (eempleados) => {
             <th scope="row">${empleado.id}</th>
             <td>${empleado.nombre}</td>
             <td>${empleado.cargo}</td>
-            <td>${empleado.fechaContratacion}</td>
-            <td><button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEditar" onclick="editarEmpleado(${empleado.id})">EDITAR</button></td>
-            <td><button class="btn btn-danger" onclick="eliminarEmpleado(${empleado.id})">ELIMINAR</button></td>
+            <td><button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEditarEmple"  onclick="editarEmpleado(${empleado.id})">EDITAR</button></td>
+            <td><button class="btn btn-danger" onClick="eliminarEmpleado(${empleado.id})">ELIMINAR</button></td>
         </tr>
         `;
     });

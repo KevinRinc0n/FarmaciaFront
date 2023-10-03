@@ -46,8 +46,8 @@ const mostrarDireccion = (ddirecciones) => {
             <td>${direccion.barrio}</td>
             <td>${direccion.complemento}</td>
             <td>${direccion.idCiudadFk}</td>
-            <td><button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEditar" onclick="editarDireccion(${direccion.id})">EDITAR</button></td>
-            <td><button class="btn btn-danger" onclick="eliminarDireccion(${direccion.id})">ELIMINAR</button></td>
+            <td><button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalEditarDirecc" onClick="editarDireccion(${direccion.id})">EDITAR</button></td>
+            <td><button class="btn btn-danger" onClick="eliminarDireccion(${direccion.id})">ELIMINAR</button></td>
         </tr>
         `;
     });
