@@ -36,90 +36,89 @@ const mostrarEmpleados = (eempleados) => {
     contenedorEmpleados.innerHTML = listar;
 };
 
-const crearEmpleado = () => {
-    const formulario = document.getElementById("agregaEmpleado");
-    if (!formulario.elements['inputNombre'].value || !formulario.elements['inputCargo'].value || !formulario.elements['inputFechaContratacion'].value) {
-        alert("Error: DEBES LLENAR TODOS LOS CAMPOS");
+async function crearEmpleado (){
+    const inputNombre = document.getElementById("inputNombre").value;
+    const inputCargo = document.getElementById("inputCargo").value;
+    if (!inputNombre || !inputCargo) {
+        alert("DEBES LLENAR TODOS LOS CAMPOS");
         return;
     }
 
     const empleado = {
-        Nombre: formulario.elements["inputNombre"].value,
-        Cargo: formulario.elements["inputCargo"].value,
-        FechaContratacion: formulario.elements["inputFechaContratacion"].value,
+        Nombre: inputNombre,
+        Cargo: inputCargo
     };
 
-    fetch(urlEmple, {
-        method: "POST",
-        body: JSON.stringify(empleado),
-        headers: {
-            "Content-Type": "application/json"
-        }
-    })
-    .then(respuesta => respuesta.json())
-    .then(respuesta => {
-        alert("Success: " + respuesta.mensaje);
+    console.log(empleado);
+
+    try {
+        const respuesta = await fetch(urlEmple,{
+            method: "POST",
+            body: JSON.stringify(empleado),
+            headers: {"Content-Type": "application/json"}
+        });
+
         getEmpleado();
-    })
-    .catch(error => {
-        console.log("Error: " + error);
+    } catch(error){
+        alert("error", error);
         document.getElementById("agregaEmpleado").reset();
-    });
+    };
 };
 
 const editarEmpleado = (id) => {
-    let empleado = eempleados.find(emp => emp.Id === id);
+    let emplee = eempleados.find(emplee => emplee.id == id);
 
-    document.getElementById("editarNombre").value = empleado.Nombre;
-    document.getElementById("editarCargo").value = empleado.Cargo;
-    document.getElementById("editarFechaContratacion").value = empleado.FechaContratacion;
+    document.getElementById("editarNombree").value = emplee.nombre;
+    document.getElementById("editarCargo").value = emplee.cargo;
 
-    document.getElementById("modalEditar").addEventListener("submit", function(event) {
-        event.preventDefault();
-        subirEmpleado(id);
-    });
+    document.getElementById("modalEditarEmple").setAttribute("data-id", id);
 };
 
-const subirEmpleado = (id) => {
-    const empleado = {
-        Id: id,
-        Nombre: document.getElementById("editarNombre").value,
-        Cargo: document.getElementById("editarCargo").value,
-        FechaContratacion: document.getElementById("editarFechaContratacion").value
-    };
+async function subirEmpleado() {
+    const editarNombre = document.getElementById("editarNombree").value;
+    const editarCargo = document.getElementById("editarCargo").value;
 
-    if (!empleado.Nombre || !empleado.Cargo || !empleado.FechaContratacion) {
-        alert("Error: DEBES LLENAR TODOS LOS CAMPOS");
+    if (!editarNombre || !editarCargo) {
+        alert("DEBES LLENAR TODOS LOS CAMPOS");
         return;
     }
 
-    fetch(urlEmple + `/${empleado.Id}`, {
-        method: "PUT",
-        body: JSON.stringify(empleado),
-        headers: {
-            "Content-Type": "application/json"
-        }
-    })
-    .then(respuesta => respuesta.json())
-    .then(respuesta => {
-        alert("Success: " + respuesta.mensaje);
+    const id = document.getElementById("modalEditarEmple").getAttribute("data-id"); 
+
+    const empleado = {
+        Nombre: editarNombre,
+        Cargo: editarCargo
+    };
+
+    try {
+        const respuesta = await fetch(`${urlEmple}/${id}`,{
+            method: "PUT",
+            body: JSON.stringify(empleado),
+            headers: {"Content-Type": "application/json"}
+        });
+
+        const data = await respuesta.json();
+        alert("success", data.mensaje);
         getEmpleado();
-    })
-    .catch(error => {
-        console.log("Error: " + error);
-    });
+
+    } catch(error){
+        alert("error", error);
+        // document.getElementById("modalEditarEmple").reset();
+    };
+
 };
 
-const eliminarEmpleado = (id) => {
-    fetch(`${urlEmple}/${id}`, {
-        method: "DELETE"
-    })
-    .then(respuesta => respuesta.json())
-    .then(respuesta => {
-        alert("Success: " + respuesta.mensaje);
-        getEmpleado();
-    })
-    .catch(error => {
-        console.log("Error: " + error);
-    });
-};
+async function eliminarEmpleado(id) {
+    try {
+        await fetch(`${urlEmple}/${id}`, {
+            method: "DELETE"
+        });
+
+        alert("success", 'Empleado eliminado correctamente');
+
+        getEmpleado(); 
+
+    } catch(error) {
+        alert("error", error);
+    }
+}

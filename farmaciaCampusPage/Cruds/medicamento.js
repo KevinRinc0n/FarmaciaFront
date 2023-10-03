@@ -16,7 +16,7 @@ const getMedic = () => {
         })
         .catch(error => {
             console.log("Ha ocurrido un problema al obtener los medicamentos.");
-            console.alert(error);
+            console.log(error);
         });
 };
 

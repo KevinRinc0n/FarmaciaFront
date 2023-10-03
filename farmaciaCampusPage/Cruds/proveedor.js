@@ -24,7 +24,7 @@ const getProveedores = () => {
         });
     })
     .catch(error => {
-        console.alert("Ha ocurrido un problema:", error);
+        console.log("Ha ocurrido un problema:", error);
     });
 };
 
