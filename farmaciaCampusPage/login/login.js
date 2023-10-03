@@ -1,4 +1,4 @@
-import { getCookieValue } from "./Configuration/Cookies.js";
+import { getCookieValue , RefreshToken } from "./Configuration/Cookies.js";
 import { rolpage } from "./Configuration/Cookies.js";
 var nombreCookie = "UserActivo";
 var nombreRol = "Rol";
@@ -76,8 +76,8 @@ login.addEventListener('submit',async (e) => {
         }
         console.log("Resultado:", result);
     })
-.catch(error=> {
+/* .catch(error=> {
             console.error("Error:", error);
             alert("Hubo un error al procesar la solicitud. Por favor, verifica la consola para más detalles.");
-        });
+        }); */
 });
