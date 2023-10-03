@@ -1,3 +1,4 @@
+import { mostrarMedicamentosMenos50Stock, mostrarCadu2024, mostrarTotalRecaudado, mostrarMedicamentosNoVendidos2023, mostrarMasCaro } from "./peticionesMeidcamentos.js";
 var cartas = document.getElementById("cards");
 var ocultarMain = document.getElementById("main");
 var medisCompras = document.getElementById("mediCompras");
@@ -1100,30 +1101,35 @@ var menos50Stock = document.getElementById("medicMenos50Stock");
 menos50Stock.addEventListener("click", function(){
     cartas.style.display = "none";
     medicamentosMenos50Stock.style.display = "flex";
+    mostrarMedicamentosMenos50Stock();
 });
 
 var vencenMedic2024 = document.getElementById("medicVencen2024");
 vencenMedic2024.addEventListener("click", function(){
     cartas.style.display = "none";
     medicamentosVencenAntes2024.style.display = "flex";
+    mostrarCadu2024();
 });
 
 var reacudadoMedic = document.getElementById("dineroRecaudadoMedic");
 reacudadoMedic.addEventListener("click", function(){
     cartas.style.display = "none";
     totalRecaudadoXVenMedic.style.display = "flex";
+    mostrarTotalRecaudado();
 });
 
 var medicamentosNoVen = document.getElementById("medicameNoVen");
 medicamentosNoVen.addEventListener("click", function(){
     cartas.style.display = "none";
     medicamenNoVendido.style.display = "flex";
+    mostrarMedicamentosNoVendidos2023();
 });
 
 var medicameMasCaro = document.getElementById("medicMasCaro");
 medicameMasCaro.addEventListener("click", function(){
     cartas.style.display = "none";
     medicamentoMasCaro.style.display = "flex";
+    mostrarMasCaro();
 });
 
 var medicExpir2024 = document.getElementById("medicQueExpiran2024");

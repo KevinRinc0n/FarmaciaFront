@@ -6,24 +6,24 @@ window.addEventListener("DOMContentLoaded", () => {
     getMedicamentos();
 });
 
-const getMedicamentos = () => {
-    fetch(`${url}Medicamento/GetStock50`)
-        .then(respuesta => respuesta.json())
-        .then(data => {
-            medicamentos = data;
-            console.log(medicamentos);
-            mostrarMedicamentos(medicamentos);
-        })
-        .catch(error => {
-            alert("Ha ocurrido un problema: " + error);
-        });
+const getMedicamentos = ()  =>{
+    fetch(url)
+    .then(respuesta  => respuesta.json())
+    .then(data  => {
+        medicamentos = data;
+        console.log(medicamentos);
+        mostrarMedicamentos(medicamentos);
+    })
+    .catch(error =>{
+        alert( "Ha ocurrido un problema",error);
+    });
 };
 
 const contenedorMedicamentos = document.getElementById("medicamentosMenos50Stock");
 
 const mostrarMedicamentos = (medicamentos) => {
     let listar = "";
-    medicamentos.forEach(medicamento => { 
+    medicamentos.forEach(medicamento =>{
         listar += `
         <div class="card divPeti" style="width: 18rem;">
             <img src="./imgs/mediCard.jpg" class="card-img-top" alt="...">
@@ -54,8 +54,8 @@ const getMedicCompProveeA = () => {
         console.log(medicamentosComProveeA);
         mostrarMedicCompProveeA(medicamentosComProveeA);
     })
-    .catch(error => {
-        alert("Ha ocurrido un problema: " + error);
+    .catch(error =>{
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -63,7 +63,7 @@ const contenedorMedicComProveeA = document.getElementById("medicamentosProveeA")
 
 const mostrarMedicCompProveeA = (medicamentosComProveeA) => {
     let listar = "";
-    medicamentosComProveeA.forEach(medicamentoProveeA => {
+    medicamentosComProveeA.forEach(medicamentoProveeA =>{
         listar += `
         <div class="card divPeti" style="width: 18rem;">
             <img src="./imgs/mediCard.jpg" class="card-img-top" alt="...">
@@ -93,7 +93,7 @@ const getMedicamentoParace = ()  =>{
         mostrarMedicamentoParace(medicamentoParacetamol);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -101,7 +101,7 @@ const contenedorMedicamentoParace = document.getElementById("medicamentoExpi2024
 
 const mostrarMedicamentoParace = (medicamentoParacetamol) =>{
     let listar = "";
-    medicamentoParacetamol.forEach(cadu2024 =>{                                           
+    medicamentoParacetamol.forEach(medicamentoParacet =>{                                           
         listar += `
         <div class="card divPeti" style="width: 18rem;">
             <img src="./imgs/mediCard.jpg" class="card-img-top" alt="...">
@@ -133,7 +133,7 @@ const getRecetas = ()  =>{
         mostrarRecetas(recetas);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -156,6 +156,7 @@ const mostrarRecetas = (recetas) =>{
 
 /////////////////////////////////////////////////////////////////
 
+/* const urlCaducan2024 = "http://localhost:5297/api/Medicamentos/GetCadu2024";
 let medisCadu2024 = [];
 
 window.addEventListener("DOMContentLoaded", () =>{
@@ -171,7 +172,7 @@ const getMediCadu2024 = ()  =>{
         mostrarCadu2024(medisCadu2024);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -191,7 +192,7 @@ const mostrarCadu2024 = (medisCadu2024) =>{
         `
     }); 
     contenedorMedisCadu2024.innerHTML = listar;
-};
+}; */
 
 /////////////////////////////////////////////////////////////////
 
@@ -210,7 +211,7 @@ const getMedicVenXProvee = ()  =>{
         mostrarMedicXProvee(medicXProvee);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -236,7 +237,47 @@ const mostrarMedicXProvee = (medicXProvee) =>{
 
 /////////////////////////////////////////////////////////////////
 
-// let recaudadoXVenta = [];
+/* const urlDineroXVenta = "http://localhost:5297/api/MovimientoInventario/GetTotalRecaudado";
+let recaudadoXVenta = [];
+
+window.addEventListener("DOMContentLoaded", () =>{
+    getTotalRecaudado();
+});
+
+const getTotalRecaudado = ()  =>{
+    fetch(urlDineroXVenta)
+    .then(respuesta  => respuesta.json())
+    .then(data  => {
+        recaudadoXVenta = data;
+        console.log(recaudadoXVenta);
+        mostrarTotalRecaudado(recaudadoXVenta);
+    })
+    .catch(error =>{
+        alert( "Ha ocurrido un problema",error);
+    });
+};
+
+const contenedorTotalRecaudado = document.getElementById("totalRecaudadoXVenMedic");
+
+const mostrarTotalRecaudado = (recaudadoXVenta) =>{
+    let listar = "";
+    recaudadoXVenta.forEach(totalRecaudado =>{
+        listar += `
+        <div class="card" style="width: 18rem;">
+            <img src="./img/dinero.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">El dinero total recaudado por las ventas de los medicamentos es: ${totalRecaudado.totalVentas}</h5>
+            </div>
+        </div>
+        `
+    }); 
+    contenedorTotalRecaudado.innerHTML = listar;
+}; */
+
+/////////////////////////////////////////////////////////////////
+
+// const urlMedisNoVendi = "http://localhost:5297/api/MovimientoInventario/GetMediNoVendidos";
+// let medisNoVendidos = [];
 
 // window.addEventListener("DOMContentLoaded", () =>{
 //     getTotalRecaudado();
@@ -251,7 +292,7 @@ const mostrarMedicXProvee = (medicXProvee) =>{
 //         mostrarTotalRecaudado(recaudadoXVenta);
 //     })
 //     .catch(error =>{
-//         alert(error, "Ha ocurrido un problema");
+//         alert( "Ha ocurrido un problema",error);
 //     });
 // };
 
@@ -259,7 +300,7 @@ const mostrarMedicXProvee = (medicXProvee) =>{
 
 // const mostrarTotalRecaudado = (recaudadoXVenta) =>{
 //     let listar = "";
-//     recaudadoXVenta.forEach(totalRecaudado =>{
+//     medisNoVendidos.forEach(medicamentoNoVend =>{
 //         listar += `
 //         <div class="card divPeti" style="width: 18rem;">
 //             <img src="./imgs/mediCard.jpg" class="card-img-top" alt="...">
@@ -275,7 +316,8 @@ const mostrarMedicXProvee = (medicXProvee) =>{
 
 /////////////////////////////////////////////////////////////////
 
-let medisNoVendidos = [];
+/* const urlMedicCaro = "http://localhost:5297/api/Medicamento/GetMediCaro";
+let medicCaro = [];
 
 window.addEventListener("DOMContentLoaded", () =>{
     getNoVendidos();
@@ -290,7 +332,7 @@ const getNoVendidos = ()  =>{
         mostrarMedicNoVendi(medisNoVendidos);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -298,7 +340,7 @@ const contenedorNoVendidos = document.getElementById("medicamentoMasCaroBody");
 
 const mostrarMedicNoVendi = (medisNoVendidos) =>{
     let listar = "";
-    medisNoVendidos.forEach(medicamentoNoVend =>{
+    medicCaro.forEach(medicamentoMoreCaro =>{
         listar += `
         <tr>
             <th scope="row">${medicamentoNoVend.id}</th>
@@ -309,7 +351,7 @@ const mostrarMedicNoVendi = (medisNoVendidos) =>{
     }); 
     contenedorNoVendidos.innerHTML = listar;
 };
-
+ */
 /////////////////////////////////////////////////////////////////
 
 // let medicCaro = [];
@@ -367,7 +409,7 @@ const getMedicXProvee = ()  =>{
         mostrarMedicaXProvee(medicamentoXProvee);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -405,7 +447,7 @@ const getPacientePara = ()  =>{
         mostrarPacientePara(pacienteCompraParace);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -441,7 +483,7 @@ const getNoventasProvee = ()  =>{
         mostrarNoVentaProvee(proveeNoVentas);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -469,24 +511,24 @@ window.addEventListener("DOMContentLoaded", () => {
     getMedicamentoMarzo();
 });
 
-const getMedicamentoMarzo = () => {
-    fetch(`${url}Medicamento/GetMedisVendMarzo`)
-        .then(respuesta => respuesta.json())
-        .then(data => {
-            medicamentosMarzo = data;
-            console.log(medicamentosMarzo);
-            mostrarMedicMarzo(medicamentosMarzo);
-        })
-        .catch(error => {
-            alert("Ha ocurrido un problema: " + error);
-        });
+const getMedicamentoMarzo = ()  =>{
+    fetch(urlMedicMarzo)
+    .then(respuesta  => respuesta.json())
+    .then(data  => {
+        medicamentosMarzo = data;
+        console.log(medicamentosMarzo);
+        mostrarMedicMarzo(medicamentosMarzo);
+    })
+    .catch(error =>{
+        alert( "Ha ocurrido un problema",error);
+    });
 };
 
 const contenedorMedicMarzo = document.getElementById("medicamentosVenMazo2023");
 
 const mostrarMedicMarzo = (medicamentosMarzo) => {
     let listar = "";
-    medicamentosMarzo.forEach(totalMedicamentoMarzo => {
+    medicamentosMarzo.forEach(totalMedicamentoMarzo =>{
         listar += `
         <div class="card divPeti" style="width: 18rem;">
             <img src="./imgs/mediCard.jpg" class="card-img-top" alt="...">
@@ -516,7 +558,7 @@ const getMediMenosVen2023 = ()  =>{
         mostrarMedicMenosven(medicMenosVendido);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -546,35 +588,35 @@ const mostrarMedicMenosven = (medicMenosVendido) =>{
 //     getProveeGanancia();
 // });
 
-// const getProveeGanancia = ()  =>{
-//     fetch(`${url}Proveedor/GetGananTotalProvee`)
-//     .then(respuesta  => respuesta.json())
-//     .then(data  => {
-//         gananciaXProvee = data;
-//         console.log(gananciaXProvee);
-//         mostrarGananciaProvee(gananciaXProvee);
-//     })
-//     .catch(error =>{
-//         alert(error, "Ha ocurrido un problema");
-//     });
-// };
+const getProveeGanancia = ()  =>{
+    fetch(urlGananciaXProvee)
+    .then(respuesta  => respuesta.json())
+    .then(data  => {
+        gananciaXProvee = data;
+        console.log(gananciaXProvee);
+        mostrarGananciaProvee(gananciaXProvee);
+    })
+    .catch(error =>{
+        alert( "Ha ocurrido un problema",error);
+    });
+};
 
 // const contenedorGananciaProvee = document.getElementById("ventXProveBody");
 
-// const mostrarGananciaProvee = (gananciaXProvee) =>{
-//     let listar = "";
-//     gananciaXProvee.forEach(proveeGananciaTotal =>{
-//         listar += `
-//         <tr>
-//             <th scope="row">${proveeGananciaTotal.Id}</th>
-//             <td>${proveeGananciaTotal.Nombre}</td>
-//             <td>${proveeGananciaTotal.Contacto}</td>
-//             <td>${proveeGananciaTotal.gananciaXProvee}</td>
-//         </tr>
-//         `
-//     }); 
-//     contenedorGananciaProvee.innerHTML = listar;
-// };
+const mostrarGananciaProvee = (gananciaXProvee) =>{
+    let listar = "";
+    gananciaXProvee.forEach(proveeGananciaTotal =>{
+        listar += `
+        <tr>
+            <th scope="row">${proveeGananciaTotal.Id}</th>
+            <td>${proveeGananciaTotal.Nombre}</td>
+            <td>${proveeGananciaTotal.Contacto}</td>
+            <td>${proveeGananciaTotal.gananciaXProvee}</td>
+        </tr>
+        `
+    }); 
+    contenedorGananciaProvee.innerHTML = listar;
+};
 
 /////////////////////////////////////////////////////////////////
 
@@ -593,7 +635,7 @@ const getPromMedis = ()  =>{
         mostrarPromMedisVenta(promMedisVentas);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -634,7 +676,7 @@ const getVentaEmple2023 = ()  =>{
         mostrarVentaEmpleados2023(ventasEmple2023);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -672,7 +714,7 @@ const getMedisExpi2024 = ()  =>{
         mostraMedicExpira2024(medicamentosExpiran2024);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -712,7 +754,7 @@ const getEmpleMas5Vent = ()  =>{
         mostraEmpleMas5ventas(empleadosMas5Ventas);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -748,7 +790,7 @@ const getMedisNuncaVen = ()  =>{
         mostraMedicNuncaVent(medicamentosNuncaVendidos);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -787,7 +829,7 @@ const getPaciente = ()  =>{
         mostraPacienMasDinero(pacienteMasDineroGasta);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -826,7 +868,7 @@ const getEmpleadosSinVentas = ()  =>{
         mostrarEmpleadosSinVentas(empleadosSinVentas);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -865,7 +907,7 @@ const getproveeSuminisMasMedis = ()  =>{
         mostrarProveeMasMedis(proveeSuminisMasMedis);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -902,7 +944,7 @@ const getpacienteComprarParace2023 = ()  =>{
         mostrarmedicNoVenBodyce2023(pacienteCompraronParace2023);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -932,36 +974,36 @@ const mostrarmedicNoVenBodyce2023 = (pacienteCompraronParace2023) =>{
 //     getMedisVenXMes();
 // });
 
-// const getMedisVenXMes = ()  =>{
-//     fetch(`${url}Medicamento/total-medicamentos-vendidosXmes-2023`)
-//     .then(respuesta  => respuesta.json())
-//     .then(data  => {
-//         totalMedicvendiXMes = data;
-//         console.log(totalMedicvendiXMes);
-//         mostrarMedisVenXMes(totalMedicvendiXMes);
-//     })
-//     .catch(error =>{
-//         alert(error, "Ha ocurrido un problema");
-//     });
-// };
+const getMedisVenXMes = ()  =>{
+    fetch(totalMedisXMes)
+    .then(respuesta  => respuesta.json())
+    .then(data  => {
+        totalMedicvendiXMes = data;
+        console.log(totalMedicvendiXMes);
+        mostrarMedisVenXMes(totalMedicvendiXMes);
+    })
+    .catch(error =>{
+        alert( "Ha ocurrido un problema",error);
+    });
+};
 
 // const contenedorMedisVenXMes = document.getElementById("medicamentosVenXMes2023");
 
-// const mostrarMedisVenXMes = (totalMedicvendiXMes) =>{
-//     let listar = "";
-//     totalMedicvendiXMes.forEach(medicamentoVenPorMe =>{
-//         listar += `
-//         <div class="card divPeti" style="width: 18rem;">
-//             <img src="./imgs/mediCard.jpg" class="card-img-top" alt="...">
-//             <div class="card-body">
-//                 <h5 class="card-title">${medicamentoVenPorMe.Id}</h5>
-//                 <p class="card-text">${medicamentoVenPorMe.Nombre}</p>
-//             </div>
-//         </div>
-//         `
-//     }); 
-//     contenedorMedisVenXMes.innerHTML = listar;
-// };
+const mostrarMedisVenXMes = (totalMedicvendiXMes) =>{
+    let listar = "";
+    totalMedicvendiXMes.forEach(medicamentoVenPorMe =>{
+        listar += `
+        <div class="card" style="width: 18rem;">
+            <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${medicamentoVenPorMe.Id}</h5>
+                <p class="card-text">${medicamentoVenPorMe.Nombre}</p>
+            </div>
+        </div>
+        `
+    }); 
+    contenedorMedisVenXMes.innerHTML = listar;
+};
 
 /////////////////////////////////////////////////////////////////
 
@@ -980,7 +1022,7 @@ const getEmpleMenos5Vent2023 = ()  =>{
         mostrarEmpleMenos5Vent2023(empleadosMenos5Ven2023);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -1019,7 +1061,7 @@ const getProveeSumMedis = ()  =>{
         mostrarProveeSumMedis(totalProveeSumnisMedicamentos);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -1048,34 +1090,34 @@ const mostrarProveeSumMedis = (totalProveeSumnisMedicamentos) =>{
 //     getProveeMedic50();
 // });
 
-// const getProveeMedic50 = ()  =>{
-//     fetch(`${url}Empleado/venta`)
-//     .then(respuesta  => respuesta.json())
-//     .then(data  => {
-//         proveMedicMenos50Stock = data;
-//         console.log(proveMedicMenos50Stock);
-//         mostrarProveeMedic50(proveMedicMenos50Stock);
-//     })
-//     .catch(error =>{
-//         alert(error, "Ha ocurrido un problema");
-//     });
-// };
+const getProveeMedic50 = ()  =>{
+    fetch(proveeMenos50Stock)
+    .then(respuesta  => respuesta.json())
+    .then(data  => {
+        proveMedicMenos50Stock = data;
+        console.log(proveMedicMenos50Stock);
+        mostrarProveeMedic50(proveMedicMenos50Stock);
+    })
+    .catch(error =>{
+        alert( "Ha ocurrido un problema",error);
+    });
+};
 
 // const contenedorProveeMedic50 = document.getElementById("");
 
-// const mostrarProveeMedic50 = (proveMedicMenos50Stock) =>{
-//     let listar = "";
-//     proveMedicMenos50Stock.forEach(proveeMedicMenos50 =>{
-//         listar += `
-//         <tr>
-//             <th scope="row">${proveeMedicMenos50.Id}</th>
-//             <td>${proveeMedicMenos50.Nombre}</td>
-//             <td>${proveeMedicMenos50.Contacto}</td>
-//         </tr>
-//         `
-//     }); 
-//     contenedorProveeMedic50.innerHTML = listar;
-// };
+const mostrarProveeMedic50 = (proveMedicMenos50Stock) =>{
+    let listar = "";
+    proveMedicMenos50Stock.forEach(proveeMedicMenos50 =>{
+        listar += `
+        <tr>
+            <th scope="row">${proveeMedicMenos50.Id}</th>
+            <td>${proveeMedicMenos50.Nombre}</td>
+            <td>${proveeMedicMenos50.Contacto}</td>
+        </tr>
+        `
+    }); 
+    contenedorProveeMedic50.innerHTML = listar;
+};
 
 /////////////////////////////////////////////////////////////////
 
@@ -1094,7 +1136,7 @@ const getPacientNoCompraMedic = ()  =>{
         mostrarPacientNoCompraMedic(pacientNoCompraron);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -1133,7 +1175,7 @@ const getMedisVendidosXMes2023 = ()  =>{
         mostrarMedisVendidosXMes2023(medisVendidoXMes);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -1172,7 +1214,7 @@ const getEmpleadoVendi = ()  =>{
         mostrarEmpleadoVendi(empleadoVendidoMayorMedic);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -1211,7 +1253,7 @@ const getTotalPacientX2023 = ()  =>{
         mostrarTotalPacientX2023(totalGastadoXPaci2023);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -1233,6 +1275,7 @@ const mostrarTotalPacientX2023 = (totalGastadoXPaci2023) =>{
 
 /////////////////////////////////////////////////////////////////
 
+/* const medicamentoNoVendi2023 = "http://localhost:5297/api/Medicamento/medicamentos-no-vendidos-2023";
 let mediNoVendido2023 = [];
 
 window.addEventListener("DOMContentLoaded", () =>{
@@ -1248,7 +1291,7 @@ const getMedicamentosNoVendidos2023 = ()  =>{
         mostrarMedicamentosNoVendidos2023(mediNoVendido2023);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -1269,7 +1312,7 @@ const mostrarMedicamentosNoVendidos2023 = (mediNoVendido2023) =>{
     }); 
     contenedorMedicamentosNoVendidos2023.innerHTML = listar;
 };
-
+ */
 /////////////////////////////////////////////////////////////////
 
 let proveeSuminisAlmenos52023 = [];
@@ -1287,7 +1330,7 @@ const getProveeSumi5Medic2023 = ()  =>{
         mostrarProveeSumi5Medic2023(proveeSuminisAlmenos52023);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -1324,7 +1367,7 @@ const getTotalMedicVen2023 = ()  =>{
         mostrarTotalMedicVen2023(medicVenTrimes2023);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -1362,7 +1405,7 @@ const getEmpleadoSinVentas2023 = ()  =>{
         mostrarEmpleadoSinVentas2023(empleSinVentas2023);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -1389,33 +1432,33 @@ window.addEventListener("DOMContentLoaded", () =>{
     getEmpleSinVentasEnAbril();
 });
 
-const getEmpleSinVentasEnAbril = ()  =>{
-    fetch(`${url}Medicamento/total-medicamentos-vendidosXmes-2023/{mes}`)
-    .then(respuesta  => respuesta.json())
-    .then(data  => {
-        empleSinVentasEnAbril = data;
-        console.log(empleSinVentasEnAbril);
-        mostrarEmpleSinVentasEnAbril(empleSinVentasEnAbril);
-    })
-    .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
-    });
-};
+// const getEmpleSinVentasEnAbril = ()  =>{
+//     fetch(empleSinVentaAbri)
+//     .then(respuesta  => respuesta.json())
+//     .then(data  => {
+//         empleSinVentasEnAbril = data;
+//         console.log(empleSinVentasEnAbril);
+//         mostrarEmpleSinVentasEnAbril(empleSinVentasEnAbril);
+//     })
+//     .catch(error =>{
+//         alert( "Ha ocurrido un problema",error);
+//     });
+// };
 
 const contenedorEmpleSinVentasEnAbril = document.getElementById("medicamentosVenPorMes2023Body");
 
-const mostrarEmpleSinVentasEnAbril = (empleSinVentasEnAbril) =>{
-    let listar = "";
-    empleSinVentasEnAbril.forEach(empleaSinVentEnAbril =>{
-        listar += `
-        <tr>
-            <th scope="row">${empleaSinVentEnAbril.id}</th>
-            <td>${empleaSinVentEnAbril.nombre}</td>
-        </tr>
-        `
-    }); 
-    contenedorEmpleSinVentasEnAbril.innerHTML = listar;
-};
+// const mostrarEmpleSinVentasEnAbril = (empleSinVentasEnAbril) =>{
+//     let listar = "";
+//     empleSinVentasEnAbril.forEach(empleaSinVentEnAbril =>{
+//         listar += `
+//         <tr>
+//             <th scope="row">${empleaSinVentEnAbril.Id}</th>
+//             <td>${empleaSinVentt2023.Nombre}</td>
+//         </tr>
+//         `
+//     }); 
+//     contenedorEmpleSinVentasEnAbril.innerHTML = listar;
+// };
 
 /////////////////////////////////////////////////////////////////
 
@@ -1434,7 +1477,7 @@ const getMedicPrecio50Stock100 = ()  =>{
         mostrarMedicPrecio50Stock100(medicPreci50StockMenor100);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
