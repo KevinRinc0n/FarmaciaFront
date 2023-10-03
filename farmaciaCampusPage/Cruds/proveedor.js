@@ -1,4 +1,4 @@
-const url = "http://localhost:5297/api/Proveedor";
+const urlProveedor = "http://localhost:5297/api/Proveedor";
 let proveedores = [];
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -6,7 +6,7 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 const getProveedores = () =>{
-    fetch(url)
+    fetch(urlProveedor)
     .then(respuesta => respuesta.json())
     .then(data => {
         proveedores = data;
@@ -64,7 +64,7 @@ const empleado = {
 };
 console.log(empleado);
 
-    fetch(url,{
+    fetch(urlProveedor,{
         method: "POST",
         body: JSON.stringify(empleado),
         headers: {
@@ -123,7 +123,7 @@ const subirProveedor = () =>{
     };
     document.getElementById("").innerHTML = "";
 
-    fetch(url,{
+    fetch(urlProveedor,{
         method: "PUT",
         body: JSON.stringify(empleado),
         headers: {
@@ -142,7 +142,7 @@ const subirProveedor = () =>{
 };
 
 const eliminarProveedor = (id) =>{
-    fetch(`${url}/${id}`,{
+    fetch(`${urlProveedor}/${id}`,{
         method : "DELETE"
     })
 

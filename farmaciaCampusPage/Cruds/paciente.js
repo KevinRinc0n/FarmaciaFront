@@ -1,4 +1,4 @@
-const url = "http://localhost:5297/api/Paciente";
+const urlPaciente = "http://localhost:5297/api/Paciente";
 let pacientes = [];
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -6,7 +6,7 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 const getPacientes = () =>{
-    fetch(url)
+    fetch(urlPaciente)
     .then(respuesta => respuesta.json())
     .then(data => {
         pacientes = data;
@@ -66,7 +66,7 @@ const paciente = {
 };
 console.log(paciente);
 
-    fetch(url,{
+    fetch(urlPaciente,{
         method: "POST",
         body: JSON.stringify(paciente),
         headers: {
@@ -125,7 +125,7 @@ const subirPacient = () =>{
     };
     document.getElementById("").innerHTML = "";
 
-    fetch(url,{
+    fetch(urlPaciente,{
         method: "PUT",
         body: JSON.stringify(paciente),
         headers: {
@@ -144,7 +144,7 @@ const subirPacient = () =>{
 };
 
 const eliminarProveedor = (id) =>{
-    fetch(`${url}/${id}`,{
+    fetch(`${urlPaciente}/${id}`,{
         method : "DELETE"
     })
 

@@ -1,4 +1,4 @@
-const url = "http://localhost:5297/api/Direccion";
+const urlDireccion = "http://localhost:5297/api/Direccion";
 let direcciones = [];
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -6,7 +6,7 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 const getDireccion = () =>{
-    fetch(url)
+    fetch(urlDireccion)
     .then(respuesta => respuesta.json())
     .then(data => {
         direcciones = data;
@@ -71,7 +71,7 @@ const direccion = {
     };
 console.log(direccion);
 
-    fetch(url,{
+    fetch(urlDireccion,{
         method: "POST",
         body: JSON.stringify(direccion),
         headers: {
@@ -138,7 +138,7 @@ const subirDireccion = () =>{
     };
     document.getElementById("").innerHTML = "";
 
-    fetch(url,{
+    fetch(urlDireccion,{
         method: "PUT",
         body: JSON.stringify(direccion),
         headers: {
@@ -157,7 +157,7 @@ const subirDireccion = () =>{
 };
 
 const eliminarDireccion = (id) =>{
-    fetch(`${url}/${id}`,{
+    fetch(`${urlDireccion}/${id}`,{
         method : "DELETE"
     })
 

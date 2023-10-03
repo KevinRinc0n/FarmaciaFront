@@ -1,4 +1,4 @@
-const url = "http://localhost:5297/api/Medicamento";
+const urlMedicamento = "http://localhost:5297/api/Medicamento";
 let medicaments = [];
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -6,7 +6,7 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 const getMedic = () =>{
-    fetch(url)
+    fetch(urlMedicamento)
     .then(respuesta => respuesta.json())
     .then(data => {
         medicaments = data;
@@ -98,7 +98,7 @@ const medicamento = {
 };
 console.log(medicamento);
 
-    fetch(url,{
+    fetch(urlMedicamento,{
         method: "POST",
         body: JSON.stringify(medicamento),
         headers: {
@@ -190,7 +190,7 @@ const subirMedicamento = () =>{
     };
     document.getElementById("").innerHTML = "";
 
-    fetch(url,{
+    fetch(urlMedicamento,{
         method: "PUT",
         body: JSON.stringify(medicamento),
         headers: {
@@ -209,7 +209,7 @@ const subirMedicamento = () =>{
 };
 
 const eliminarMedicamento = (id) =>{
-    fetch(`${url}/${id}`,{
+    fetch(`${urlMedicamento}/${id}`,{
         method : "DELETE"
     })
 

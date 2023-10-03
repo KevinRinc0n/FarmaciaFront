@@ -1,4 +1,4 @@
-const url = "http://localhost:5297/api/Empleado";
+const urlEmpleado = "http://localhost:5297/api/Empleado";
 let empleados = [];
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -6,7 +6,7 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 const getEmplado = () =>{
-    fetch(url)
+    fetch(urlEmpleado)
     .then(respuesta => respuesta.json())
     .then(data => {
         empleados = data;
@@ -53,7 +53,7 @@ const empleado = {
 };
 console.log(empleado);
 
-    fetch(url,{
+    fetch(urlEmpleado,{
         method: "POST",
         body: JSON.stringify(empleado),
         headers: {
@@ -100,7 +100,7 @@ const subirEmpleado = () =>{
     };
     document.getElementById("").innerHTML = "";
 
-    fetch(url,{
+    fetch(urlEmpleado,{
         method: "PUT",
         body: JSON.stringify(empleado),
         headers: {
@@ -119,7 +119,7 @@ const subirEmpleado = () =>{
 };
 
 const eliminarEmpleado = (id) =>{
-    fetch(`${url}/${id}`,{
+    fetch(`${urlEmpleado}/${id}`,{
         method : "DELETE"
     })
 

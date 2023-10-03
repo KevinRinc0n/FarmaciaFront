@@ -14,7 +14,7 @@ const getMedicamentos = ()  =>{
         mostrarMedicamentos(medicamentos);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -22,7 +22,7 @@ const contenedorMedicamentos = document.getElementById("medicamentosMenos50Stock
 
 const mostrarMedicamentos = (medicamentos) =>{
     let listar = "";
-    medicamentos.foreach(medicamento =>{
+    medicamentos.forEach(medicamento =>{
         listar += `
         <div class="card" style="width: 18rem;">
             <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
@@ -55,7 +55,7 @@ const getMedicCompProveeA = ()  =>{
         mostrarMedicCompProveeA(medicamentosComProveeA);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -63,7 +63,7 @@ const contenedorMedicComProveeA = document.getElementById("medicamentosProveeA")
 
 const mostrarMedicCompProveeA = (medicamentosComProveeA) =>{
     let listar = "";
-    medicamentosComProveeA.foreach(medicamentoProveeA =>{
+    medicamentosComProveeA.forEach(medicamentoProveeA =>{
         listar += `
         <div class="card" style="width: 18rem;">
             <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
@@ -94,7 +94,7 @@ const getMedicamentoParace = ()  =>{
         mostrarMedicamentoParace(medicamentoParacetamol);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -102,7 +102,7 @@ const contenedorMedicamentoParace = document.getElementById("medicamentosTotaPar
 
 const mostrarMedicamentoParace = (medicamentoParacetamol) =>{
     let listar = "";
-    medicamentoParacetamol.foreach(medicamentoParacet =>{                                           
+    medicamentoParacetamol.forEach(medicamentoParacet =>{                                           
         listar += `
         <div class="card" style="width: 18rem;">
             <img src="./img/parace.jpg" class="card-img-top" alt="...">
@@ -134,7 +134,7 @@ const getRecetas = ()  =>{
         mostrarRecetas(recetas);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -142,7 +142,7 @@ const contenedorRecetas = document.getElementById("recetasBody");
 
 const mostrarRecetas = (recetas) =>{
     let listar = "";
-    recetas.foreach(receta =>{
+    recetas.forEach(receta =>{
         listar += `
         <tr>
             <th scope="row">${receta.Id}</th>
@@ -157,7 +157,7 @@ const mostrarRecetas = (recetas) =>{
 
 /////////////////////////////////////////////////////////////////
 
-const urlCaducan2024 = "http://localhost:5297/api/Medicamentos/GetCadu2024";
+/* const urlCaducan2024 = "http://localhost:5297/api/Medicamentos/GetCadu2024";
 let medisCadu2024 = [];
 
 window.addEventListener("DOMContentLoaded", () =>{
@@ -173,7 +173,7 @@ const getMediCadu2024 = ()  =>{
         mostrarCadu2024(medisCadu2024);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -181,7 +181,7 @@ const contenedorMedisCadu2024 = document.getElementById("medicAntes2024Body");
 
 const mostrarCadu2024 = (medisCadu2024) =>{
     let listar = "";
-    medisCadu2024.foreach(medicamentoCadu2024 =>{
+    medisCadu2024.forEach(medicamentoCadu2024 =>{
         listar += `
         <tr>
             <th scope="row">${medicamentoCadu2024.Id}</th>
@@ -193,7 +193,7 @@ const mostrarCadu2024 = (medisCadu2024) =>{
         `
     }); 
     contenedorMedisCadu2024.innerHTML = listar;
-};
+}; */
 
 /////////////////////////////////////////////////////////////////
 
@@ -213,7 +213,7 @@ const getMedicVenXProvee = ()  =>{
         mostrarMedicXProvee(medicXProvee);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -221,7 +221,7 @@ const contenedorMedicXProvee = document.getElementById("totalMedisVenXProveedor"
 
 const mostrarMedicXProvee = (medicXProvee) =>{
     let listar = "";
-    medicXProvee.foreach(totalMedicXProve =>{
+    medicXProvee.forEach(totalMedicXProve =>{
         listar += `
         <div class="card" style="width: 18rem;">
             <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
@@ -239,7 +239,7 @@ const mostrarMedicXProvee = (medicXProvee) =>{
 
 /////////////////////////////////////////////////////////////////
 
-const urlDineroXVenta = "http://localhost:5297/api/MovimientoInventario/GetTotalRecaudado";
+/* const urlDineroXVenta = "http://localhost:5297/api/MovimientoInventario/GetTotalRecaudado";
 let recaudadoXVenta = [];
 
 window.addEventListener("DOMContentLoaded", () =>{
@@ -255,7 +255,7 @@ const getTotalRecaudado = ()  =>{
         mostrarTotalRecaudado(recaudadoXVenta);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -263,7 +263,7 @@ const contenedorTotalRecaudado = document.getElementById("totalRecaudadoXVenMedi
 
 const mostrarTotalRecaudado = (recaudadoXVenta) =>{
     let listar = "";
-    recaudadoXVenta.foreach(totalRecaudado =>{
+    recaudadoXVenta.forEach(totalRecaudado =>{
         listar += `
         <div class="card" style="width: 18rem;">
             <img src="./img/dinero.jpg" class="card-img-top" alt="...">
@@ -274,7 +274,7 @@ const mostrarTotalRecaudado = (recaudadoXVenta) =>{
         `
     }); 
     contenedorTotalRecaudado.innerHTML = listar;
-};
+}; */
 
 /////////////////////////////////////////////////////////////////
 
@@ -294,7 +294,7 @@ const mostrarTotalRecaudado = (recaudadoXVenta) =>{
 //         mostrarMedicNoVendi(medisNoVendidos);
 //     })
 //     .catch(error =>{
-//         alert(error, "Ha ocurrido un problema");
+//         alert( "Ha ocurrido un problema",error);
 //     });
 // };
 
@@ -302,7 +302,7 @@ const mostrarTotalRecaudado = (recaudadoXVenta) =>{
 
 // const mostrarMedicNoVendi = (medisNoVendidos) =>{
 //     let listar = "";
-//     medisNoVendidos.foreach(medicamentoNoVend =>{
+//     medisNoVendidos.forEach(medicamentoNoVend =>{
 //         listar += `
 //         <tr>
 //             <th scope="row">${medicamentoNoVend.Id}</th>
@@ -316,7 +316,7 @@ const mostrarTotalRecaudado = (recaudadoXVenta) =>{
 
 /////////////////////////////////////////////////////////////////
 
-const urlMedicCaro = "http://localhost:5297/api/Medicamento/GetMediCaro";
+/* const urlMedicCaro = "http://localhost:5297/api/Medicamento/GetMediCaro";
 let medicCaro = [];
 
 window.addEventListener("DOMContentLoaded", () =>{
@@ -332,7 +332,7 @@ const getMasCaro = ()  =>{
         mostrarMasCaro(medicCaro);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -340,7 +340,7 @@ const contenedorMasCaro = document.getElementById("medicamentoMasCaro");
 
 const mostrarMasCaro = (medicCaro) =>{
     let listar = "";
-    medicCaro.foreach(medicamentoMoreCaro =>{
+    medicCaro.forEach(medicamentoMoreCaro =>{
         listar += `
         <div class="card" style="width: 18rem;">
             <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
@@ -354,7 +354,7 @@ const mostrarMasCaro = (medicCaro) =>{
     }); 
     contenedorMasCaro.innerHTML = listar;
 };
-
+ */
 /////////////////////////////////////////////////////////////////
 
 const urlMedicXProvee = "http://localhost:5297/api/Proveedor/GetMedisXProve";
@@ -373,7 +373,7 @@ const getMedicXProvee = ()  =>{
         mostrarMedicaXProvee(medicamentoXProvee);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -381,7 +381,7 @@ const contenedorMedicaXProvee = document.getElementById("cantMedicXProvee");
 
 const mostrarMedicaXProvee = (medicamentoXProvee) =>{
     let listar = "";
-    medicamentoXProvee.foreach(medicamentoXProv =>{
+    medicamentoXProvee.forEach(medicamentoXProv =>{
         listar += `
         <tr>
             <th scope="row">${medicamentoXProv.Id}</th>
@@ -412,7 +412,7 @@ const getPacientePara = ()  =>{
         mostrarPacientePara(pacienteCompraParace);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -420,7 +420,7 @@ const contenedorPacientePara = document.getElementById("pacienCompraPara");
 
 const mostrarPacientePara = (pacienteCompraParace) =>{
     let listar = "";
-    pacienteCompraParace.foreach(pacientComprParace =>{
+    pacienteCompraParace.forEach(pacientComprParace =>{
         listar += `
         <tr>
             <th scope="row">${pacientComprParace.Id}</th>
@@ -449,7 +449,7 @@ const getNoventasProvee = ()  =>{
         mostrarNoVentaProvee(proveeNoVentas);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -457,7 +457,7 @@ const contenedorProveeNoVentas = document.getElementById("proveeNoVenMedicUltiAÃ
 
 const mostrarNoVentaProvee = (proveeNoVentas) =>{
     let listar = "";
-    proveeNoVentas.foreach(proveeNoVenMediLastYear =>{
+    proveeNoVentas.forEach(proveeNoVenMediLastYear =>{
         listar += `
         <tr>
             <th scope="row">${proveeNoVenMediLastYear.Id}</th>
@@ -487,7 +487,7 @@ const getMedicamentoMarzo = ()  =>{
         mostrarMedicMarzo(medicamentosMarzo);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -495,7 +495,7 @@ const contenedorMedicMarzo = document.getElementById("medicamentosVenMazo2023");
 
 const mostrarMedicMarzo = (medicamentosMarzo) =>{
     let listar = "";
-    medicamentosMarzo.foreach(totalMedicamentoMarzo =>{
+    medicamentosMarzo.forEach(totalMedicamentoMarzo =>{
         listar += `
         <div class="card" style="width: 18rem;">
             <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
@@ -526,7 +526,7 @@ const getMediMenosVen2023 = ()  =>{
         mostrarMedicMenosven(medicMenosVendido);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -534,7 +534,7 @@ const contenedorMedicMenosVen = document.getElementById("medicamentosMenosVen202
 
 const mostrarMedicMenosven = (medicMenosVendido) =>{
     let listar = "";
-    medicMenosVendido.foreach(medicamentoMenosVen =>{
+    medicMenosVendido.forEach(medicamentoMenosVen =>{
         listar += `
         <div class="card" style="width: 18rem;">
             <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
@@ -566,7 +566,7 @@ const getProveeGanancia = ()  =>{
         mostrarGananciaProvee(gananciaXProvee);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -574,7 +574,7 @@ const contenedorGananciaProvee = document.getElementById("ventXProveBody");
 
 const mostrarGananciaProvee = (gananciaXProvee) =>{
     let listar = "";
-    gananciaXProvee.foreach(proveeGananciaTotal =>{
+    gananciaXProvee.forEach(proveeGananciaTotal =>{
         listar += `
         <tr>
             <th scope="row">${proveeGananciaTotal.Id}</th>
@@ -605,7 +605,7 @@ const getPromMedis = ()  =>{
         mostrarPromMedisVenta(promMedisVentas);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -613,7 +613,7 @@ const contenedorPromMedis = document.getElementById("medicamentosPromeXVen");
 
 const mostrarPromMedisVenta = (promMedisVentas) =>{
     let listar = "";
-    promMedisVentas.foreach(promedioMedicamento =>{
+    promMedisVentas.forEach(promedioMedicamento =>{
         listar += `
         <div class="card" style="width: 18rem;">
             <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
@@ -647,7 +647,7 @@ const getVentaEmple2023 = ()  =>{
         mostrarVentaEmpleados2023(ventasEmple2023);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -655,7 +655,7 @@ const contenedorVentaEmple = document.getElementById("ventaXEmpleado");
 
 const mostrarVentaEmpleados2023 = (ventasEmple2023) =>{
     let listar = "";
-    ventasEmple2023.foreach(ventaXEmple =>{
+    ventasEmple2023.forEach(ventaXEmple =>{
         listar += `
         <div class="card" style="width: 18rem;">
             <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
@@ -688,7 +688,7 @@ const getMedisExpi2024 = ()  =>{
         mostraMedicExpira2024(medicamentosExpiran2024);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -696,7 +696,7 @@ const contenedoMedicExp2024 = document.getElementById("medicamentoExpi2024");
 
 const mostraMedicExpira2024 = (medicamentosExpiran2024) =>{
     let listar = "";
-    medicamentosExpiran2024.foreach(medicamento2024Expira =>{
+    medicamentosExpiran2024.forEach(medicamento2024Expira =>{
         listar += `
         <div class="card" style="width: 18rem;">
             <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
@@ -730,7 +730,7 @@ const getEmpleMas5Vent = ()  =>{
         mostraEmpleMas5ventas(empleadosMas5Ventas);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -738,7 +738,7 @@ const contenedorEmpleMas5Ventas = document.getElementById("empleadoMas5Ventas");
 
 const mostraEmpleMas5ventas = (empleadosMas5Ventas) =>{
     let listar = "";
-    empleadosMas5Ventas.foreach(empleMas5Ven =>{
+    empleadosMas5Ventas.forEach(empleMas5Ven =>{
         listar += `
         <tr>
             <th scope="row">${empleMas5Ven.Id}</th>
@@ -767,7 +767,7 @@ const getMedisNuncaVen = ()  =>{
         mostraMedicNuncaVent(medicamentosNuncaVendidos);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -775,7 +775,7 @@ const contenedorMedicNuncaVendi = document.getElementById("medicamentosNoVendido
 
 const mostraMedicNuncaVent = (medicamentosNuncaVendidos) =>{
     let listar = "";
-    medicamentosNuncaVendidos.foreach(medicamentoNeverVendi =>{
+    medicamentosNuncaVendidos.forEach(medicamentoNeverVendi =>{
         listar += `
         <div class="card" style="width: 18rem;">
             <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
@@ -807,7 +807,7 @@ const getPaciente = ()  =>{
         mostraPacienMasDinero(pacienteMasDineroGasta);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -815,7 +815,7 @@ const contenedorMasDineroGasta = document.getElementById("pacienteMasDinero2023"
 
 const mostraPacienMasDinero = (pacienteMasDineroGasta) =>{
     let listar = "";
-    pacienteMasDineroGasta.foreach(pacienteMasDinero =>{
+    pacienteMasDineroGasta.forEach(pacienteMasDinero =>{
         listar += `
         <div class="card" style="width: 18rem;">
             <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
@@ -847,7 +847,7 @@ const getEmpleadosSinVentas = ()  =>{
         mostrarEmpleadosSinVentas(empleadosSinVentas);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -855,7 +855,7 @@ const contenedorEmpleSinVentas = document.getElementById("empleadoSinVentas2023"
 
 const mostrarEmpleadosSinVentas = (empleadosSinVentas) =>{
     let listar = "";
-    empleadosSinVentas.foreach(empleadoSinVentt =>{
+    empleadosSinVentas.forEach(empleadoSinVentt =>{
         listar += `
         <div class="card" style="width: 18rem;">
             <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
@@ -887,7 +887,7 @@ const getproveeSuminisMasMedis = ()  =>{
         mostrarProveeMasMedis(proveeSuminisMasMedis);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -895,7 +895,7 @@ const contenedorProveMasMedis = document.getElementById("proveedorSumiMasMedic20
 
 const mostrarProveeMasMedis = (proveeSuminisMasMedis) =>{
     let listar = "";
-    proveeSuminisMasMedis.foreach(proveeSuminisMoreMedic =>{
+    proveeSuminisMasMedis.forEach(proveeSuminisMoreMedic =>{
         listar += `
         <tr>
             <th scope="row">${proveeSuminisMoreMedic.Id}</th>
@@ -925,7 +925,7 @@ const getpacienteComprarParace2023 = ()  =>{
         mostrarpacienCompraParace2023(pacienteCompraronParace2023);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -933,7 +933,7 @@ const contenedorpacienCompraParace2023 = document.getElementById("pacienCompraPa
 
 const mostrarpacienCompraParace2023 = (pacienteCompraronParace2023) =>{
     let listar = "";
-    pacienteCompraronParace2023.foreach(pacienteParacc =>{
+    pacienteCompraronParace2023.forEach(pacienteParacc =>{
         listar += `
         <div class="card" style="width: 18rem;">
             <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
@@ -965,7 +965,7 @@ const getMedisVenXMes = ()  =>{
         mostrarMedisVenXMes(totalMedicvendiXMes);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -973,7 +973,7 @@ const contenedorMedisVenXMes = document.getElementById("medicamentosVenXMes2023"
 
 const mostrarMedisVenXMes = (totalMedicvendiXMes) =>{
     let listar = "";
-    totalMedicvendiXMes.foreach(medicamentoVenPorMe =>{
+    totalMedicvendiXMes.forEach(medicamentoVenPorMe =>{
         listar += `
         <div class="card" style="width: 18rem;">
             <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
@@ -1005,7 +1005,7 @@ const getEmpleMenos5Vent2023 = ()  =>{
         mostrarEmpleMenos5Vent2023(empleadosMenos5Ven2023);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -1013,7 +1013,7 @@ const contenedorEmpleMenos5Vent2023 = document.getElementById("empleadoMenos5Ven
 
 const mostrarEmpleMenos5Vent2023 = (empleadosMenos5Ven2023) =>{
     let listar = "";
-    empleadosMenos5Ven2023.foreach(empleadoMenos5Ventt =>{
+    empleadosMenos5Ven2023.forEach(empleadoMenos5Ventt =>{
         listar += `
         <div class="card" style="width: 18rem;">
             <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
@@ -1045,7 +1045,7 @@ const getProveeSumMedis = ()  =>{
         mostrarProveeSumMedis(totalProveeSumnisMedicamentos);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -1053,7 +1053,7 @@ const contenedorProveeSumMedis = document.getElementById("proveedoresSumiMedic20
 
 const mostrarProveeSumMedis = (totalProveeSumnisMedicamentos) =>{
     let listar = "";
-    totalProveeSumnisMedicamentos.foreach(proveeSumMedic =>{
+    totalProveeSumnisMedicamentos.forEach(proveeSumMedic =>{
         listar += `
         <div class="card" style="width: 18rem;">
             <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
@@ -1084,7 +1084,7 @@ const getProveeMedic50 = ()  =>{
         mostrarProveeMedic50(proveMedicMenos50Stock);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -1092,7 +1092,7 @@ const contenedorProveeMedic50 = document.getElementById("proveeMenos50MedicBody"
 
 const mostrarProveeMedic50 = (proveMedicMenos50Stock) =>{
     let listar = "";
-    proveMedicMenos50Stock.foreach(proveeMedicMenos50 =>{
+    proveMedicMenos50Stock.forEach(proveeMedicMenos50 =>{
         listar += `
         <tr>
             <th scope="row">${proveeMedicMenos50.Id}</th>
@@ -1122,7 +1122,7 @@ const getPacientNoCompraMedic = ()  =>{
         mostrarPacientNoCompraMedic(pacientNoCompraron);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -1130,7 +1130,7 @@ const contenedorPacientNoCompraMedic = document.getElementById("pacienNoCompra20
 
 const mostrarPacientNoCompraMedic = (pacientNoCompraron) =>{
     let listar = "";
-    pacientNoCompraron.foreach(pacienteSinCom =>{
+    pacientNoCompraron.forEach(pacienteSinCom =>{
         listar += `
         <div class="card" style="width: 18rem;">
             <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
@@ -1162,7 +1162,7 @@ const getMedisVendidosXMes2023 = ()  =>{
         mostrarMedisVendidosXMes2023(medisVendidoXMes);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -1170,7 +1170,7 @@ const contenedorMedisVendidosXMes2023 = document.getElementById("medicamentosVen
 
 const mostrarMedisVendidosXMes2023 = (medisVendidoXMes) =>{
     let listar = "";
-    medisVendidoXMes.foreach(medicamentoVenXMes =>{
+    medisVendidoXMes.forEach(medicamentoVenXMes =>{
         listar += `
         <div class="card" style="width: 18rem;">
             <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
@@ -1202,7 +1202,7 @@ const getEmpleadoVendi = ()  =>{
         mostrarEmpleadoVendi(empleadoVendidoMayorMedic);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -1210,7 +1210,7 @@ const contenedorEmpleadoVendi = document.getElementById("empleVenMedicDistinto20
 
 const mostrarEmpleadoVendi = (empleadoVendidoMayorMedic) =>{
     let listar = "";
-    empleadoVendidoMayorMedic.foreach(empleadoMayorMedicDisnti =>{
+    empleadoVendidoMayorMedic.forEach(empleadoMayorMedicDisnti =>{
         listar += `
         <div class="card" style="width: 18rem;">
             <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
@@ -1242,7 +1242,7 @@ const getTotalPacientX2023 = ()  =>{
         mostrarTotalPacientX2023(totalGastadoXPaci2023);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -1250,7 +1250,7 @@ const contenedorTotalPacientX2023 = document.getElementById("totalGastXPacientre
 
 const mostrarTotalPacientX2023 = (totalGastadoXPaci2023) =>{
     let listar = "";
-    totalGastadoXPaci2023.foreach(pacienteTotalGast =>{
+    totalGastadoXPaci2023.forEach(pacienteTotalGast =>{
         listar += `
         <tr>
             <th scope="row">${pacienteTotalGast.Id}</th>
@@ -1264,7 +1264,7 @@ const mostrarTotalPacientX2023 = (totalGastadoXPaci2023) =>{
 
 /////////////////////////////////////////////////////////////////
 
-const medicamentoNoVendi2023 = "http://localhost:5297/api/Medicamento/medicamentos-no-vendidos-2023";
+/* const medicamentoNoVendi2023 = "http://localhost:5297/api/Medicamento/medicamentos-no-vendidos-2023";
 let mediNoVendido2023 = [];
 
 window.addEventListener("DOMContentLoaded", () =>{
@@ -1280,7 +1280,7 @@ const getMedicamentosNoVendidos2023 = ()  =>{
         mostrarMedicamentosNoVendidos2023(mediNoVendido2023);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -1288,7 +1288,7 @@ const contenedorMedicamentosNoVendidos2023 = document.getElementById("medicament
 
 const mostrarMedicamentosNoVendidos2023 = (mediNoVendido2023) =>{
     let listar = "";
-    mediNoVendido2023.foreach(medicamentoNoVen2023 =>{
+    mediNoVendido2023.forEach(medicamentoNoVen2023 =>{
         listar += `
         <div class="card" style="width: 18rem;">
             <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
@@ -1301,7 +1301,7 @@ const mostrarMedicamentosNoVendidos2023 = (mediNoVendido2023) =>{
     }); 
     contenedorMedicamentosNoVendidos2023.innerHTML = listar;
 };
-
+ */
 /////////////////////////////////////////////////////////////////
 
 const proveeSumi5Medic2023 = "http://localhost:5297/api/Proveedor/suministro-almenos-5-medicamentos-diferentes-2023";
@@ -1320,7 +1320,7 @@ const getProveeSumi5Medic2023 = ()  =>{
         mostrarProveeSumi5Medic2023(proveeSuminisAlmenos52023);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -1328,7 +1328,7 @@ const contenedorProveeSumi5Medic2023 = document.getElementById("proveeSumiMas5Me
 
 const mostrarProveeSumi5Medic2023 = (proveeSuminisAlmenos52023) =>{
     let listar = "";
-    proveeSuminisAlmenos52023.foreach(provSuminis5MedicDifere =>{
+    proveeSuminisAlmenos52023.forEach(provSuminis5MedicDifere =>{
         listar += `
         <tr>
             <th scope="row">${provSuminis5MedicDifere.Id}</th>
@@ -1358,7 +1358,7 @@ const getTotalMedicVen2023 = ()  =>{
         mostrarTotalMedicVen2023(medicVenTrimes2023);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -1366,7 +1366,7 @@ const contenedorTotalMedicVen2023 = document.getElementById("medicamentosTotalTr
 
 const mostrarTotalMedicVen2023 = (medicVenTrimes2023) =>{
     let listar = "";
-    medicVenTrimes2023.foreach(totalMedicTrimestre =>{
+    medicVenTrimes2023.forEach(totalMedicTrimestre =>{
         listar += `
         <div class="card" style="width: 18rem;">
             <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
@@ -1397,7 +1397,7 @@ const getEmpleadoSinVentas2023 = ()  =>{
         mostrarEmpleadoSinVentas2023(empleSinVentas2023);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -1405,7 +1405,7 @@ const contenedorEmpleadoSinVentas2023 = document.getElementById("empleadoSinVent
 
 const mostrarEmpleadoSinVentas2023 = (empleSinVentas2023) =>{
     let listar = "";
-    empleSinVentas2023.foreach(empleaSinVentt2023 =>{
+    empleSinVentas2023.forEach(empleaSinVentt2023 =>{
         listar += `
         <tr>
             <th scope="row">${empleaSinVentt2023.Id}</th>
@@ -1434,7 +1434,7 @@ const mostrarEmpleadoSinVentas2023 = (empleSinVentas2023) =>{
 //         mostrarEmpleSinVentasEnAbril(empleSinVentasEnAbril);
 //     })
 //     .catch(error =>{
-//         alert(error, "Ha ocurrido un problema");
+//         alert( "Ha ocurrido un problema",error);
 //     });
 // };
 
@@ -1442,7 +1442,7 @@ const mostrarEmpleadoSinVentas2023 = (empleSinVentas2023) =>{
 
 // const mostrarEmpleSinVentasEnAbril = (empleSinVentasEnAbril) =>{
 //     let listar = "";
-//     empleSinVentasEnAbril.foreach(empleaSinVentEnAbril =>{
+//     empleSinVentasEnAbril.forEach(empleaSinVentEnAbril =>{
 //         listar += `
 //         <tr>
 //             <th scope="row">${empleaSinVentEnAbril.Id}</th>
@@ -1471,7 +1471,7 @@ const getMedicPrecio50Stock100 = ()  =>{
         mostrarMedicPrecio50Stock100(medicPreci50StockMenor100);
     })
     .catch(error =>{
-        alert(error, "Ha ocurrido un problema");
+        alert( "Ha ocurrido un problema",error);
     });
 };
 
@@ -1479,7 +1479,7 @@ const contenedorMedicPrecio50Stock100 = document.getElementById("medicamentosPre
 
 const mostrarMedicPrecio50Stock100 = (medicPreci50StockMenor100) =>{
     let listar = "";
-    medicPreci50StockMenor100.foreach(medicamento500Y100 =>{
+    medicPreci50StockMenor100.forEach(medicamento500Y100 =>{
         listar += `
         <div class="card" style="width: 18rem;">
             <img src="./img/mediCard.jpg" class="card-img-top" alt="...">
